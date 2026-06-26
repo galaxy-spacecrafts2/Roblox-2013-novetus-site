@@ -1,0 +1,201 @@
+name: Build RobloxWebSite
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar MSBuild
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Instalar NuGet CLI
+        uses: NuGet/setup-nuget@v2
+        with:
+          nuget-version: 'latest'
+
+      - name: Gerar stubs dos assemblies ausentes
+        shell: pwsh
+        run: |
+          # Os projetos de assembly ficam em ../Assemblies/ relativo ao .sln
+          # No GitHub Actions o workspace é ex: D:\a\repo\repo
+          # Então ../Assemblies/ = D:\a\repo\Assemblies\
+          $root = Split-Path "${{ github.workspace }}" -Parent
+          $assembliesRoot = Join-Path $root "Assemblies"
+
+          # Lista de todos os assemblies faltando (caminho relativo a $assembliesRoot)
+          $assemblies = @(
+            "Agents\Roblox.Agents\Roblox.Agents",
+            "ApiControlPlane\Roblox.ApiControlPlane\Roblox.ApiControlPlane",
+            "Assets\Roblox.Assets\Roblox.Assets",
+            "Caching\Emcaster\Emcaster",
+            "Caching\MemCachedClient\Roblox.MemcachedClient",
+            "Caching\Roblox.Caching\Roblox.Caching",
+            "Caching\Roblox.MultiCastToMemcached\Roblox.MultiCastToMemcached",
+            "Common\Roblox.Common.NetStandard\Roblox.Common.NetStandard",
+            "Common\Roblox.Common\Roblox.Common",
+            "Common\Roblox.Common.Web\Roblox.Common.Web",
+            "Configuration\Roblox.Configuration\Roblox.Configuration",
+            "Configuration\Roblox.WebsiteSettings\Roblox.WebsiteSettings",
+            "Core\Roblox.Web.Core\Roblox.Web.Core",
+            "Databases\Roblox.Databases\Roblox.Databases",
+            "Data\Roblox.Data\Roblox.Data",
+            "DataV2\Core\Roblox.DataV2.Core\Roblox.DataV2.Core",
+            "Economy\Roblox.Economy.Common\Roblox.Economy.Common",
+            "Entities\Roblox.Entities.Mssql\Roblox.Entities.Mssql",
+            "EntityFrameworkCore\Roblox.EntityFrameworkCore\Roblox.EntityFrameworkCore",
+            "EventLog\Roblox.EventLog.Extended\Roblox.EventLog.Extended",
+            "EventLog\Roblox.EventLog\Roblox.EventLog",
+            "Files\Roblox.Files\Roblox.Files",
+            "Grid\Arbiter\Roblox.Grid.Arbiter.Common\Roblox.Grid.Arbiter.Common",
+            "Grid\Roblox.Grid.Client\Roblox.Grid.Client",
+            "Grid\Roblox.Grid.Common\Roblox.Grid.Common",
+            "Hashing\Roblox.Hashing\Roblox.Hashing",
+            "Http\Roblox.Http.Client.Monitoring\Roblox.Http.Client.Monitoring",
+            "Http\Roblox.Http.Client\Roblox.Http.Client",
+            "Http\Roblox.Http\Roblox.Http",
+            "Http\Roblox.Http.ServiceClient\Roblox.Http.ServiceClient",
+            "Infrastructure\Roblox.Farms\Roblox.Farms",
+            "Instrumentation\Roblox.Instrumentation\Roblox.Instrumentation",
+            "IpAddresses\Roblox.IpAddresses\Roblox.IpAddresses",
+            "LightUtils\Redis\Roblox.LightUtils.Redis\Roblox.LightUtils.Redis",
+            "LightUtils\Roblox.LightUtils\Roblox.LightUtils",
+            "Marketing\Roblox.Marketing\Roblox.Marketing",
+            "Moderation\Roblox.Moderation\Roblox.Moderation",
+            "Mssql\Roblox.MssqlDatabases\Roblox.MssqlDatabases",
+            "Mssql\Roblox.Mssql\Roblox.Mssql",
+            "Pipeline\Roblox.Pipeline\Roblox.Pipeline",
+            "Platform\Authentication\Roblox.Platform.Authentication.Core\Roblox.Platform.Authentication.Core",
+            "Platform\Authentication\Roblox.Platform.Authentication.Entities\Roblox.Platform.Authentication.Entities",
+            "Platform\Authentication\Roblox.Platform.Authentication\Roblox.Platform.Authentication",
+            "Platform\Core\Roblox.Platform.Core\Roblox.Platform.Core",
+            "Platform\Email\Roblox.Platform.Email.Core\Roblox.Platform.Email.Core",
+            "Platform\Email\Roblox.Platform.Email.Entities\Roblox.Platform.Email.Entities",
+            "Platform\Email\Roblox.Platform.Email\Roblox.Platform.Email",
+            "Platform\Membership\Roblox.Platform.Membership.Commands\Roblox.Platform.Membership.Commands",
+            "Platform\Membership\Roblox.Platform.Membership.Core\Roblox.Platform.Membership.Core",
+            "Platform\Membership\Roblox.Platform.Membership\Roblox.Platform.Membership",
+            "Platform\Roles\Roblox.Platform.Roles.Core\Roblox.Platform.Roles.Core",
+            "Platform\Roles\Roblox.Platform.Roles.Entities\Roblox.Platform.Roles.Entities",
+            "Platform\Roles\Roblox.Platform.Roles\Roblox.Platform.Roles",
+            "Platform\Security\Roblox.Platform.Security.Core\Roblox.Platform.Security.Core",
+            "Platform\Security\Roblox.Platform.Security\Roblox.Platform.Security",
+            "Redis\Roblox.Redis\Roblox.Redis",
+            "RequestContext\Roblox.RequestContext\Roblox.RequestContext",
+            "Sentinels\Roblox.Sentinels\Roblox.Sentinels",
+            "Showcases\Roblox.Showcases\Roblox.Showcases",
+            "Tracing\Roblox.Tracing.Core\Roblox.Tracing.Core",
+            "UI\Roblox.Controls\Roblox.Controls",
+            "UI\Roblox.Thumbs\Roblox.Thumbs",
+            "Users\Roblox.Users.Old\Roblox.Users.Old",
+            "Users\Roblox.Users\Roblox.Users",
+            "Web\Code\Roblox.Web.Code\Roblox.Web.Code",
+            "Web\HttpModules\Roblox.Web.HttpModules\Roblox.Web.HttpModules",
+            "Web\Maintenance\Roblox.Web.Maintenance.NetFramework\Roblox.Web.Maintenance.NetFramework",
+            "Web\Mvc\Roblox.Web.Mvc.NetFramework\Roblox.Web.Mvc.NetFramework",
+            "Web\StaticContent\Roblox.Web.StaticContent\Roblox.Web.StaticContent"
+          )
+
+          # Projeto especial com caminho diferente (espaço no nome)
+          $specialAssemblies = @(
+            "Server Class Library\Roblox Class Library\Roblox Server Class Library"
+          )
+
+          $csprojTemplate = @'
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props"
+          Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <RootNamespace>ASSEMBLY_NAMESPACE</RootNamespace>
+    <AssemblyName>ASSEMBLY_NAME</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Stub.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
+'@
+
+          $csTemplate = @'
+// Stub gerado automaticamente pelo GitHub Actions
+// Assembly: ASSEMBLY_NAME
+namespace ASSEMBLY_NAMESPACE { }
+'@
+
+          $allAssemblies = $assemblies + $specialAssemblies
+
+          foreach ($entry in $allAssemblies) {
+            $parts      = $entry -split '\\'
+            $assemblyName = $parts[-1]
+            $namespace    = $assemblyName -replace '[^a-zA-Z0-9]', '_'
+            $dir          = Join-Path $assembliesRoot ($entry | Split-Path -Parent)
+            $projFile     = Join-Path $assembliesRoot "$entry.csproj"
+            $csFile       = Join-Path (Split-Path $projFile) "Stub.cs"
+
+            New-Item -ItemType Directory -Force -Path (Split-Path $projFile) | Out-Null
+
+            ($csprojTemplate `
+              -replace 'ASSEMBLY_NAMESPACE', $namespace `
+              -replace 'ASSEMBLY_NAME', $assemblyName) | Set-Content $projFile -Encoding UTF8
+
+            ($csTemplate `
+              -replace 'ASSEMBLY_NAMESPACE', $namespace `
+              -replace 'ASSEMBLY_NAME', $assemblyName) | Set-Content $csFile -Encoding UTF8
+
+            Write-Host "Stub criado: $assemblyName"
+          }
+
+          Write-Host ""
+          Write-Host "✅ $($allAssemblies.Count) stubs gerados em $assembliesRoot"
+
+      - name: Criar pasta packages no nível correto
+        shell: pwsh
+        run: |
+          $root = Split-Path "${{ github.workspace }}" -Parent
+          New-Item -ItemType Directory -Force -Path (Join-Path $root "packages") | Out-Null
+          Write-Host "Pasta packages criada em $root\packages"
+
+      - name: Restaurar pacotes NuGet
+        shell: pwsh
+        run: |
+          nuget restore "${{ github.workspace }}\RobloxWebSite.sln" `
+            -PackagesDirectory (Join-Path (Split-Path "${{ github.workspace }}" -Parent) "packages") `
+            -NonInteractive
+
+      - name: Build da solução completa
+        shell: pwsh
+        run: |
+          msbuild "${{ github.workspace }}\RobloxWebSite.sln" `
+            /p:Configuration=Release `
+            /p:Platform="Any CPU" `
+            /m `
+            /verbosity:minimal `
+            /nologo
+
+      - name: Publicar artefatos do build
+        if: success()
+        uses: actions/upload-artifact@v4
+        with:
+          name: roblox-website-build
+          path: RobloxWebSite\bin\
+          retention-days: 7
