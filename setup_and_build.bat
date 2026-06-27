@@ -230,28 +230,6 @@ if %errorLevel% equ 0 (
     set "NEED_REBOOT=1"
 )
 
-:: -- CHECK / DOWNLOAD CLOUDFLARED --
-echo.
-echo  [CHECK] Cloudflare Tunnel (cloudflared)...
-if exist "%CLOUDFLARED_PATH%" (
-    echo  [OK]    cloudflared.exe already present.
-) else (
-    where cloudflared >nul 2>&1
-    if %errorLevel% equ 0 (
-        echo  [OK]    cloudflared found in PATH.
-    ) else (
-        echo  [MISSING] cloudflared not found. Downloading...
-        powershell -NoProfile -ExecutionPolicy Bypass -Command ^
-            "Invoke-WebRequest -Uri '%CLOUDFLARED_URL%' -OutFile '%CLOUDFLARED_PATH%'"
-        if !errorLevel! neq 0 (
-            echo  [ERROR] Failed to download cloudflared. Check internet connection.
-            pause
-            exit /b 1
-        )
-        echo  [OK]    cloudflared.exe downloaded.
-    )
-)
-
 :: -- SUMMARY --
 echo.
 echo  =====================================================
@@ -262,7 +240,6 @@ echo  MSBuild      : Installed/Verified
 echo  .NET 4.7.2   : Installed/Verified
 echo  NuGet CLI    : Installed/Verified
 echo  IIS Express  : Installed/Verified
-echo  cloudflared  : Installed/Verified
 echo.
 
 :: -- WRITE PHASE 2 FLAG --
@@ -488,22 +465,37 @@ if exist "%SEED_FLAG%" (
     goto :STEP5_NETWORK
 )
 
-:: -- EXECUTA O SEED --
-echo  [INFO] Executando seed_accounts.ps1...
-powershell -NoProfile -ExecutionPolicy Bypass -File "%SCRIPT_DIR%seed_accounts.ps1" ^
+:: -- EXTRAI E EXECUTA O SEED (EMBUTIDO NO FINAL DESTE ARQUIVO) --
+echo  [INFO] Preparando script de seed embutido...
+set "SEED_PS=C:\Windows\Temp\rb_seed.ps1"
+
+powershell -NoProfile -ExecutionPolicy Bypass -Command ^
+    "$marker='::SEED_PS_START';$w=$false;$out=[System.Collections.Generic.List[string]]::new();foreach($l in [System.IO.File]::ReadAllLines('%~f0')){if($l -eq $marker){$w=$true}elseif($w){$out.Add($l)}};[System.IO.File]::WriteAllLines('%SEED_PS%',$out,[System.Text.Encoding]::UTF8)"
+
+if not exist "%SEED_PS%" (
+    echo  [WARN]  Nao foi possivel extrair o script de seed.
+    echo  [INFO]  Verifique se o arquivo bat nao foi modificado manualmente.
+    goto :STEP5_NETWORK
+)
+
+echo  [INFO] Executando seed...
+powershell -NoProfile -ExecutionPolicy Bypass -File "%SEED_PS%" ^
     -Server "!DB_SERVER!" -Database "!DB_NAME!" -ScriptDir "%SCRIPT_DIR%"
 
 if %errorLevel% neq 0 (
     echo.
     echo  [WARN]  O seed de contas falhou ou o banco ainda nao esta pronto.
-    echo  [INFO]  Isso pode acontecer se o SQL Server nao estiver configurado.
-    echo  [INFO]  Voce pode rodar o seed manualmente depois:
-    echo          powershell -File seed_accounts.ps1
+    echo  [INFO]  Isso pode acontecer se o SQL Server nao estiver instalado/rodando.
+    echo  [INFO]  Instale o SQL Server Express (gratis):
+    echo          https://www.microsoft.com/pt-br/sql-server/sql-server-downloads
+    echo  [INFO]  Depois delete .accounts_seeded e re-execute este script.
     echo.
 ) else (
     echo Phase2Seeded > "%SEED_FLAG%"
     echo  [OK]    Contas criadas com sucesso!
 )
+
+del "%SEED_PS%" >nul 2>&1
 
 echo.
 echo  =====================================================
@@ -682,7 +674,7 @@ if %errorLevel% equ 0 (
 )
 
 :: ============================================================
-:: STEP 5 - LAUNCH IIS EXPRESS + ROUTER PORT FORWARD REMINDER
+:: STEP 6 - LAUNCH IIS EXPRESS
 :: ============================================================
 echo.
 echo  =====================================================
@@ -724,7 +716,6 @@ echo        Porta interna : 80
 echo        Protocolo     : TCP
 echo.
 
-:: Show local IP to help with port forwarding
 for /f "tokens=2 delims=:" %%a in (
     'ipconfig ^| findstr /i "IPv4" ^| findstr /v "127.0.0.1"'
 ) do (
@@ -738,11 +729,10 @@ echo.
 echo   Depois disso, o site fica acessivel para sempre em:
 echo.
 echo  =====================================================
-echo.
+
 echo  [INFO] Server launched >> "%LOG_FILE%"
 echo  [INFO] URL: http://!NOIP_HOST! >> "%LOG_FILE%"
 
-echo  Aguardando IIS Express iniciar...
 echo.
 echo  =====================================================
 echo   RetroBlox esta NO AR!
@@ -757,7 +747,6 @@ echo   Pressione Ctrl+C para parar o servidor.
 echo  =====================================================
 echo.
 
-:: Run IIS Express in foreground (Ctrl+C stops it)
 "!IISEXPRESS_PATH!" /config:"%IIS_CONFIG%" /siteid:1
 
 echo.
@@ -768,4 +757,228 @@ echo   Log build  :  build_output.log
 echo  =====================================================
 echo.
 pause
-exit /b 0
+
+goto :EOF
+
+::SEED_PS_START
+# ============================================================
+# RetroBlox - Account Seeder (embutido em setup_and_build.bat)
+# Extraido e executado automaticamente pela etapa 4 do bat.
+# ============================================================
+
+param(
+    [string]$Server     = "localhost",
+    [string]$Database   = "MyReleaseDB",
+    [string]$ScriptDir  = $PSScriptRoot
+)
+
+$ErrorActionPreference = "Stop"
+
+Write-Host ""
+Write-Host "  =====================================================" -ForegroundColor Cyan
+Write-Host "   RetroBlox - Criando contas no banco de dados" -ForegroundColor Cyan
+Write-Host "  =====================================================" -ForegroundColor Cyan
+Write-Host ""
+
+# Localiza BCrypt.Net DLL nos packages restaurados
+$bcryptDll = Get-ChildItem -Path "$ScriptDir\packages" -Recurse `
+    -Filter "BCrypt.Net-Next.dll" -ErrorAction SilentlyContinue |
+    Where-Object { $_.FullName -like "*net47*" -or $_.FullName -like "*net4*" } |
+    Select-Object -First 1
+
+if (-not $bcryptDll) {
+    $bcryptDll = Get-ChildItem -Path "$ScriptDir\packages" -Recurse `
+        -Filter "BCrypt.Net-Next.dll" -ErrorAction SilentlyContinue |
+        Select-Object -First 1
+}
+
+if (-not $bcryptDll) {
+    Write-Host "  [ERRO] BCrypt.Net-Next.dll nao encontrada em packages\." -ForegroundColor Red
+    Write-Host "  [INFO] Certifique-se de que o NuGet restore foi concluido." -ForegroundColor Yellow
+    exit 1
+}
+
+Add-Type -Path $bcryptDll.FullName
+Write-Host "  [OK]  BCrypt carregado: $($bcryptDll.FullName)" -ForegroundColor Green
+
+function Hash-Password($plain) {
+    return [BCrypt.Net.BCrypt]::HashPassword($plain, 11)
+}
+
+# Conexao SQL Server
+Write-Host "  [INFO] Conectando em: $Server / $Database" -ForegroundColor Yellow
+
+$connectionString = "Server=$Server;Database=$Database;Integrated Security=True;TrustServerCertificate=True;"
+
+function Invoke-Sql($sql) {
+    $conn = New-Object System.Data.SqlClient.SqlConnection($connectionString)
+    $conn.Open()
+    $cmd  = $conn.CreateCommand()
+    $cmd.CommandText    = $sql
+    $cmd.CommandTimeout = 60
+    try   { $cmd.ExecuteNonQuery() | Out-Null }
+    finally { $conn.Close() }
+}
+
+function Invoke-SqlScalar($sql) {
+    $conn = New-Object System.Data.SqlClient.SqlConnection($connectionString)
+    $conn.Open()
+    $cmd  = $conn.CreateCommand()
+    $cmd.CommandText    = $sql
+    $cmd.CommandTimeout = 60
+    try   { return $cmd.ExecuteScalar() }
+    finally { $conn.Close() }
+}
+
+# Cria tabelas se nao existirem
+Write-Host "  [INFO] Criando tabelas se nao existirem..." -ForegroundColor Yellow
+
+Invoke-Sql ("IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'AccountStatus') " +
+    "BEGIN " +
+    "CREATE TABLE [dbo].[AccountStatus] ([ID] TINYINT NOT NULL PRIMARY KEY, [Value] NVARCHAR(50) NOT NULL); " +
+    "INSERT INTO [dbo].[AccountStatus] VALUES (1,'Ok'),(2,'Suppressed'),(3,'Deleted'); " +
+    "END")
+
+Invoke-Sql ("IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Accounts') " +
+    "BEGIN " +
+    "CREATE TABLE [dbo].[Accounts] (" +
+    "[ID]              BIGINT        NOT NULL PRIMARY KEY IDENTITY(1,1)," +
+    "[Name]            NVARCHAR(50)  NOT NULL UNIQUE," +
+    "[Email]           NVARCHAR(200) NULL," +
+    "[PasswordHash]    NVARCHAR(200) NOT NULL," +
+    "[AccountStatusID] TINYINT       NOT NULL DEFAULT 1 REFERENCES [AccountStatus]([ID])," +
+    "[Description]     NVARCHAR(500) NULL," +
+    "[AgeBracket]      TINYINT       NOT NULL DEFAULT 1," +
+    "[IsAdmin]         BIT           NOT NULL DEFAULT 0," +
+    "[IsMythAccount]   BIT           NOT NULL DEFAULT 0," +
+    "[Created]         DATETIME      NOT NULL DEFAULT GETUTCDATE()); " +
+    "END")
+
+Invoke-Sql ("IF NOT EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Users') " +
+    "BEGIN " +
+    "CREATE TABLE [dbo].[Users] (" +
+    "[ID]        BIGINT       NOT NULL PRIMARY KEY IDENTITY(1,1)," +
+    "[Name]      NVARCHAR(50) NOT NULL UNIQUE," +
+    "[AccountID] BIGINT       NOT NULL REFERENCES [Accounts]([ID])," +
+    "[Created]   DATETIME     NOT NULL DEFAULT GETUTCDATE()); " +
+    "END")
+
+Write-Host "  [OK]  Tabelas prontas." -ForegroundColor Green
+
+function Add-AccountWithId($id, $name, $password, $email, $description, $isAdmin, $isMythAccount, $statusId, $createdDate, $ageBracket) {
+    $exists = Invoke-SqlScalar "SELECT COUNT(1) FROM [Accounts] WHERE [Name] = '$name'"
+    if ($exists -gt 0) {
+        Write-Host "  [SKIP] Conta '$name' ja existe." -ForegroundColor DarkGray
+        return
+    }
+    $hash    = (Hash-Password $password).Replace("'","''")
+    $descVal = if ($description) { "'" + $description.Replace("'","''") + "'" } else { "NULL" }
+    $emailVal= if ($email)       { "'" + $email + "'"                         } else { "NULL" }
+    $dateVal = if ($createdDate) { "'" + $createdDate + "'"                   } else { "GETUTCDATE()" }
+
+    Invoke-Sql ("SET IDENTITY_INSERT [Accounts] ON; " +
+        "INSERT INTO [Accounts] ([ID],[Name],[Email],[PasswordHash],[AccountStatusID],[Description],[AgeBracket],[IsAdmin],[IsMythAccount],[Created]) " +
+        "VALUES ($id,'$name',$emailVal,'$hash',$statusId,$descVal,$ageBracket,$isAdmin,$isMythAccount,$dateVal); " +
+        "SET IDENTITY_INSERT [Accounts] OFF; " +
+        "INSERT INTO [Users] ([Name],[AccountID],[Created]) VALUES ('$name',$id,$dateVal);")
+    Write-Host "  [OK]  Conta criada: $name (ID=$id)" -ForegroundColor Green
+}
+
+function Add-Account($name, $password, $email, $description, $isAdmin, $isMythAccount, $statusId, $createdDate, $ageBracket) {
+    $exists = Invoke-SqlScalar "SELECT COUNT(1) FROM [Accounts] WHERE [Name] = '$name'"
+    if ($exists -gt 0) {
+        Write-Host "  [SKIP] Conta '$name' ja existe." -ForegroundColor DarkGray
+        return
+    }
+    $hash    = (Hash-Password $password).Replace("'","''")
+    $descVal = if ($description) { "'" + $description.Replace("'","''") + "'" } else { "NULL" }
+    $emailVal= if ($email)       { "'" + $email + "'"                         } else { "NULL" }
+    $dateVal = if ($createdDate) { "'" + $createdDate + "'"                   } else { "GETUTCDATE()" }
+
+    Invoke-Sql ("INSERT INTO [Accounts] ([Name],[Email],[PasswordHash],[AccountStatusID],[Description],[AgeBracket],[IsAdmin],[IsMythAccount],[Created]) " +
+        "VALUES ('$name',$emailVal,'$hash',$statusId,$descVal,$ageBracket,$isAdmin,$isMythAccount,$dateVal); " +
+        "DECLARE @accId BIGINT = SCOPE_IDENTITY(); " +
+        "INSERT INTO [Users] ([Name],[AccountID],[Created]) VALUES ('$name',@accId,$dateVal);")
+    Write-Host "  [OK]  Conta criada: $name" -ForegroundColor Green
+}
+
+# ── builderman (admin, ID=1) ─────────────────────────────────
+Write-Host ""
+Write-Host "  [INFO] Criando conta builderman (admin, ID=1)..." -ForegroundColor Yellow
+
+Add-AccountWithId `
+    -id            1 `
+    -name          "builderman" `
+    -password      "Admin@RetroBlox1" `
+    -email         $null `
+    -description   "Welcome to RetroBlox! I am the founder and administrator of this platform." `
+    -isAdmin       1 `
+    -isMythAccount 0 `
+    -statusId      1 `
+    -createdDate   "2006-01-01 00:00:00" `
+    -ageBracket    1
+
+# ── noli (conta lenda/mito - deletada, 2007) ─────────────────
+# Conta glitchada documentada em 2010: sem avatar, sem dados,
+# redireciona para homepage ao clicar no perfil.
+# Associada a Void Stars e furtos de contas na era 2007-2010.
+Write-Host ""
+Write-Host "  [INFO] Criando conta noli (mito/lenda, deletada)..." -ForegroundColor Yellow
+
+Add-Account `
+    -name          "noli" `
+    -password      "V01dStar_2007!" `
+    -email         $null `
+    -description   $null `
+    -isAdmin       0 `
+    -isMythAccount 1 `
+    -statusId      3 `
+    -createdDate   "2007-09-05 00:00:00" `
+    -ageBracket    1
+
+# ── 12 bots de teste ─────────────────────────────────────────
+Write-Host ""
+Write-Host "  [INFO] Criando 12 contas bot de teste..." -ForegroundColor Yellow
+
+$bots = @(
+    @{ Name="Player1";  Desc="Hey! I love building things on RetroBlox!" },
+    @{ Name="Player2";  Desc="Scripting enthusiast and game developer." },
+    @{ Name="Player3";  Desc="Just here to have fun and play games." },
+    @{ Name="Player4";  Desc="RetroBlox is the best platform ever!" },
+    @{ Name="Player5";  Desc="Explorer and adventure seeker." },
+    @{ Name="Player6";  Desc="I like to make obstacle courses." },
+    @{ Name="Player7";  Desc="Sword fighter and ninja warrior." },
+    @{ Name="Player8";  Desc="Collector of rare items and hats." },
+    @{ Name="Player9";  Desc="I run the fastest on the server!" },
+    @{ Name="Player10"; Desc="Builder, scripter, and team player." },
+    @{ Name="Player11"; Desc="Game tester and bug reporter." },
+    @{ Name="Player12"; Desc="I joined RetroBlox on day one!" }
+)
+
+foreach ($bot in $bots) {
+    $year  = Get-Random -Minimum 2008 -Maximum 2013
+    $month = Get-Random -Minimum 1    -Maximum 13
+    $day   = Get-Random -Minimum 1    -Maximum 28
+    $date  = "{0}-{1:D2}-{2:D2} 00:00:00" -f $year, $month, $day
+
+    Add-Account `
+        -name          $bot.Name `
+        -password      ("BotPass@" + $bot.Name + "1") `
+        -email         $null `
+        -description   $bot.Desc `
+        -isAdmin       0 `
+        -isMythAccount 0 `
+        -statusId      1 `
+        -createdDate   $date `
+        -ageBracket    1
+}
+
+Write-Host ""
+Write-Host "  =====================================================" -ForegroundColor Cyan
+Write-Host "   Contas criadas com sucesso!" -ForegroundColor Cyan
+Write-Host ""
+Write-Host "   builderman  senha: Admin@RetroBlox1  (MUDE ISSO!)" -ForegroundColor Yellow
+Write-Host "   noli        conta deletada/glitchada (mito de 2007)" -ForegroundColor DarkGray
+Write-Host "   Player1-12  bots de teste" -ForegroundColor Green
+Write-Host "  =====================================================" -ForegroundColor Cyan
+Write-Host ""
