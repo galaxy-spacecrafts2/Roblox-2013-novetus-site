@@ -1,10 +1,10 @@
 @echo off
 setlocal EnableDelayedExpansion
-title Roblox Website - Setup and Build
+title RetroBlox - Setup and Build
 color 0A
 
 :: ============================================================
-:: ROBLOX WEBSITE - SETUP AND BUILD SCRIPT
+:: RETROBLOX WEBSITE - SETUP AND BUILD SCRIPT
 :: Run this script as Administrator.
 :: Phase 1: Installs all required tools, then reboots.
 :: Phase 2: Run again after reboot to restore packages and build.
@@ -17,6 +17,12 @@ set "NUGET_URL=https://dist.nuget.org/win-x86-commandline/latest/nuget.exe"
 set "NUGET_PATH=%SCRIPT_DIR%nuget.exe"
 set "PACKAGES_DIR=%SCRIPT_DIR%packages"
 set "SLN_FILE=%SCRIPT_DIR%RobloxWebSite.sln"
+set "SITE_DIR=%SCRIPT_DIR%RobloxWebSite"
+set "HOSTNAME=retroblox.com"
+set "WWW_HOSTNAME=www.retroblox.com"
+set "HTTP_PORT=80"
+set "HTTPS_PORT=443"
+set "HOSTS_FILE=C:\Windows\System32\drivers\etc\hosts"
 
 echo. >> "%LOG_FILE%"
 echo [%DATE% %TIME%] Script started >> "%LOG_FILE%"
@@ -26,7 +32,7 @@ echo [%DATE% %TIME%] Script started >> "%LOG_FILE%"
 :: ============================================================
 echo.
 echo  =====================================================
-echo   Roblox Website Build Script
+echo   RetroBlox Website Build ^& Setup Script
 echo  =====================================================
 echo.
 net session >nul 2>&1
@@ -189,7 +195,30 @@ if exist "%NUGET_PATH%" (
     )
 )
 
-:: -- CHECK / INSTALL GIT (optional but useful) --
+:: -- CHECK / INSTALL IIS EXPRESS --
+echo.
+echo  [CHECK] IIS Express...
+set "IISEXPRESS_PATH="
+for %%p in (
+    "C:\Program Files\IIS Express\iisexpress.exe"
+    "C:\Program Files (x86)\IIS Express\iisexpress.exe"
+) do (
+    if exist %%p set "IISEXPRESS_PATH=%%~p"
+)
+if defined IISEXPRESS_PATH (
+    echo  [OK]    IIS Express found at: !IISEXPRESS_PATH!
+) else (
+    echo  [MISSING] IIS Express not found. Installing...
+    choco install iis-express -y
+    if !errorLevel! neq 0 (
+        echo  [WARN]  IIS Express install may have failed. Continuing...
+    ) else (
+        echo  [OK]    IIS Express installed.
+        set "NEED_REBOOT=1"
+    )
+)
+
+:: -- CHECK / INSTALL GIT --
 echo.
 echo  [CHECK] Git...
 where git >nul 2>&1
@@ -211,6 +240,7 @@ echo  Chocolatey   : Installed/Verified
 echo  MSBuild      : Installed/Verified
 echo  .NET 4.7.2   : Installed/Verified
 echo  NuGet CLI    : Installed/Verified
+echo  IIS Express  : Installed/Verified
 echo.
 
 :: -- WRITE PHASE 2 FLAG --
@@ -235,20 +265,19 @@ if defined NEED_REBOOT (
 exit /b 0
 
 :: ============================================================
-:: PHASE 2 - PACKAGE RESTORE AND BUILD
+:: PHASE 2 - PACKAGE RESTORE, BUILD, AND NETWORK SETUP
 :: ============================================================
 
 :PHASE2_BUILD
 echo.
 echo  =====================================================
-echo   Phase 2: Package Restore and Build
+echo   Phase 2: Package Restore, Build ^& Network Setup
 echo  =====================================================
 echo.
 
 :: -- LOCATE MSBUILD --
 echo  [CHECK] Locating MSBuild...
 set "MSBUILD_PATH="
-
 for %%p in (
     "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\MSBuild.exe"
     "C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Current\Bin\MSBuild.exe"
@@ -274,7 +303,6 @@ if not defined MSBUILD_PATH (
 )
 echo  [OK]    MSBuild: !MSBUILD_PATH!
 
-:: -- ADD MSBUILD DIR TO PATH --
 for %%F in ("!MSBUILD_PATH!") do set "MSBUILD_DIR=%%~dpF"
 set "PATH=!PATH!;!MSBUILD_DIR!"
 
@@ -316,7 +344,7 @@ echo  [OK]    Solution: %SLN_FILE%
 :: -- NUGET RESTORE (MAIN PROJECT) --
 echo.
 echo  =====================================================
-echo   Step 1/4: Restoring NuGet packages (main project)
+echo   Step 1/5: Restoring NuGet packages (main project)
 echo  =====================================================
 echo  [INFO] This may take a few minutes on first run...
 echo.
@@ -324,7 +352,6 @@ echo.
 if %errorLevel% neq 0 (
     echo  [WARN]  NuGet restore returned a non-zero exit code.
     echo  [WARN]  Some packages may have failed. Continuing...
-    echo  [WARN]  NuGet restore warning >> "%LOG_FILE%"
 ) else (
     echo  [OK]    NuGet restore completed.
 )
@@ -332,7 +359,7 @@ if %errorLevel% neq 0 (
 :: -- NUGET RESTORE (ALL ASSEMBLY PROJECTS) --
 echo.
 echo  =====================================================
-echo   Step 2/4: Restoring NuGet packages (assemblies)
+echo   Step 2/5: Restoring NuGet packages (assemblies)
 echo  =====================================================
 set "RESTORE_ERRORS=0"
 for /r "%SCRIPT_DIR%Assemblies" %%f in (*.sln *.csproj) do (
@@ -352,7 +379,7 @@ if !RESTORE_ERRORS! gtr 0 (
 :: -- BUILD SOLUTION --
 echo.
 echo  =====================================================
-echo   Step 3/4: Building Solution (Debug)
+echo   Step 3/5: Building Solution (Debug)
 echo  =====================================================
 echo  [INFO] Running MSBuild on full solution...
 echo.
@@ -392,10 +419,139 @@ echo  =====================================================
 echo   [OK] Build SUCCEEDED
 echo  =====================================================
 
-:: -- LAUNCH DEV SERVER --
+:: ============================================================
+:: STEP 4 - HOSTNAME AND PORT FORWARDING SETUP
+:: ============================================================
 echo.
 echo  =====================================================
-echo   Step 4/4: Launching IIS Express Dev Server
+echo   Step 4/5: Setting up RetroBlox.com hostname
+echo  =====================================================
+
+:: -- HOSTS FILE --
+echo  [INFO] Adding retroblox.com to hosts file...
+
+findstr /i /c:"retroblox.com" "%HOSTS_FILE%" >nul 2>&1
+if %errorLevel% equ 0 (
+    echo  [OK]    retroblox.com already in hosts file.
+) else (
+    echo. >> "%HOSTS_FILE%"
+    echo # RetroBlox local development >> "%HOSTS_FILE%"
+    echo 127.0.0.1   %HOSTNAME% >> "%HOSTS_FILE%"
+    echo 127.0.0.1   %WWW_HOSTNAME% >> "%HOSTS_FILE%"
+    echo  [OK]    Added retroblox.com and www.retroblox.com to hosts file.
+)
+
+:: -- FLUSH DNS CACHE --
+echo  [INFO] Flushing DNS cache...
+ipconfig /flushdns >nul 2>&1
+echo  [OK]    DNS cache flushed.
+
+:: -- RESERVE URLs WITH HTTP.SYS (allows non-admin IIS Express to use port 80) --
+echo  [INFO] Reserving HTTP URLs with http.sys...
+netsh http add urlacl url=http://%HOSTNAME%:%HTTP_PORT%/ user=Everyone >nul 2>&1
+netsh http add urlacl url=http://%WWW_HOSTNAME%:%HTTP_PORT%/ user=Everyone >nul 2>&1
+netsh http add urlacl url=http://localhost:%HTTP_PORT%/ user=Everyone >nul 2>&1
+echo  [OK]    URL reservations created.
+
+:: -- WINDOWS FIREWALL RULES --
+echo  [INFO] Configuring Windows Firewall for port %HTTP_PORT%...
+netsh advfirewall firewall show rule name="RetroBlox HTTP" >nul 2>&1
+if %errorLevel% equ 0 (
+    echo  [OK]    Firewall rule already exists.
+) else (
+    netsh advfirewall firewall add rule ^
+        name="RetroBlox HTTP" ^
+        dir=in ^
+        action=allow ^
+        protocol=TCP ^
+        localport=%HTTP_PORT% ^
+        description="Allow inbound HTTP for RetroBlox dev server" >nul 2>&1
+    echo  [OK]    Inbound firewall rule created for port %HTTP_PORT%.
+)
+netsh advfirewall firewall show rule name="RetroBlox HTTP Out" >nul 2>&1
+if %errorLevel% neq 0 (
+    netsh advfirewall firewall add rule ^
+        name="RetroBlox HTTP Out" ^
+        dir=out ^
+        action=allow ^
+        protocol=TCP ^
+        localport=%HTTP_PORT% ^
+        description="Allow outbound HTTP for RetroBlox dev server" >nul 2>&1
+    echo  [OK]    Outbound firewall rule created for port %HTTP_PORT%.
+)
+
+:: -- PORT 80 CONFLICT CHECK (disable HTTP.SYS/World Wide Web if blocking port 80) --
+echo  [INFO] Checking if port %HTTP_PORT% is already in use...
+netstat -ano | findstr ":%HTTP_PORT% " | findstr "LISTENING" >nul 2>&1
+if %errorLevel% equ 0 (
+    echo  [WARN]  Port %HTTP_PORT% is already in use by another process.
+    echo  [INFO]  Checking if IIS is occupying port 80...
+    sc query W3SVC >nul 2>&1
+    if %errorLevel% equ 0 (
+        echo  [INFO]  Stopping IIS (W3SVC) to free port 80...
+        net stop W3SVC >nul 2>&1
+        net stop WAS >nul 2>&1
+        echo  [OK]    IIS stopped.
+    ) else (
+        echo  [WARN]  Unknown process on port 80. IIS Express may fail to bind.
+        echo  [INFO]  Run: netstat -ano ^| findstr ":80 " to identify it.
+    )
+) else (
+    echo  [OK]    Port %HTTP_PORT% is free.
+)
+
+:: -- CONFIGURE IIS EXPRESS APPLICATIONHOST.CONFIG --
+echo  [INFO] Configuring IIS Express site binding for %HOSTNAME%:%HTTP_PORT%...
+
+set "IIS_CONFIG_DIR=%USERPROFILE%\Documents\IISExpress\config"
+set "IIS_CONFIG=%IIS_CONFIG_DIR%\applicationhost.config"
+
+if not exist "%IIS_CONFIG_DIR%" (
+    mkdir "%IIS_CONFIG_DIR%" >nul 2>&1
+)
+
+:: Generate a fresh applicationhost.config for this site
+(
+echo ^<?xml version="1.0" encoding="UTF-8"?^>
+echo ^<configuration^>
+echo   ^<system.applicationHost^>
+echo     ^<sites^>
+echo       ^<site name="RetroBlox" id="1"^>
+echo         ^<application path="/" applicationPool="RetroBloxAppPool"^>
+echo           ^<virtualDirectory path="/" physicalPath="%SITE_DIR%" /^>
+echo         ^</application^>
+echo         ^<bindings^>
+echo           ^<binding protocol="http" bindingInformation="*:%HTTP_PORT%:localhost" /^>
+echo           ^<binding protocol="http" bindingInformation="*:%HTTP_PORT%:%HOSTNAME%" /^>
+echo           ^<binding protocol="http" bindingInformation="*:%HTTP_PORT%:%WWW_HOSTNAME%" /^>
+echo         ^</bindings^>
+echo       ^</site^>
+echo       ^<siteDefaults^>
+echo         ^<logFile logFormat="W3C" directory="%USERPROFILE%\Documents\IISExpress\Logs" /^>
+echo         ^<traceFailedRequestsLogging directory="%USERPROFILE%\Documents\IISExpress\TraceLogFiles" /^>
+echo       ^</siteDefaults^>
+echo       ^<applicationDefaults applicationPool="RetroBloxAppPool" /^>
+echo       ^<virtualDirectoryDefaults allowSubDirConfig="true" /^>
+echo     ^</sites^>
+echo     ^<applicationPools^>
+echo       ^<add name="RetroBloxAppPool" managedRuntimeVersion="v4.0" managedPipelineMode="Integrated" /^>
+echo       ^<applicationPoolDefaults^>
+echo         ^<processModel loadUserProfile="true" /^>
+echo       ^</applicationPoolDefaults^>
+echo     ^</applicationPools^>
+echo     ^<modules runAllManagedModulesForAllRequests="true" /^>
+echo   ^</system.applicationHost^>
+echo ^</configuration^>
+) > "%IIS_CONFIG%"
+
+echo  [OK]    IIS Express config written to: %IIS_CONFIG%
+
+:: ============================================================
+:: STEP 5 - LAUNCH SERVER
+:: ============================================================
+echo.
+echo  =====================================================
+echo   Step 5/5: Launching IIS Express
 echo  =====================================================
 
 set "IISEXPRESS_PATH="
@@ -406,30 +562,41 @@ for %%p in (
     if exist %%p set "IISEXPRESS_PATH=%%~p"
 )
 
-if defined IISEXPRESS_PATH (
-    echo  [OK]    IIS Express found: !IISEXPRESS_PATH!
-    echo  [INFO]  Starting server on http://localhost:5000 ...
-    echo.
-    echo  Open your browser to:  http://localhost:5000
-    echo  Press Ctrl+C to stop.
-    echo.
-    "!IISEXPRESS_PATH!" /path:"%SCRIPT_DIR%RobloxWebSite" /port:5000 /clr:v4.0
-) else (
-    echo  [WARN]  IIS Express not found.
-    echo  [INFO]  To install IIS Express:
-    echo          choco install iis-express -y
-    echo  [INFO]  Then re-run this script.
-    echo.
-    echo  [INFO]  Alternatively, open the solution in Visual Studio
-    echo          and press F5 to run with IIS Express.
+if not defined IISEXPRESS_PATH (
+    echo  [ERROR] IIS Express not found.
+    echo  [INFO]  Run: choco install iis-express -y
+    echo          Then re-run this script.
+    pause
+    exit /b 1
 )
+
+echo  [OK]    IIS Express: !IISEXPRESS_PATH!
+echo.
+echo  =====================================================
+echo   RetroBlox is starting!
+echo.
+echo   Open your browser to:
+echo     http://retroblox.com
+echo     http://www.retroblox.com
+echo     http://localhost
+echo.
+echo   Press Ctrl+C to stop the server.
+echo  =====================================================
+echo.
+
+:: Log it
+echo  [INFO] Server launched >> "%LOG_FILE%"
+echo  [INFO] URL: http://%HOSTNAME% >> "%LOG_FILE%"
 
 :: -- CLEANUP FLAG --
 if exist "%FLAG_FILE%" del "%FLAG_FILE%"
 
+:: Launch IIS Express using the custom config
+"!IISEXPRESS_PATH!" /config:"%IIS_CONFIG%" /siteid:1
+
 echo.
-echo  [DONE] All steps completed. Log saved to: setup_build.log
-echo         Build log saved to:  build_output.log
+echo  [INFO] Server stopped.
+echo  [DONE] Log: setup_build.log  ^|  Build log: build_output.log
 echo.
 pause
 exit /b 0
