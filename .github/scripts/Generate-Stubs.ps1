@@ -5,7 +5,21 @@ param(
 
 $ErrorActionPreference = "Stop"
 
+function Normalize-StubDir($dir, $name) {
+    while ($true) {
+        $leaf = Split-Path $dir -Leaf
+        $parent = Split-Path $dir -Parent
+        if ($leaf -eq $name -and (Split-Path $parent -Leaf) -eq $name) {
+            $dir = $parent
+            continue
+        }
+        break
+    }
+    return $dir
+}
+
 function Write-Stub($dir, $name, $content) {
+    $dir = Normalize-StubDir $dir $name
     New-Item -ItemType Directory -Force -Path $dir | Out-Null
     $csproj = @"
 <?xml version="1.0" encoding="utf-8"?>
@@ -38,6 +52,7 @@ function Write-Stub($dir, $name, $content) {
 }
 
 function Write-StubWithRef($dir, $name, $refs, $content) {
+    $dir = Normalize-StubDir $dir $name
     New-Item -ItemType Directory -Force -Path $dir | Out-Null
     $refItems = ($refs | ForEach-Object { "    <Reference Include=`"$_`"><HintPath>..\..\$_\bin\Release\$_.dll</HintPath></Reference>" }) -join "`n"
     $csproj = @"
@@ -654,7 +669,7 @@ namespace Roblox.Web.Code
 # ─── Roblox.Web.Maintenance ────────────────────────────────────────────────────
 Write-Stub `
   "$AssembliesRoot\Web\Maintenance\Roblox.Web.Maintenance.NetFramework" `
-  "Roblox.Web.Maintenance" `
+  "Roblox.Web.Maintenance.NetFramework" `
 @'
 using System;
 
@@ -685,7 +700,7 @@ namespace Roblox.Web.Maintenance
 # ─── Roblox.Web.Mvc ────────────────────────────────────────────────────────────
 Write-Stub `
   "$AssembliesRoot\Web\Mvc\Roblox.Web.Mvc.NetFramework" `
-  "Roblox.Web.Mvc" `
+  "Roblox.Web.Mvc.NetFramework" `
 @'
 using System;
 using System.Web.Mvc;
@@ -746,13 +761,19 @@ Write-Stub "$AssembliesRoot\Web\HttpModules\Roblox.Web.HttpModules" "Roblox.Web.
 Write-Stub "$AssembliesRoot\Core\Roblox.Web.Core" "Roblox.Web.Core" `
   "namespace Roblox.Web.Core { }"
 
+Write-Stub "$AssembliesRoot\UI\Roblox.Controls" "Roblox.Controls" `
+  "namespace Roblox.Controls { }"
+
+Write-Stub "$AssembliesRoot\UI\Roblox.Thumbs" "Roblox.Thumbs" `
+  "namespace Roblox.Thumbs { }"
+
 # ─── Remaining stubs (minimal) ─────────────────────────────────────────────────
 $minimalStubs = @{
     "Agents\Roblox.Agents\Roblox.Agents"                                           = "Roblox.Agents"
     "ApiControlPlane\Roblox.ApiControlPlane\Roblox.ApiControlPlane"               = "Roblox.ApiControlPlane"
     "Assets\Roblox.Assets\Roblox.Assets"                                           = "Roblox.Assets"
     "Caching\Emcaster\Emcaster"                                                    = "Emcaster"
-    "Caching\MemCachedClient\Roblox.MemcachedClient"                               = "Roblox.MemcachedClient"
+    "Caching\MemCachedClient"                                                    = "Roblox.MemcachedClient"
     "Caching\Roblox.Caching\Roblox.Caching"                                        = "Roblox.Caching"
     "Caching\Roblox.MultiCastToMemcached\Roblox.MultiCastToMemcached"             = "Roblox.MultiCastToMemcached"
     "Common\Roblox.Common.NetStandard\Roblox.Common.NetStandard"                  = "Roblox.Common.NetStandard"
