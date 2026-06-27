@@ -52,7 +52,7 @@ jobs:
           dotnet restore "${{ github.workspace }}/RobloxWebSite.sln" --packages $packagesDir
 
       - name: Build site
-        run: msbuild "${{ github.workspace }}/RobloxWebSite.sln" /p:Configuration=Release /p:Platform="Any CPU"
+        run: msbuild "${{ github.workspace }}/RobloxWebSite.sln" /p:Configuration=Release /p:Platform="Any CPU" /p:VisualStudioVersion=17.0
 
       - name: Publish build artifact
         if: success()
