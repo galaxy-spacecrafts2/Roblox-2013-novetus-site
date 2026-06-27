@@ -1,6 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -3140,143 +3140,143 @@
     <Folder Include="WebCode\Place\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Assemblies\Assets\Roblox.Assets\Roblox.Assets.csproj">
+    <ProjectReference Include="..\Assemblies\Assets\Roblox.Assets\Roblox.Assets.csproj">
       <Project>{89f20d28-e035-4a75-8722-0a33fcc38e1d}</Project>
       <Name>Roblox.Assets</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\Caching\Roblox.Caching\Roblox.Caching.csproj">
+    <ProjectReference Include="..\Assemblies\Caching\Roblox.Caching\Roblox.Caching.csproj">
       <Project>{9982ab29-94fe-49d6-ad2c-b8b5e975ffb4}</Project>
       <Name>Roblox.Caching</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\Common\Roblox.Common.Web\Roblox.Common.Web.csproj">
+    <ProjectReference Include="..\Assemblies\Common\Roblox.Common.Web\Roblox.Common.Web.csproj">
       <Project>{1ea9cd64-6dfa-4bbb-945b-104f7841b8da}</Project>
       <Name>Roblox.Common.Web</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\Common\Roblox.Common\Roblox.Common.csproj">
+    <ProjectReference Include="..\Assemblies\Common\Roblox.Common\Roblox.Common.csproj">
       <Project>{b635c6c6-044d-4403-90d9-0b833c84b7c8}</Project>
       <Name>Roblox.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\Configuration\Roblox.Configuration\Roblox.Configuration.csproj">
+    <ProjectReference Include="..\Assemblies\Configuration\Roblox.Configuration\Roblox.Configuration.csproj">
       <Project>{03747d11-69cd-4cf7-948e-24e657e8aabe}</Project>
       <Name>Roblox.Configuration</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\DataV2\Core\Roblox.DataV2.Core\Roblox.DataV2.Core.csproj">
+    <ProjectReference Include="..\Assemblies\DataV2\Core\Roblox.DataV2.Core\Roblox.DataV2.Core.csproj">
       <Project>{1127a908-30fa-4314-8149-a9d68848d109}</Project>
       <Name>Roblox.DataV2.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\Data\Roblox.Data\Roblox.Data.csproj">
+    <ProjectReference Include="..\Assemblies\Data\Roblox.Data\Roblox.Data.csproj">
       <Project>{d8858ddf-cfcc-4870-b2ae-7668353e8d8c}</Project>
       <Name>Roblox.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\EntityFrameworkCore\Roblox.EntityFrameworkCore\Roblox.EntityFrameworkCore.csproj">
+    <ProjectReference Include="..\Assemblies\EntityFrameworkCore\Roblox.EntityFrameworkCore\Roblox.EntityFrameworkCore.csproj">
       <Project>{3d92fcb3-5b85-42c8-8172-d146b113cf0b}</Project>
       <Name>Roblox.EntityFrameworkCore</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\EventLog\Roblox.EventLog.Extended\Roblox.EventLog.Extended.csproj">
+    <ProjectReference Include="..\Assemblies\EventLog\Roblox.EventLog.Extended\Roblox.EventLog.Extended.csproj">
       <Project>{b0131767-8a90-4d6f-8357-0410718811c9}</Project>
       <Name>Roblox.EventLog.Extended</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\EventLog\Roblox.EventLog\Roblox.EventLog.csproj">
+    <ProjectReference Include="..\Assemblies\EventLog\Roblox.EventLog\Roblox.EventLog.csproj">
       <Project>{c5ccd21b-fccd-4543-ae33-d42ffbdbc165}</Project>
       <Name>Roblox.EventLog</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\Hashing\Roblox.Hashing\Roblox.Hashing.csproj">
+    <ProjectReference Include="..\Assemblies\Hashing\Roblox.Hashing\Roblox.Hashing.csproj">
       <Project>{721c2024-260f-4943-b574-246476f7ec26}</Project>
       <Name>Roblox.Hashing</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\Infrastructure\Roblox.Farms\Roblox.Farms.csproj">
+    <ProjectReference Include="..\Assemblies\Infrastructure\Roblox.Farms\Roblox.Farms.csproj">
       <Project>{0ed7ca61-8a89-4e7e-aac2-737274a68113}</Project>
       <Name>Roblox.Farms</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\Moderation\Roblox.Moderation\Roblox.Moderation.csproj">
+    <ProjectReference Include="..\Assemblies\Moderation\Roblox.Moderation\Roblox.Moderation.csproj">
       <Project>{18e81bc8-9527-4e9f-ad5b-26eac015a566}</Project>
       <Name>Roblox.Moderation</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\Mssql\Roblox.MssqlDatabases\Roblox.MssqlDatabases.csproj">
+    <ProjectReference Include="..\Assemblies\Mssql\Roblox.MssqlDatabases\Roblox.MssqlDatabases.csproj">
       <Project>{51b46cc5-3244-4542-8c42-dbf7fdb9a32f}</Project>
       <Name>Roblox.MssqlDatabases</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\Platform\Authentication\Roblox.Platform.Authentication.Core\Roblox.Platform.Authentication.Core.csproj">
+    <ProjectReference Include="..\Assemblies\Platform\Authentication\Roblox.Platform.Authentication.Core\Roblox.Platform.Authentication.Core.csproj">
       <Project>{d4242200-33be-4d65-bda0-d4df913e6500}</Project>
       <Name>Roblox.Platform.Authentication.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\Platform\Authentication\Roblox.Platform.Authentication\Roblox.Platform.Authentication.csproj">
+    <ProjectReference Include="..\Assemblies\Platform\Authentication\Roblox.Platform.Authentication\Roblox.Platform.Authentication.csproj">
       <Project>{08f9d74a-6d38-486b-80c5-6c16ff5e411e}</Project>
       <Name>Roblox.Platform.Authentication</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\Platform\Core\Roblox.Platform.Core\Roblox.Platform.Core.csproj">
+    <ProjectReference Include="..\Assemblies\Platform\Core\Roblox.Platform.Core\Roblox.Platform.Core.csproj">
       <Project>{cc56f00f-4953-4cb5-97fc-34769449fbf8}</Project>
       <Name>Roblox.Platform.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\Platform\Email\Roblox.Platform.Email.Core\Roblox.Platform.Email.Core.csproj">
+    <ProjectReference Include="..\Assemblies\Platform\Email\Roblox.Platform.Email.Core\Roblox.Platform.Email.Core.csproj">
       <Project>{ff2a737e-29bd-4e25-98de-5076c2454b49}</Project>
       <Name>Roblox.Platform.Email.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\Platform\Email\Roblox.Platform.Email\Roblox.Platform.Email.csproj">
+    <ProjectReference Include="..\Assemblies\Platform\Email\Roblox.Platform.Email\Roblox.Platform.Email.csproj">
       <Project>{e6874637-1cc0-46b2-85d9-277d0995fd07}</Project>
       <Name>Roblox.Platform.Email</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\Platform\Membership\Roblox.Platform.Membership.Core\Roblox.Platform.Membership.Core.csproj">
+    <ProjectReference Include="..\Assemblies\Platform\Membership\Roblox.Platform.Membership.Core\Roblox.Platform.Membership.Core.csproj">
       <Project>{b777f5b1-715c-4d80-a6b5-595826855e88}</Project>
       <Name>Roblox.Platform.Membership.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\Platform\Membership\Roblox.Platform.Membership\Roblox.Platform.Membership.csproj">
+    <ProjectReference Include="..\Assemblies\Platform\Membership\Roblox.Platform.Membership\Roblox.Platform.Membership.csproj">
       <Project>{a07c5414-6721-4bc7-a9d0-43c3be6d527a}</Project>
       <Name>Roblox.Platform.Membership</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\Platform\Roles\Roblox.Platform.Roles.Core\Roblox.Platform.Roles.Core.csproj">
+    <ProjectReference Include="..\Assemblies\Platform\Roles\Roblox.Platform.Roles.Core\Roblox.Platform.Roles.Core.csproj">
       <Project>{a5ea018e-06f6-4840-adbc-ac32d5ef0fd0}</Project>
       <Name>Roblox.Platform.Roles.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\Platform\Roles\Roblox.Platform.Roles\Roblox.Platform.Roles.csproj">
+    <ProjectReference Include="..\Assemblies\Platform\Roles\Roblox.Platform.Roles\Roblox.Platform.Roles.csproj">
       <Project>{b101cc09-752e-4c39-8ab7-b1d35cb371ed}</Project>
       <Name>Roblox.Platform.Roles</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\Platform\Security\Roblox.Platform.Security\Roblox.Platform.Security.csproj">
+    <ProjectReference Include="..\Assemblies\Platform\Security\Roblox.Platform.Security\Roblox.Platform.Security.csproj">
       <Project>{0d528424-6275-4f7f-a36c-4a28535f82ed}</Project>
       <Name>Roblox.Platform.Security</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\Server Class Library\Roblox Class Library\Roblox Server Class Library.csproj">
+    <ProjectReference Include="..\Assemblies\Server Class Library\Roblox Class Library\Roblox Server Class Library.csproj">
       <Project>{9d8436fb-9d7f-4562-86f5-336092cb57da}</Project>
       <Name>Roblox Server Class Library</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\Showcases\Roblox.Showcases\Roblox.Showcases.csproj">
+    <ProjectReference Include="..\Assemblies\Showcases\Roblox.Showcases\Roblox.Showcases.csproj">
       <Project>{916cbe49-5760-4e93-95d5-4c17fbba8c2f}</Project>
       <Name>Roblox.Showcases</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\UI\Roblox.Controls\Roblox.Controls.csproj">
+    <ProjectReference Include="..\Assemblies\UI\Roblox.Controls\Roblox.Controls.csproj">
       <Project>{353670ab-e0f1-4009-80b9-6e968be335d3}</Project>
       <Name>Roblox.Controls</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\Configuration\Roblox.WebsiteSettings\Roblox.WebsiteSettings.csproj">
+    <ProjectReference Include="..\Assemblies\Configuration\Roblox.WebsiteSettings\Roblox.WebsiteSettings.csproj">
       <Project>{92e5ada3-716f-413a-82ce-ee664a371ee6}</Project>
       <Name>Roblox.WebsiteSettings</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\Users\Roblox.Users.Old\Roblox.Users.Old.csproj">
+    <ProjectReference Include="..\Assemblies\Users\Roblox.Users.Old\Roblox.Users.Old.csproj">
       <Project>{619cbe0e-ee94-4401-a5ab-1959e7fde61c}</Project>
       <Name>Roblox.Users.Old</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\Users\Roblox.Users\Roblox.Users.csproj">
+    <ProjectReference Include="..\Assemblies\Users\Roblox.Users\Roblox.Users.csproj">
       <Project>{4591b3a9-5bcc-4a63-9650-f47598537a5f}</Project>
       <Name>Roblox.Users</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\Web\Code\Roblox.Web.Code\Roblox.Web.Code.csproj">
+    <ProjectReference Include="..\Assemblies\Web\Code\Roblox.Web.Code\Roblox.Web.Code.csproj">
       <Project>{d7c4dad3-09e8-4b9d-8622-5442ec8ed865}</Project>
       <Name>Roblox.Web.Code</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\Web\HttpModules\Roblox.Web.HttpModules\Roblox.Web.HttpModules.csproj">
+    <ProjectReference Include="..\Assemblies\Web\HttpModules\Roblox.Web.HttpModules\Roblox.Web.HttpModules.csproj">
       <Project>{40d88a0a-a664-4f29-9d4b-6a5506fb4634}</Project>
       <Name>Roblox.Web.HttpModules</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\Web\Maintenance\Roblox.Web.Maintenance.NetFramework\Roblox.Web.Maintenance.NetFramework.csproj">
+    <ProjectReference Include="..\Assemblies\Web\Maintenance\Roblox.Web.Maintenance.NetFramework\Roblox.Web.Maintenance.csproj">
       <Project>{594cf031-bc38-44a8-a975-9c7f45b11159}</Project>
       <Name>Roblox.Web.Maintenance.NetFramework</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Roblox.Web.Mvc.NetFramework.csproj">
+    <ProjectReference Include="..\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Roblox.Web.Mvc.csproj">
       <Project>{a59e72cb-86a7-46a3-9f7a-a24bc54c028e}</Project>
       <Name>Roblox.Web.Mvc.NetFramework</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Assemblies\Web\StaticContent\Roblox.Web.StaticContent\Roblox.Web.StaticContent.csproj">
+    <ProjectReference Include="..\Assemblies\Web\StaticContent\Roblox.Web.StaticContent\Roblox.Web.StaticContent.csproj">
       <Project>{d8dc99f6-dbc1-4ea9-ba75-30006642d5b7}</Project>
       <Name>Roblox.Web.StaticContent</Name>
     </ProjectReference>
@@ -3358,7 +3358,7 @@
     <TypeScriptCompile Include="js\presenceStatus\constants\presenceStatusConstants.ts" />
   </ItemGroup>
   <PropertyGroup>
-    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">17.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

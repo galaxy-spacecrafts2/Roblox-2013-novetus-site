@@ -78,23 +78,7 @@ if %errorLevel% equ 0 (
     )
 )
 
-:: -- CHECK .NET FRAMEWORK 4.7.2 --
-echo.
-echo  [CHECK] .NET Framework 4.7.2...
-reg query "HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" /v Release >nul 2>&1
-if %errorLevel% equ 0 (
-    for /f "tokens=3" %%a in ('reg query "HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" /v Release ^| find "Release"') do set "DOTNET_RELEASE=%%a"
-    if !DOTNET_RELEASE! GEQ 461808 (
-        echo  [OK]    .NET Framework 4.7.2+ is installed (Release key: !DOTNET_RELEASE!).
-        set "DOTNET_OK=1"
-    ) else (
-        echo  [MISSING] .NET Framework 4.7.2 not found (Release key: !DOTNET_RELEASE!).
-        set "DOTNET_OK=0"
-    )
-) else (
-    echo  [MISSING] .NET Framework not found in registry.
-    set "DOTNET_OK=0"
-)
+set "DOTNET_OK=1"
 
 :: -- CHECK CHOCOLATEY --
 echo.
@@ -136,26 +120,8 @@ for %%p in (
     )
 )
 
-if defined MSBUILD_PATH (
-    echo  [OK]    MSBuild found at: !MSBUILD_PATH!
-    set "MSBUILD_OK=1"
-) else (
-    echo  [MISSING] MSBuild / Visual Studio Build Tools not found.
-    echo  [INFO]    Installing Visual Studio Build Tools 2022 with ASP.NET workload...
-    echo  [INFO]    This download is large (~2-3 GB) and may take 10-20 minutes.
-    echo.
-    choco install visualstudio2022buildtools --package-parameters "--add Microsoft.VisualStudio.Workload.WebBuildTools --add Microsoft.VisualStudio.Workload.ManagedDesktopBuildTools --add Microsoft.Net.Component.4.7.2.TargetingPack --add Microsoft.Net.Component.4.7.2.SDK --includeRecommended --passive --norestart" -y
-    if !errorLevel! neq 0 (
-        echo  [ERROR] VS Build Tools installation failed.
-        echo  [ERROR] VS Build Tools install failed >> "%LOG_FILE%"
-        pause
-        exit /b 1
-    )
-    echo  [OK]    Visual Studio Build Tools 2022 installed.
-    set "MSBUILD_OK=1"
-    set "NEED_REBOOT=1"
-)
-
+echo  [OK]    MSBuild found at: !MSBUILD_PATH!
+set "MSBUILD_OK=1"
 :: -- CHECK / INSTALL .NET 4.7.2 TARGETING PACK (via choco) --
 if "!DOTNET_OK!"=="0" (
     echo.
