@@ -23,6 +23,11 @@ set "WWW_HOSTNAME=www.retroblox.com"
 set "HTTP_PORT=80"
 set "HTTPS_PORT=443"
 set "HOSTS_FILE=C:\Windows\System32\drivers\etc\hosts"
+set "CLOUDFLARED_URL=https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-windows-amd64.exe"
+set "CLOUDFLARED_PATH=%SCRIPT_DIR%cloudflared.exe"
+set "CF_TOKEN_FILE=%SCRIPT_DIR%.cf_tunnel_token"
+set "CF_CONFIG_DIR=%USERPROFILE%\.cloudflared"
+set "CF_CONFIG_FILE=%CF_CONFIG_DIR%\config.yml"
 
 echo. >> "%LOG_FILE%"
 echo [%DATE% %TIME%] Script started >> "%LOG_FILE%"
@@ -231,6 +236,28 @@ if %errorLevel% equ 0 (
     set "NEED_REBOOT=1"
 )
 
+:: -- CHECK / DOWNLOAD CLOUDFLARED --
+echo.
+echo  [CHECK] Cloudflare Tunnel (cloudflared)...
+if exist "%CLOUDFLARED_PATH%" (
+    echo  [OK]    cloudflared.exe already present.
+) else (
+    where cloudflared >nul 2>&1
+    if %errorLevel% equ 0 (
+        echo  [OK]    cloudflared found in PATH.
+    ) else (
+        echo  [MISSING] cloudflared not found. Downloading...
+        powershell -NoProfile -ExecutionPolicy Bypass -Command ^
+            "Invoke-WebRequest -Uri '%CLOUDFLARED_URL%' -OutFile '%CLOUDFLARED_PATH%'"
+        if !errorLevel! neq 0 (
+            echo  [ERROR] Failed to download cloudflared. Check internet connection.
+            pause
+            exit /b 1
+        )
+        echo  [OK]    cloudflared.exe downloaded.
+    )
+)
+
 :: -- SUMMARY --
 echo.
 echo  =====================================================
@@ -241,6 +268,7 @@ echo  MSBuild      : Installed/Verified
 echo  .NET 4.7.2   : Installed/Verified
 echo  NuGet CLI    : Installed/Verified
 echo  IIS Express  : Installed/Verified
+echo  cloudflared  : Installed/Verified
 echo.
 
 :: -- WRITE PHASE 2 FLAG --
@@ -420,97 +448,41 @@ echo   [OK] Build SUCCEEDED
 echo  =====================================================
 
 :: ============================================================
-:: STEP 4 - HOSTNAME AND PORT FORWARDING SETUP
+:: STEP 4 - IIS EXPRESS CONFIG + CLOUDFLARE TUNNEL SETUP
 :: ============================================================
 echo.
 echo  =====================================================
-echo   Step 4/5: Setting up RetroBlox.com hostname
+echo   Step 4/5: Configuring IIS Express + Cloudflare Tunnel
 echo  =====================================================
 
-:: -- HOSTS FILE --
-echo  [INFO] Adding retroblox.com to hosts file...
-
-findstr /i /c:"retroblox.com" "%HOSTS_FILE%" >nul 2>&1
-if %errorLevel% equ 0 (
-    echo  [OK]    retroblox.com already in hosts file.
-) else (
-    echo. >> "%HOSTS_FILE%"
-    echo # RetroBlox local development >> "%HOSTS_FILE%"
-    echo 127.0.0.1   %HOSTNAME% >> "%HOSTS_FILE%"
-    echo 127.0.0.1   %WWW_HOSTNAME% >> "%HOSTS_FILE%"
-    echo  [OK]    Added retroblox.com and www.retroblox.com to hosts file.
-)
-
-:: -- FLUSH DNS CACHE --
-echo  [INFO] Flushing DNS cache...
-ipconfig /flushdns >nul 2>&1
-echo  [OK]    DNS cache flushed.
-
-:: -- RESERVE URLs WITH HTTP.SYS (allows non-admin IIS Express to use port 80) --
-echo  [INFO] Reserving HTTP URLs with http.sys...
-netsh http add urlacl url=http://%HOSTNAME%:%HTTP_PORT%/ user=Everyone >nul 2>&1
-netsh http add urlacl url=http://%WWW_HOSTNAME%:%HTTP_PORT%/ user=Everyone >nul 2>&1
+:: -- URL RESERVATION (lets IIS Express bind to port 80 without conflict) --
+echo  [INFO] Reserving HTTP URL with http.sys...
 netsh http add urlacl url=http://localhost:%HTTP_PORT%/ user=Everyone >nul 2>&1
-echo  [OK]    URL reservations created.
+echo  [OK]    URL reservation done.
 
-:: -- WINDOWS FIREWALL RULES --
-echo  [INFO] Configuring Windows Firewall for port %HTTP_PORT%...
-netsh advfirewall firewall show rule name="RetroBlox HTTP" >nul 2>&1
-if %errorLevel% equ 0 (
-    echo  [OK]    Firewall rule already exists.
-) else (
-    netsh advfirewall firewall add rule ^
-        name="RetroBlox HTTP" ^
-        dir=in ^
-        action=allow ^
-        protocol=TCP ^
-        localport=%HTTP_PORT% ^
-        description="Allow inbound HTTP for RetroBlox dev server" >nul 2>&1
-    echo  [OK]    Inbound firewall rule created for port %HTTP_PORT%.
-)
-netsh advfirewall firewall show rule name="RetroBlox HTTP Out" >nul 2>&1
-if %errorLevel% neq 0 (
-    netsh advfirewall firewall add rule ^
-        name="RetroBlox HTTP Out" ^
-        dir=out ^
-        action=allow ^
-        protocol=TCP ^
-        localport=%HTTP_PORT% ^
-        description="Allow outbound HTTP for RetroBlox dev server" >nul 2>&1
-    echo  [OK]    Outbound firewall rule created for port %HTTP_PORT%.
-)
-
-:: -- PORT 80 CONFLICT CHECK (disable HTTP.SYS/World Wide Web if blocking port 80) --
-echo  [INFO] Checking if port %HTTP_PORT% is already in use...
+:: -- PORT 80 CONFLICT CHECK --
+echo  [INFO] Checking if port %HTTP_PORT% is in use...
 netstat -ano | findstr ":%HTTP_PORT% " | findstr "LISTENING" >nul 2>&1
 if %errorLevel% equ 0 (
-    echo  [WARN]  Port %HTTP_PORT% is already in use by another process.
-    echo  [INFO]  Checking if IIS is occupying port 80...
+    echo  [WARN]  Port %HTTP_PORT% already in use. Checking for IIS (W3SVC)...
     sc query W3SVC >nul 2>&1
     if %errorLevel% equ 0 (
-        echo  [INFO]  Stopping IIS (W3SVC) to free port 80...
         net stop W3SVC >nul 2>&1
         net stop WAS >nul 2>&1
-        echo  [OK]    IIS stopped.
+        echo  [OK]    IIS stopped to free port 80.
     ) else (
-        echo  [WARN]  Unknown process on port 80. IIS Express may fail to bind.
-        echo  [INFO]  Run: netstat -ano ^| findstr ":80 " to identify it.
+        echo  [WARN]  Unknown process on port 80 - IIS Express may fail to bind.
     )
 ) else (
     echo  [OK]    Port %HTTP_PORT% is free.
 )
 
-:: -- CONFIGURE IIS EXPRESS APPLICATIONHOST.CONFIG --
-echo  [INFO] Configuring IIS Express site binding for %HOSTNAME%:%HTTP_PORT%...
-
+:: -- CONFIGURE IIS EXPRESS --
+echo  [INFO] Writing IIS Express config...
 set "IIS_CONFIG_DIR=%USERPROFILE%\Documents\IISExpress\config"
 set "IIS_CONFIG=%IIS_CONFIG_DIR%\applicationhost.config"
+if not exist "%IIS_CONFIG_DIR%" mkdir "%IIS_CONFIG_DIR%" >nul 2>&1
 
-if not exist "%IIS_CONFIG_DIR%" (
-    mkdir "%IIS_CONFIG_DIR%" >nul 2>&1
-)
-
-:: Generate a fresh applicationhost.config for this site
 (
 echo ^<?xml version="1.0" encoding="UTF-8"?^>
 echo ^<configuration^>
@@ -522,8 +494,6 @@ echo           ^<virtualDirectory path="/" physicalPath="%SITE_DIR%" /^>
 echo         ^</application^>
 echo         ^<bindings^>
 echo           ^<binding protocol="http" bindingInformation="*:%HTTP_PORT%:localhost" /^>
-echo           ^<binding protocol="http" bindingInformation="*:%HTTP_PORT%:%HOSTNAME%" /^>
-echo           ^<binding protocol="http" bindingInformation="*:%HTTP_PORT%:%WWW_HOSTNAME%" /^>
 echo         ^</bindings^>
 echo       ^</site^>
 echo       ^<siteDefaults^>
@@ -543,17 +513,81 @@ echo     ^<modules runAllManagedModulesForAllRequests="true" /^>
 echo   ^</system.applicationHost^>
 echo ^</configuration^>
 ) > "%IIS_CONFIG%"
+echo  [OK]    IIS Express config written.
 
-echo  [OK]    IIS Express config written to: %IIS_CONFIG%
+:: -- LOCATE CLOUDFLARED --
+echo.
+echo  [INFO] Locating cloudflared...
+set "CF_EXE="
+if exist "%CLOUDFLARED_PATH%" (
+    set "CF_EXE=%CLOUDFLARED_PATH%"
+) else (
+    where cloudflared >nul 2>&1
+    if %errorLevel% equ 0 (
+        set "CF_EXE=cloudflared"
+    ) else (
+        echo  [MISSING] cloudflared not found. Downloading now...
+        powershell -NoProfile -ExecutionPolicy Bypass -Command ^
+            "Invoke-WebRequest -Uri '%CLOUDFLARED_URL%' -OutFile '%CLOUDFLARED_PATH%'"
+        if !errorLevel! neq 0 (
+            echo  [ERROR] Could not download cloudflared.
+            pause
+            exit /b 1
+        )
+        set "CF_EXE=%CLOUDFLARED_PATH%"
+    )
+)
+echo  [OK]    cloudflared: !CF_EXE!
+
+:: -- GET / LOAD CLOUDFLARE TUNNEL TOKEN --
+echo.
+if exist "%CF_TOKEN_FILE%" (
+    set /p CF_TOKEN=<"%CF_TOKEN_FILE%"
+    echo  [OK]    Cloudflare tunnel token loaded from saved file.
+) else (
+    echo  =====================================================
+    echo   ACTION REQUIRED - Cloudflare Tunnel Token
+    echo  =====================================================
+    echo.
+    echo  To get your free tunnel token:
+    echo.
+    echo  1. Go to https://dash.cloudflare.com
+    echo  2. Sign in (free account - no credit card needed)
+    echo  3. Click "Zero Trust" in the left sidebar
+    echo  4. Go to Networks ^> Tunnels ^> Create a tunnel
+    echo  5. Name it "retroblox" and click Save
+    echo  6. Choose Windows as the OS
+    echo  7. Copy ONLY the token value (the long string after --token)
+    echo  8. Paste it below and press Enter
+    echo.
+    echo  Also do this ONE TIME in Cloudflare dashboard:
+    echo    - Go to the tunnel ^> Public Hostname tab
+    echo    - Add hostname: retroblox.com ^> Service: http://localhost:80
+    echo    - Add hostname: www.retroblox.com ^> Service: http://localhost:80
+    echo.
+    echo  NOTE: Your domain retroblox.com must be added to
+    echo        Cloudflare (free) with nameservers pointing there.
+    echo.
+    set /p CF_TOKEN="  Paste your tunnel token here: "
+    echo.
+    if "!CF_TOKEN!"=="" (
+        echo  [ERROR] No token entered. Cannot start tunnel.
+        pause
+        exit /b 1
+    )
+    echo !CF_TOKEN!>"%CF_TOKEN_FILE%"
+    echo  [OK]    Token saved for future runs.
+)
 
 :: ============================================================
-:: STEP 5 - LAUNCH SERVER
+:: STEP 5 - LAUNCH IIS EXPRESS + CLOUDFLARE TUNNEL
 :: ============================================================
 echo.
 echo  =====================================================
-echo   Step 5/5: Launching IIS Express
+echo   Step 5/5: Launching server and public tunnel
 echo  =====================================================
 
+:: -- LOCATE IIS EXPRESS --
 set "IISEXPRESS_PATH="
 for %%p in (
     "C:\Program Files\IIS Express\iisexpress.exe"
@@ -564,39 +598,51 @@ for %%p in (
 
 if not defined IISEXPRESS_PATH (
     echo  [ERROR] IIS Express not found.
-    echo  [INFO]  Run: choco install iis-express -y
-    echo          Then re-run this script.
+    echo  [INFO]  Run: choco install iis-express -y  then re-run this script.
     pause
     exit /b 1
 )
-
 echo  [OK]    IIS Express: !IISEXPRESS_PATH!
+
+:: -- START IIS EXPRESS IN BACKGROUND --
+echo  [INFO] Starting IIS Express on localhost:%HTTP_PORT%...
+start "IISExpress-RetroBlox" /B "!IISEXPRESS_PATH!" /config:"%IIS_CONFIG%" /siteid:1
+
+:: Give IIS Express 3 seconds to initialise before tunnel connects
+timeout /t 3 /nobreak >nul
+
+:: -- START CLOUDFLARE TUNNEL --
+echo  [INFO] Starting Cloudflare Tunnel to %HOSTNAME%...
+echo  [INFO] Tunnel token file: %CF_TOKEN_FILE%
 echo.
 echo  =====================================================
-echo   RetroBlox is starting!
+echo   RetroBlox is LIVE!
 echo.
-echo   Open your browser to:
-echo     http://retroblox.com
-echo     http://www.retroblox.com
-echo     http://localhost
+echo   Public URL  :  https://%HOSTNAME%
+echo   Public URL  :  https://%WWW_HOSTNAME%
+echo   Local URL   :  http://localhost:%HTTP_PORT%
 echo.
-echo   Press Ctrl+C to stop the server.
+echo   Cloudflare handles HTTPS automatically.
+echo   Anyone in the world can visit https://retroblox.com
+echo.
+echo   Press Ctrl+C to stop everything.
 echo  =====================================================
 echo.
 
-:: Log it
-echo  [INFO] Server launched >> "%LOG_FILE%"
-echo  [INFO] URL: http://%HOSTNAME% >> "%LOG_FILE%"
+echo  [INFO] Server launched - https://%HOSTNAME% >> "%LOG_FILE%"
 
 :: -- CLEANUP FLAG --
 if exist "%FLAG_FILE%" del "%FLAG_FILE%"
 
-:: Launch IIS Express using the custom config
-"!IISEXPRESS_PATH!" /config:"%IIS_CONFIG%" /siteid:1
+:: Run tunnel in foreground (keeps window alive; Ctrl+C stops both tunnel and IIS)
+"!CF_EXE!" tunnel run --token "!CF_TOKEN!"
 
+:: When tunnel exits, also kill IIS Express
 echo.
-echo  [INFO] Server stopped.
-echo  [DONE] Log: setup_build.log  ^|  Build log: build_output.log
+echo  [INFO] Tunnel stopped. Shutting down IIS Express...
+taskkill /f /im iisexpress.exe >nul 2>&1
+echo  [DONE] Everything stopped cleanly.
+echo  [DONE] Log: setup_build.log  ^|  Build: build_output.log
 echo.
 pause
 exit /b 0
