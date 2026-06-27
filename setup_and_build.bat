@@ -539,52 +539,12 @@ if exist "%CLOUDFLARED_PATH%" (
 )
 echo  [OK]    cloudflared: !CF_EXE!
 
-:: -- GET / LOAD CLOUDFLARE TUNNEL TOKEN --
-echo.
-if exist "%CF_TOKEN_FILE%" (
-    set /p CF_TOKEN=<"%CF_TOKEN_FILE%"
-    echo  [OK]    Cloudflare tunnel token loaded from saved file.
-) else (
-    echo  =====================================================
-    echo   ACTION REQUIRED - Cloudflare Tunnel Token
-    echo  =====================================================
-    echo.
-    echo  To get your free tunnel token:
-    echo.
-    echo  1. Go to https://dash.cloudflare.com
-    echo  2. Sign in (free account - no credit card needed)
-    echo  3. Click "Zero Trust" in the left sidebar
-    echo  4. Go to Networks ^> Tunnels ^> Create a tunnel
-    echo  5. Name it "retroblox" and click Save
-    echo  6. Choose Windows as the OS
-    echo  7. Copy ONLY the token value (the long string after --token)
-    echo  8. Paste it below and press Enter
-    echo.
-    echo  Also do this ONE TIME in Cloudflare dashboard:
-    echo    - Go to the tunnel ^> Public Hostname tab
-    echo    - Add hostname: retroblox.com ^> Service: http://localhost:80
-    echo    - Add hostname: www.retroblox.com ^> Service: http://localhost:80
-    echo.
-    echo  NOTE: Your domain retroblox.com must be added to
-    echo        Cloudflare (free) with nameservers pointing there.
-    echo.
-    set /p CF_TOKEN="  Paste your tunnel token here: "
-    echo.
-    if "!CF_TOKEN!"=="" (
-        echo  [ERROR] No token entered. Cannot start tunnel.
-        pause
-        exit /b 1
-    )
-    echo !CF_TOKEN!>"%CF_TOKEN_FILE%"
-    echo  [OK]    Token saved for future runs.
-)
-
 :: ============================================================
-:: STEP 5 - LAUNCH IIS EXPRESS + CLOUDFLARE TUNNEL
+:: STEP 5 - LAUNCH IIS EXPRESS + CLOUDFLARE QUICK TUNNEL
 :: ============================================================
 echo.
 echo  =====================================================
-echo   Step 5/5: Launching server and public tunnel
+echo   Step 5/5: Launching server and free public tunnel
 echo  =====================================================
 
 :: -- LOCATE IIS EXPRESS --
@@ -608,41 +568,48 @@ echo  [OK]    IIS Express: !IISEXPRESS_PATH!
 echo  [INFO] Starting IIS Express on localhost:%HTTP_PORT%...
 start "IISExpress-RetroBlox" /B "!IISEXPRESS_PATH!" /config:"%IIS_CONFIG%" /siteid:1
 
-:: Give IIS Express 3 seconds to initialise before tunnel connects
-timeout /t 3 /nobreak >nul
+:: Give IIS Express a few seconds to initialise
+timeout /t 4 /nobreak >nul
 
-:: -- START CLOUDFLARE TUNNEL --
-echo  [INFO] Starting Cloudflare Tunnel to %HOSTNAME%...
-echo  [INFO] Tunnel token file: %CF_TOKEN_FILE%
+:: -- WRITE QUICK TUNNEL HELPER SCRIPT --
+:: The Quick Tunnel prints the public URL to stdout.
+:: We pipe it through findstr so it appears highlighted in the window.
+set "TUNNEL_LOG=%SCRIPT_DIR%tunnel_url.log"
+
 echo.
 echo  =====================================================
-echo   RetroBlox is LIVE!
+echo   Iniciando Cloudflare Quick Tunnel...
+echo   (sem conta, sem dominio, 100%% gratis)
 echo.
-echo   Public URL  :  https://%HOSTNAME%
-echo   Public URL  :  https://%WWW_HOSTNAME%
-echo   Local URL   :  http://localhost:%HTTP_PORT%
-echo.
-echo   Cloudflare handles HTTPS automatically.
-echo   Anyone in the world can visit https://retroblox.com
-echo.
-echo   Press Ctrl+C to stop everything.
+echo   Aguarde ~5 segundos...
+echo   A URL publica vai aparecer logo abaixo.
 echo  =====================================================
 echo.
 
-echo  [INFO] Server launched - https://%HOSTNAME% >> "%LOG_FILE%"
+echo  [INFO] Quick Tunnel launched >> "%LOG_FILE%"
 
 :: -- CLEANUP FLAG --
 if exist "%FLAG_FILE%" del "%FLAG_FILE%"
 
-:: Run tunnel in foreground (keeps window alive; Ctrl+C stops both tunnel and IIS)
-"!CF_EXE!" tunnel run --token "!CF_TOKEN!"
+:: Run Quick Tunnel in foreground.
+:: Cloudflare prints the public URL like:
+::   https://xxxxxx-xxxx-xxxx-xxxx.trycloudflare.com
+:: The URL changes each restart (it's free/no account).
+:: When ready to use retroblox.com, register the domain and
+:: replace this line with:
+::   "!CF_EXE!" tunnel run --token "YOUR_TOKEN_HERE"
+"!CF_EXE!" tunnel --url http://localhost:%HTTP_PORT% --no-autoupdate
 
-:: When tunnel exits, also kill IIS Express
+:: When tunnel exits, kill IIS Express too
 echo.
 echo  [INFO] Tunnel stopped. Shutting down IIS Express...
 taskkill /f /im iisexpress.exe >nul 2>&1
-echo  [DONE] Everything stopped cleanly.
-echo  [DONE] Log: setup_build.log  ^|  Build: build_output.log
+echo.
+echo  =====================================================
+echo   Tudo parado com sucesso.
+echo   Log geral  :  setup_build.log
+echo   Log build  :  build_output.log
+echo  =====================================================
 echo.
 pause
 exit /b 0
