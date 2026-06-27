@@ -18,16 +18,10 @@ set "NUGET_PATH=%SCRIPT_DIR%nuget.exe"
 set "PACKAGES_DIR=%SCRIPT_DIR%packages"
 set "SLN_FILE=%SCRIPT_DIR%RobloxWebSite.sln"
 set "SITE_DIR=%SCRIPT_DIR%RobloxWebSite"
-set "HOSTNAME=retroblox.com"
-set "WWW_HOSTNAME=www.retroblox.com"
 set "HTTP_PORT=80"
-set "HTTPS_PORT=443"
 set "HOSTS_FILE=C:\Windows\System32\drivers\etc\hosts"
-set "CLOUDFLARED_URL=https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-windows-amd64.exe"
-set "CLOUDFLARED_PATH=%SCRIPT_DIR%cloudflared.exe"
-set "CF_TOKEN_FILE=%SCRIPT_DIR%.cf_tunnel_token"
-set "CF_CONFIG_DIR=%USERPROFILE%\.cloudflared"
-set "CF_CONFIG_FILE=%CF_CONFIG_DIR%\config.yml"
+set "NOIP_CREDS_FILE=%SCRIPT_DIR%.noip_creds"
+set "NOIP_API=https://dynupdate.no-ip.com/nic/update"
 
 echo. >> "%LOG_FILE%"
 echo [%DATE% %TIME%] Script started >> "%LOG_FILE%"
@@ -448,41 +442,55 @@ echo   [OK] Build SUCCEEDED
 echo  =====================================================
 
 :: ============================================================
-:: STEP 4 - IIS EXPRESS CONFIG + CLOUDFLARE TUNNEL SETUP
+:: STEP 4 - IIS EXPRESS CONFIG + NO-IP DDNS SETUP
 :: ============================================================
 echo.
 echo  =====================================================
-echo   Step 4/5: Configuring IIS Express + Cloudflare Tunnel
+echo   Step 4/5: Configurando IIS Express + No-IP DDNS
 echo  =====================================================
 
-:: -- URL RESERVATION (lets IIS Express bind to port 80 without conflict) --
-echo  [INFO] Reserving HTTP URL with http.sys...
-netsh http add urlacl url=http://localhost:%HTTP_PORT%/ user=Everyone >nul 2>&1
-echo  [OK]    URL reservation done.
+:: -- URL RESERVATION --
+echo  [INFO] Reservando URL no http.sys...
+netsh http add urlacl url=http://+:%HTTP_PORT%/ user=Everyone >nul 2>&1
+echo  [OK]    URL reservada.
+
+:: -- FIREWALL RULES --
+echo  [INFO] Configurando Firewall do Windows para porta %HTTP_PORT%...
+netsh advfirewall firewall show rule name="RetroBlox HTTP In" >nul 2>&1
+if %errorLevel% neq 0 (
+    netsh advfirewall firewall add rule name="RetroBlox HTTP In" ^
+        dir=in action=allow protocol=TCP localport=%HTTP_PORT% >nul 2>&1
+    echo  [OK]    Regra de entrada criada.
+) else (
+    echo  [OK]    Regra de entrada ja existe.
+)
+netsh advfirewall firewall show rule name="RetroBlox HTTP Out" >nul 2>&1
+if %errorLevel% neq 0 (
+    netsh advfirewall firewall add rule name="RetroBlox HTTP Out" ^
+        dir=out action=allow protocol=TCP localport=%HTTP_PORT% >nul 2>&1
+    echo  [OK]    Regra de saida criada.
+)
 
 :: -- PORT 80 CONFLICT CHECK --
-echo  [INFO] Checking if port %HTTP_PORT% is in use...
+echo  [INFO] Verificando se a porta %HTTP_PORT% esta livre...
 netstat -ano | findstr ":%HTTP_PORT% " | findstr "LISTENING" >nul 2>&1
 if %errorLevel% equ 0 (
-    echo  [WARN]  Port %HTTP_PORT% already in use. Checking for IIS (W3SVC)...
     sc query W3SVC >nul 2>&1
     if %errorLevel% equ 0 (
-        net stop W3SVC >nul 2>&1
-        net stop WAS >nul 2>&1
-        echo  [OK]    IIS stopped to free port 80.
+        net stop W3SVC >nul 2>&1 & net stop WAS >nul 2>&1
+        echo  [OK]    IIS parado para liberar a porta 80.
     ) else (
-        echo  [WARN]  Unknown process on port 80 - IIS Express may fail to bind.
+        echo  [WARN]  Porta 80 em uso por outro processo. IIS Express pode falhar.
     )
 ) else (
-    echo  [OK]    Port %HTTP_PORT% is free.
+    echo  [OK]    Porta %HTTP_PORT% livre.
 )
 
 :: -- CONFIGURE IIS EXPRESS --
-echo  [INFO] Writing IIS Express config...
+echo  [INFO] Escrevendo config do IIS Express...
 set "IIS_CONFIG_DIR=%USERPROFILE%\Documents\IISExpress\config"
 set "IIS_CONFIG=%IIS_CONFIG_DIR%\applicationhost.config"
 if not exist "%IIS_CONFIG_DIR%" mkdir "%IIS_CONFIG_DIR%" >nul 2>&1
-
 (
 echo ^<?xml version="1.0" encoding="UTF-8"?^>
 echo ^<configuration^>
@@ -493,7 +501,7 @@ echo         ^<application path="/" applicationPool="RetroBloxAppPool"^>
 echo           ^<virtualDirectory path="/" physicalPath="%SITE_DIR%" /^>
 echo         ^</application^>
 echo         ^<bindings^>
-echo           ^<binding protocol="http" bindingInformation="*:%HTTP_PORT%:localhost" /^>
+echo           ^<binding protocol="http" bindingInformation="*:%HTTP_PORT%:" /^>
 echo         ^</bindings^>
 echo       ^</site^>
 echo       ^<siteDefaults^>
@@ -513,38 +521,96 @@ echo     ^<modules runAllManagedModulesForAllRequests="true" /^>
 echo   ^</system.applicationHost^>
 echo ^</configuration^>
 ) > "%IIS_CONFIG%"
-echo  [OK]    IIS Express config written.
+echo  [OK]    Config do IIS Express escrito.
 
-:: -- LOCATE CLOUDFLARED --
+:: -- NO-IP CREDENTIALS --
 echo.
-echo  [INFO] Locating cloudflared...
-set "CF_EXE="
-if exist "%CLOUDFLARED_PATH%" (
-    set "CF_EXE=%CLOUDFLARED_PATH%"
-) else (
-    where cloudflared >nul 2>&1
-    if %errorLevel% equ 0 (
-        set "CF_EXE=cloudflared"
-    ) else (
-        echo  [MISSING] cloudflared not found. Downloading now...
-        powershell -NoProfile -ExecutionPolicy Bypass -Command ^
-            "Invoke-WebRequest -Uri '%CLOUDFLARED_URL%' -OutFile '%CLOUDFLARED_PATH%'"
-        if !errorLevel! neq 0 (
-            echo  [ERROR] Could not download cloudflared.
-            pause
-            exit /b 1
-        )
-        set "CF_EXE=%CLOUDFLARED_PATH%"
+echo  [INFO] Configurando No-IP DDNS...
+set "NOIP_USER="
+set "NOIP_PASS="
+set "NOIP_HOST="
+
+if exist "%NOIP_CREDS_FILE%" (
+    for /f "tokens=1,2 delims==" %%a in (%NOIP_CREDS_FILE%) do (
+        if "%%a"=="user" set "NOIP_USER=%%b"
+        if "%%a"=="pass" set "NOIP_PASS=%%b"
+        if "%%a"=="host" set "NOIP_HOST=%%b"
     )
+    echo  [OK]    Credenciais No-IP carregadas: !NOIP_HOST!
+) else (
+    echo.
+    echo  =====================================================
+    echo   ACAO NECESSARIA - Criar conta No-IP gratuita
+    echo  =====================================================
+    echo.
+    echo  1. Acesse https://www.noip.com  e crie uma conta gratis
+    echo  2. Va em "Dynamic DNS" ^> "No-IP Hostnames"
+    echo  3. Crie um hostname - exemplo: retroblox.ddns.net
+    echo     (escolha qualquer nome disponivel que queira)
+    echo  4. Volte aqui e digite as informacoes abaixo:
+    echo.
+    set /p NOIP_USER="  Seu email/usuario do No-IP: "
+    set /p NOIP_PASS="  Sua senha do No-IP: "
+    set /p NOIP_HOST="  Seu hostname (ex: retroblox.ddns.net): "
+    echo.
+    if "!NOIP_USER!"=="" (
+        echo  [ERROR] Usuario nao informado. Saindo.
+        pause & exit /b 1
+    )
+    (
+        echo user=!NOIP_USER!
+        echo pass=!NOIP_PASS!
+        echo host=!NOIP_HOST!
+    ) > "%NOIP_CREDS_FILE%"
+    echo  [OK]    Credenciais salvas para proximas execucoes.
 )
-echo  [OK]    cloudflared: !CF_EXE!
+
+:: -- UPDATE NO-IP WITH CURRENT PUBLIC IP --
+echo.
+echo  [INFO] Obtendo IP publico atual...
+for /f "usebackq delims=" %%i in (
+    `powershell -NoProfile -ExecutionPolicy Bypass -Command "(Invoke-WebRequest -Uri 'https://api.ipify.org' -UseBasicParsing).Content.Trim()" 2^>nul`
+) do set "PUBLIC_IP=%%i"
+
+if "!PUBLIC_IP!"=="" (
+    echo  [WARN]  Nao foi possivel obter o IP publico. Tentando alternativa...
+    for /f "usebackq delims=" %%i in (
+        `powershell -NoProfile -ExecutionPolicy Bypass -Command "(Invoke-WebRequest -Uri 'https://checkip.amazonaws.com' -UseBasicParsing).Content.Trim()" 2^>nul`
+    ) do set "PUBLIC_IP=%%i"
+)
+
+if "!PUBLIC_IP!"=="" (
+    echo  [ERROR] Nao foi possivel obter o IP publico. Verifique a internet.
+    pause & exit /b 1
+)
+echo  [OK]    IP publico: !PUBLIC_IP!
+
+echo  [INFO] Atualizando No-IP com o IP !PUBLIC_IP!...
+for /f "usebackq delims=" %%r in (
+    `powershell -NoProfile -ExecutionPolicy Bypass -Command ^
+    "$creds = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes('!NOIP_USER!:!NOIP_PASS!'));" ^
+    "$uri = '%NOIP_API%?hostname=!NOIP_HOST!&myip=!PUBLIC_IP!';" ^
+    "$headers = @{ Authorization = 'Basic ' + $creds; 'User-Agent' = 'RetroBloxScript/1.0 setup@retroblox' };" ^
+    "(Invoke-WebRequest -Uri $uri -Headers $headers -UseBasicParsing).Content" 2^>nul`
+) do set "NOIP_RESPONSE=%%r"
+
+echo  [INFO] Resposta No-IP: !NOIP_RESPONSE!
+
+echo !NOIP_RESPONSE! | findstr /i "good nochg" >nul 2>&1
+if %errorLevel% equ 0 (
+    echo  [OK]    No-IP atualizado com sucesso!
+) else (
+    echo  [WARN]  Resposta inesperada do No-IP: !NOIP_RESPONSE!
+    echo  [INFO]  Verifique usuario, senha e hostname em: %NOIP_CREDS_FILE%
+    echo  [INFO]  Para resetar as credenciais, delete o arquivo acima e re-execute.
+)
 
 :: ============================================================
-:: STEP 5 - LAUNCH IIS EXPRESS + CLOUDFLARE QUICK TUNNEL
+:: STEP 5 - LAUNCH IIS EXPRESS + ROUTER PORT FORWARD REMINDER
 :: ============================================================
 echo.
 echo  =====================================================
-echo   Step 5/5: Launching server and free public tunnel
+echo   Step 5/5: Iniciando servidor
 echo  =====================================================
 
 :: -- LOCATE IIS EXPRESS --
@@ -555,58 +621,72 @@ for %%p in (
 ) do (
     if exist %%p set "IISEXPRESS_PATH=%%~p"
 )
-
 if not defined IISEXPRESS_PATH (
-    echo  [ERROR] IIS Express not found.
-    echo  [INFO]  Run: choco install iis-express -y  then re-run this script.
-    pause
-    exit /b 1
+    echo  [ERROR] IIS Express nao encontrado.
+    echo  [INFO]  Execute: choco install iis-express -y  e tente novamente.
+    pause & exit /b 1
 )
 echo  [OK]    IIS Express: !IISEXPRESS_PATH!
-
-:: -- START IIS EXPRESS IN BACKGROUND --
-echo  [INFO] Starting IIS Express on localhost:%HTTP_PORT%...
-start "IISExpress-RetroBlox" /B "!IISEXPRESS_PATH!" /config:"%IIS_CONFIG%" /siteid:1
-
-:: Give IIS Express a few seconds to initialise
-timeout /t 4 /nobreak >nul
-
-:: -- WRITE QUICK TUNNEL HELPER SCRIPT --
-:: The Quick Tunnel prints the public URL to stdout.
-:: We pipe it through findstr so it appears highlighted in the window.
-set "TUNNEL_LOG=%SCRIPT_DIR%tunnel_url.log"
-
-echo.
-echo  =====================================================
-echo   Iniciando Cloudflare Quick Tunnel...
-echo   (sem conta, sem dominio, 100%% gratis)
-echo.
-echo   Aguarde ~5 segundos...
-echo   A URL publica vai aparecer logo abaixo.
-echo  =====================================================
-echo.
-
-echo  [INFO] Quick Tunnel launched >> "%LOG_FILE%"
 
 :: -- CLEANUP FLAG --
 if exist "%FLAG_FILE%" del "%FLAG_FILE%"
 
-:: Run Quick Tunnel in foreground.
-:: Cloudflare prints the public URL like:
-::   https://xxxxxx-xxxx-xxxx-xxxx.trycloudflare.com
-:: The URL changes each restart (it's free/no account).
-:: When ready to use retroblox.com, register the domain and
-:: replace this line with:
-::   "!CF_EXE!" tunnel run --token "YOUR_TOKEN_HERE"
-"!CF_EXE!" tunnel --url http://localhost:%HTTP_PORT% --no-autoupdate
-
-:: When tunnel exits, kill IIS Express too
-echo.
-echo  [INFO] Tunnel stopped. Shutting down IIS Express...
-taskkill /f /im iisexpress.exe >nul 2>&1
 echo.
 echo  =====================================================
-echo   Tudo parado com sucesso.
+echo   LEMBRETE UNICO - Redirecionamento de porta
+echo  =====================================================
+echo.
+echo   Voce precisa fazer isso UMA VEZ so no seu roteador:
+echo.
+echo   1. Abra o navegador e acesse o painel do roteador
+echo      (geralmente http://192.168.1.1 ou http://192.168.0.1)
+echo   2. Procure "Port Forwarding" ou "Redirecionamento de Porta"
+echo   3. Adicione uma regra:
+echo        Porta externa : 80
+echo        IP interno    : (seu IP local - veja abaixo)
+echo        Porta interna : 80
+echo        Protocolo     : TCP
+echo.
+
+:: Show local IP to help with port forwarding
+for /f "tokens=2 delims=:" %%a in (
+    'ipconfig ^| findstr /i "IPv4" ^| findstr /v "127.0.0.1"'
+) do (
+    set "LOCAL_IP=%%a"
+    set "LOCAL_IP=!LOCAL_IP: =!"
+    goto :got_local_ip
+)
+:got_local_ip
+echo        Seu IP local  : !LOCAL_IP!
+echo.
+echo   Depois disso, o site fica acessivel para sempre em:
+echo.
+echo  =====================================================
+echo.
+echo  [INFO] Server launched >> "%LOG_FILE%"
+echo  [INFO] URL: http://!NOIP_HOST! >> "%LOG_FILE%"
+
+echo  Aguardando IIS Express iniciar...
+echo.
+echo  =====================================================
+echo   RetroBlox esta NO AR!
+echo.
+echo   URL publica  :  http://!NOIP_HOST!
+echo   URL local    :  http://localhost
+echo   Seu IP       :  !PUBLIC_IP!
+echo.
+echo   Qualquer pessoa pode acessar http://!NOIP_HOST!
+echo.
+echo   Pressione Ctrl+C para parar o servidor.
+echo  =====================================================
+echo.
+
+:: Run IIS Express in foreground (Ctrl+C stops it)
+"!IISEXPRESS_PATH!" /config:"%IIS_CONFIG%" /siteid:1
+
+echo.
+echo  =====================================================
+echo   Servidor parado.
 echo   Log geral  :  setup_build.log
 echo   Log build  :  build_output.log
 echo  =====================================================
