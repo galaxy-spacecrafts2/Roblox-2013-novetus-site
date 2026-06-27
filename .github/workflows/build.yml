@@ -9,20 +9,25 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest  # Change from ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-     
+      
+      - name: Install .NET SDK with WebApplication workload
+        run: |
+          dotnet workload restore
+      
       - name: Install .NET Framework Targeting Pack
         run: |
-           # Install the .NET Framework 4.7.2 developer pack
-           choco install netfx-4.7.2-devpack -y
+          choco install netfx-4.7.2-devpack -y
+      
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v2
         with:
-            vs-version: '17.0'
+          vs-version: '17.0'
+      
       - name: Create dynamic folders
         shell: pwsh
         run: |
@@ -47,9 +52,7 @@ jobs:
           dotnet restore "${{ github.workspace }}/RobloxWebSite.sln" --packages $packagesDir
 
       - name: Build site
-        shell: pwsh
-        run: |
-          dotnet build "${{ github.workspace }}/RobloxWebSite.sln" --configuration Release --no-restore
+        run: msbuild "${{ github.workspace }}/RobloxWebSite.sln" /p:Configuration=Release /p:Platform="Any CPU"
 
       - name: Publish build artifact
         if: success()
