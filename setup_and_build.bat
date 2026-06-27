@@ -366,7 +366,7 @@ echo  [OK]    Solution: %SLN_FILE%
 :: -- NUGET RESTORE (MAIN PROJECT) --
 echo.
 echo  =====================================================
-echo   Step 1/5: Restoring NuGet packages (main project)
+echo   Step 1/6: Restoring NuGet packages (main project)
 echo  =====================================================
 echo  [INFO] This may take a few minutes on first run...
 echo.
@@ -381,7 +381,7 @@ if %errorLevel% neq 0 (
 :: -- NUGET RESTORE (ALL ASSEMBLY PROJECTS) --
 echo.
 echo  =====================================================
-echo   Step 2/5: Restoring NuGet packages (assemblies)
+echo   Step 2/6: Restoring NuGet packages (assemblies)
 echo  =====================================================
 set "RESTORE_ERRORS=0"
 for /r "%SCRIPT_DIR%Assemblies" %%f in (*.sln *.csproj) do (
@@ -401,7 +401,7 @@ if !RESTORE_ERRORS! gtr 0 (
 :: -- BUILD SOLUTION --
 echo.
 echo  =====================================================
-echo   Step 3/5: Building Solution (Debug)
+echo   Step 3/6: Building Solution (Debug)
 echo  =====================================================
 echo  [INFO] Running MSBuild on full solution...
 echo.
@@ -442,11 +442,87 @@ echo   [OK] Build SUCCEEDED
 echo  =====================================================
 
 :: ============================================================
-:: STEP 4 - IIS EXPRESS CONFIG + NO-IP DDNS SETUP
+:: STEP 4 - SEED ACCOUNTS NO BANCO DE DADOS
 :: ============================================================
 echo.
 echo  =====================================================
-echo   Step 4/5: Configurando IIS Express + No-IP DDNS
+echo   Step 4/6: Criando contas no banco de dados
+echo  =====================================================
+
+:: -- PEDE DADOS DO SQL SERVER NA PRIMEIRA VEZ --
+set "DB_CREDS_FILE=%SCRIPT_DIR%.db_creds"
+set "DB_SERVER=localhost"
+set "DB_NAME=MyReleaseDB"
+
+if exist "%DB_CREDS_FILE%" (
+    for /f "tokens=1,2 delims==" %%a in (%DB_CREDS_FILE%) do (
+        if "%%a"=="server" set "DB_SERVER=%%b"
+        if "%%a"=="db"     set "DB_NAME=%%b"
+    )
+    echo  [OK]    Config do banco carregada: !DB_SERVER! / !DB_NAME!
+) else (
+    echo.
+    echo  =====================================================
+    echo   Configure o SQL Server
+    echo  =====================================================
+    echo.
+    echo  Pressione ENTER para usar os valores padrao,
+    echo  ou digite um valor diferente.
+    echo.
+    set /p "DB_SERVER_IN=  Servidor SQL Server [localhost]: "
+    if not "!DB_SERVER_IN!"=="" set "DB_SERVER=!DB_SERVER_IN!"
+    set /p "DB_NAME_IN=  Nome do banco [MyReleaseDB]: "
+    if not "!DB_NAME_IN!"=="" set "DB_NAME=!DB_NAME_IN!"
+    echo.
+    (
+        echo server=!DB_SERVER!
+        echo db=!DB_NAME!
+    ) > "%DB_CREDS_FILE%"
+    echo  [OK]    Config salva para proximas execucoes.
+)
+
+:: -- VERIFICA SE O SEED JA FOI FEITO --
+set "SEED_FLAG=%SCRIPT_DIR%.accounts_seeded"
+if exist "%SEED_FLAG%" (
+    echo  [OK]    Contas ja foram criadas anteriormente. Pulando seed.
+    goto :STEP5_NETWORK
+)
+
+:: -- EXECUTA O SEED --
+echo  [INFO] Executando seed_accounts.ps1...
+powershell -NoProfile -ExecutionPolicy Bypass -File "%SCRIPT_DIR%seed_accounts.ps1" ^
+    -Server "!DB_SERVER!" -Database "!DB_NAME!" -ScriptDir "%SCRIPT_DIR%"
+
+if %errorLevel% neq 0 (
+    echo.
+    echo  [WARN]  O seed de contas falhou ou o banco ainda nao esta pronto.
+    echo  [INFO]  Isso pode acontecer se o SQL Server nao estiver configurado.
+    echo  [INFO]  Voce pode rodar o seed manualmente depois:
+    echo          powershell -File seed_accounts.ps1
+    echo.
+) else (
+    echo Phase2Seeded > "%SEED_FLAG%"
+    echo  [OK]    Contas criadas com sucesso!
+)
+
+echo.
+echo  =====================================================
+echo   Contas criadas:
+echo    builderman  ^| ID=1 ^| Admin ^| senha: Admin@RetroBlox1
+echo    noli        ^| Conta deletada/glitchada ^(mito de 2007^)
+echo    Player1-12  ^| Bots de teste
+echo  =====================================================
+echo.
+echo  [ATENCAO] Troque a senha do builderman apos o primeiro login!
+echo.
+
+:STEP5_NETWORK
+:: ============================================================
+:: STEP 5 - IIS EXPRESS CONFIG + NO-IP DDNS SETUP
+:: ============================================================
+echo.
+echo  =====================================================
+echo   Step 5/6: Configurando IIS Express + No-IP DDNS
 echo  =====================================================
 
 :: -- URL RESERVATION --
@@ -610,7 +686,7 @@ if %errorLevel% equ 0 (
 :: ============================================================
 echo.
 echo  =====================================================
-echo   Step 5/5: Iniciando servidor
+echo   Step 6/6: Iniciando servidor
 echo  =====================================================
 
 :: -- LOCATE IIS EXPRESS --
