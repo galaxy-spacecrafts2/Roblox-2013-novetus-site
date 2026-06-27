@@ -1,0 +1,435 @@
+@echo off
+setlocal EnableDelayedExpansion
+title Roblox Website - Setup and Build
+color 0A
+
+:: ============================================================
+:: ROBLOX WEBSITE - SETUP AND BUILD SCRIPT
+:: Run this script as Administrator.
+:: Phase 1: Installs all required tools, then reboots.
+:: Phase 2: Run again after reboot to restore packages and build.
+:: ============================================================
+
+set "SCRIPT_DIR=%~dp0"
+set "FLAG_FILE=%SCRIPT_DIR%.setup_phase2_ready"
+set "LOG_FILE=%SCRIPT_DIR%setup_build.log"
+set "NUGET_URL=https://dist.nuget.org/win-x86-commandline/latest/nuget.exe"
+set "NUGET_PATH=%SCRIPT_DIR%nuget.exe"
+set "PACKAGES_DIR=%SCRIPT_DIR%packages"
+set "SLN_FILE=%SCRIPT_DIR%RobloxWebSite.sln"
+
+echo. >> "%LOG_FILE%"
+echo [%DATE% %TIME%] Script started >> "%LOG_FILE%"
+
+:: ============================================================
+:: ADMIN CHECK
+:: ============================================================
+echo.
+echo  =====================================================
+echo   Roblox Website Build Script
+echo  =====================================================
+echo.
+net session >nul 2>&1
+if %errorLevel% neq 0 (
+    echo  [ERROR] This script must be run as Administrator.
+    echo.
+    echo  Right-click setup_and_build.bat and choose
+    echo  "Run as administrator", then try again.
+    echo.
+    pause
+    exit /b 1
+)
+echo  [OK] Running as Administrator.
+
+:: ============================================================
+:: PHASE DETECTION
+:: ============================================================
+if exist "%FLAG_FILE%" (
+    echo  [INFO] Post-reboot phase detected. Proceeding to build...
+    echo.
+    goto :PHASE2_BUILD
+)
+
+echo  [INFO] First run detected. Starting Phase 1: Tool Installation.
+echo.
+
+:: ============================================================
+:: PHASE 1 - TOOL INSTALLATION
+:: ============================================================
+
+:PHASE1_TOOLS
+
+:: -- CHECK WINDOWS VERSION --
+echo  [CHECK] Windows version...
+ver | findstr /i "10\." >nul 2>&1
+if %errorLevel% equ 0 (
+    echo  [OK]    Windows 10 detected.
+) else (
+    ver | findstr /i "11\." >nul 2>&1
+    if %errorLevel% equ 0 (
+        echo  [OK]    Windows 11 detected.
+    ) else (
+        echo  [WARN]  Could not confirm Windows 10/11. Proceeding anyway.
+    )
+)
+
+:: -- CHECK .NET FRAMEWORK 4.7.2 --
+echo.
+echo  [CHECK] .NET Framework 4.7.2...
+reg query "HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" /v Release >nul 2>&1
+if %errorLevel% equ 0 (
+    for /f "tokens=3" %%a in ('reg query "HKLM\SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" /v Release ^| find "Release"') do set "DOTNET_RELEASE=%%a"
+    if !DOTNET_RELEASE! GEQ 461808 (
+        echo  [OK]    .NET Framework 4.7.2+ is installed (Release key: !DOTNET_RELEASE!).
+        set "DOTNET_OK=1"
+    ) else (
+        echo  [MISSING] .NET Framework 4.7.2 not found (Release key: !DOTNET_RELEASE!).
+        set "DOTNET_OK=0"
+    )
+) else (
+    echo  [MISSING] .NET Framework not found in registry.
+    set "DOTNET_OK=0"
+)
+
+:: -- CHECK CHOCOLATEY --
+echo.
+echo  [CHECK] Chocolatey package manager...
+where choco >nul 2>&1
+if %errorLevel% equ 0 (
+    echo  [OK]    Chocolatey is installed.
+    set "CHOCO_OK=1"
+) else (
+    echo  [MISSING] Chocolatey not found. Installing...
+    set "CHOCO_OK=0"
+    powershell -NoProfile -ExecutionPolicy Bypass -Command "Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))"
+    if !errorLevel! neq 0 (
+        echo  [ERROR] Chocolatey installation failed. Check your internet connection.
+        echo  [ERROR] Chocolatey install failed >> "%LOG_FILE%"
+        pause
+        exit /b 1
+    )
+    set "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+    echo  [OK]    Chocolatey installed successfully.
+    set "CHOCO_OK=1"
+)
+
+:: -- CHECK / INSTALL VISUAL STUDIO BUILD TOOLS 2022 --
+echo.
+echo  [CHECK] Visual Studio Build Tools / MSBuild...
+set "MSBUILD_PATH="
+for %%p in (
+    "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\MSBuild.exe"
+    "C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Current\Bin\MSBuild.exe"
+    "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\MSBuild.exe"
+    "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\MSBuild.exe"
+    "C:\Program Files\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\MSBuild.exe"
+    "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\MSBuild.exe"
+    "C:\Program Files (x86)\MSBuild\14.0\Bin\MSBuild.exe"
+) do (
+    if exist %%p (
+        set "MSBUILD_PATH=%%~p"
+    )
+)
+
+if defined MSBUILD_PATH (
+    echo  [OK]    MSBuild found at: !MSBUILD_PATH!
+    set "MSBUILD_OK=1"
+) else (
+    echo  [MISSING] MSBuild / Visual Studio Build Tools not found.
+    echo  [INFO]    Installing Visual Studio Build Tools 2022 with ASP.NET workload...
+    echo  [INFO]    This download is large (~2-3 GB) and may take 10-20 minutes.
+    echo.
+    choco install visualstudio2022buildtools --package-parameters "--add Microsoft.VisualStudio.Workload.WebBuildTools --add Microsoft.VisualStudio.Workload.ManagedDesktopBuildTools --add Microsoft.Net.Component.4.7.2.TargetingPack --add Microsoft.Net.Component.4.7.2.SDK --includeRecommended --passive --norestart" -y
+    if !errorLevel! neq 0 (
+        echo  [ERROR] VS Build Tools installation failed.
+        echo  [ERROR] VS Build Tools install failed >> "%LOG_FILE%"
+        pause
+        exit /b 1
+    )
+    echo  [OK]    Visual Studio Build Tools 2022 installed.
+    set "MSBUILD_OK=1"
+    set "NEED_REBOOT=1"
+)
+
+:: -- CHECK / INSTALL .NET 4.7.2 TARGETING PACK (via choco) --
+if "!DOTNET_OK!"=="0" (
+    echo.
+    echo  [INFO]  Installing .NET Framework 4.7.2 Developer Pack...
+    choco install netfx-4.7.2-devpack -y
+    if !errorLevel! neq 0 (
+        echo  [WARN]  .NET 4.7.2 Dev Pack install may have failed. Continuing...
+    ) else (
+        echo  [OK]    .NET Framework 4.7.2 Developer Pack installed.
+    )
+    set "NEED_REBOOT=1"
+)
+
+:: -- CHECK / INSTALL NUGET CLI --
+echo.
+echo  [CHECK] NuGet CLI...
+if exist "%NUGET_PATH%" (
+    echo  [OK]    nuget.exe found at: %NUGET_PATH%
+    set "NUGET_OK=1"
+) else (
+    where nuget >nul 2>&1
+    if %errorLevel% equ 0 (
+        echo  [OK]    NuGet is in PATH.
+        set "NUGET_OK=1"
+    ) else (
+        echo  [MISSING] NuGet CLI not found. Downloading...
+        powershell -NoProfile -ExecutionPolicy Bypass -Command "Invoke-WebRequest -Uri '%NUGET_URL%' -OutFile '%NUGET_PATH%'"
+        if !errorLevel! neq 0 (
+            echo  [ERROR] Failed to download nuget.exe. Check your internet connection.
+            echo  [ERROR] NuGet download failed >> "%LOG_FILE%"
+            pause
+            exit /b 1
+        )
+        echo  [OK]    nuget.exe downloaded to: %NUGET_PATH%
+        set "NUGET_OK=1"
+    )
+)
+
+:: -- CHECK / INSTALL GIT (optional but useful) --
+echo.
+echo  [CHECK] Git...
+where git >nul 2>&1
+if %errorLevel% equ 0 (
+    echo  [OK]    Git is installed.
+) else (
+    echo  [MISSING] Git not found. Installing...
+    choco install git -y
+    echo  [OK]    Git installed.
+    set "NEED_REBOOT=1"
+)
+
+:: -- SUMMARY --
+echo.
+echo  =====================================================
+echo   Phase 1 Complete - Installation Summary
+echo  =====================================================
+echo  Chocolatey   : Installed/Verified
+echo  MSBuild      : Installed/Verified
+echo  .NET 4.7.2   : Installed/Verified
+echo  NuGet CLI    : Installed/Verified
+echo.
+
+:: -- WRITE PHASE 2 FLAG --
+echo Phase1Complete > "%FLAG_FILE%"
+echo  [INFO] Phase 1 flag written.
+
+:: -- REBOOT IF NEEDED --
+if defined NEED_REBOOT (
+    echo  [INFO] A reboot is required to complete the installation.
+    echo  [INFO] After reboot, run this script again as Administrator
+    echo         to continue with package restore and build.
+    echo.
+    echo  Rebooting in 15 seconds... Press Ctrl+C to cancel.
+    timeout /t 15
+    shutdown /r /t 0
+) else (
+    echo  [INFO] No reboot required. Proceeding directly to Phase 2...
+    echo.
+    goto :PHASE2_BUILD
+)
+
+exit /b 0
+
+:: ============================================================
+:: PHASE 2 - PACKAGE RESTORE AND BUILD
+:: ============================================================
+
+:PHASE2_BUILD
+echo.
+echo  =====================================================
+echo   Phase 2: Package Restore and Build
+echo  =====================================================
+echo.
+
+:: -- LOCATE MSBUILD --
+echo  [CHECK] Locating MSBuild...
+set "MSBUILD_PATH="
+
+for %%p in (
+    "C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\MSBuild.exe"
+    "C:\Program Files\Microsoft Visual Studio\2022\Professional\MSBuild\Current\Bin\MSBuild.exe"
+    "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Current\Bin\MSBuild.exe"
+    "C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\MSBuild.exe"
+    "C:\Program Files\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\MSBuild.exe"
+    "C:\Program Files (x86)\Microsoft Visual Studio\2019\BuildTools\MSBuild\Current\Bin\MSBuild.exe"
+    "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe"
+    "C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\MSBuild\Current\Bin\MSBuild.exe"
+    "C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe"
+) do (
+    if exist %%p (
+        set "MSBUILD_PATH=%%~p"
+    )
+)
+
+if not defined MSBUILD_PATH (
+    echo  [ERROR] MSBuild not found. Did Phase 1 complete successfully?
+    echo  [INFO]  Try running this script again as Administrator.
+    echo  [ERROR] MSBuild not found in Phase 2 >> "%LOG_FILE%"
+    pause
+    exit /b 1
+)
+echo  [OK]    MSBuild: !MSBUILD_PATH!
+
+:: -- ADD MSBUILD DIR TO PATH --
+for %%F in ("!MSBUILD_PATH!") do set "MSBUILD_DIR=%%~dpF"
+set "PATH=!PATH!;!MSBUILD_DIR!"
+
+:: -- LOCATE NUGET --
+echo.
+echo  [CHECK] Locating NuGet CLI...
+if exist "%NUGET_PATH%" (
+    set "NUGET_EXE=%NUGET_PATH%"
+    echo  [OK]    NuGet: %NUGET_PATH%
+) else (
+    where nuget >nul 2>&1
+    if %errorLevel% equ 0 (
+        set "NUGET_EXE=nuget"
+        echo  [OK]    NuGet found in PATH.
+    ) else (
+        echo  [MISSING] nuget.exe not found. Downloading now...
+        powershell -NoProfile -ExecutionPolicy Bypass -Command "Invoke-WebRequest -Uri '%NUGET_URL%' -OutFile '%NUGET_PATH%'"
+        if !errorLevel! neq 0 (
+            echo  [ERROR] Failed to download nuget.exe.
+            pause
+            exit /b 1
+        )
+        set "NUGET_EXE=%NUGET_PATH%"
+        echo  [OK]    NuGet downloaded.
+    )
+)
+
+:: -- VERIFY SOLUTION FILE --
+echo.
+echo  [CHECK] Solution file...
+if not exist "%SLN_FILE%" (
+    echo  [ERROR] RobloxWebSite.sln not found at: %SLN_FILE%
+    echo  [INFO]  Make sure you are running this script from the repo root folder.
+    pause
+    exit /b 1
+)
+echo  [OK]    Solution: %SLN_FILE%
+
+:: -- NUGET RESTORE (MAIN PROJECT) --
+echo.
+echo  =====================================================
+echo   Step 1/4: Restoring NuGet packages (main project)
+echo  =====================================================
+echo  [INFO] This may take a few minutes on first run...
+echo.
+"%NUGET_EXE%" restore "%SLN_FILE%" -PackagesDirectory "%PACKAGES_DIR%" -NonInteractive
+if %errorLevel% neq 0 (
+    echo  [WARN]  NuGet restore returned a non-zero exit code.
+    echo  [WARN]  Some packages may have failed. Continuing...
+    echo  [WARN]  NuGet restore warning >> "%LOG_FILE%"
+) else (
+    echo  [OK]    NuGet restore completed.
+)
+
+:: -- NUGET RESTORE (ALL ASSEMBLY PROJECTS) --
+echo.
+echo  =====================================================
+echo   Step 2/4: Restoring NuGet packages (assemblies)
+echo  =====================================================
+set "RESTORE_ERRORS=0"
+for /r "%SCRIPT_DIR%Assemblies" %%f in (*.sln *.csproj) do (
+    echo  [RESTORE] %%f
+    "%NUGET_EXE%" restore "%%f" -PackagesDirectory "%PACKAGES_DIR%" -NonInteractive >nul 2>&1
+    if !errorLevel! neq 0 (
+        echo  [WARN]    Restore issues for: %%~nxf
+        set /a RESTORE_ERRORS+=1
+    )
+)
+if !RESTORE_ERRORS! gtr 0 (
+    echo  [WARN]  !RESTORE_ERRORS! assembly restore(s) had issues. Continuing with build...
+) else (
+    echo  [OK]    All assembly packages restored.
+)
+
+:: -- BUILD SOLUTION --
+echo.
+echo  =====================================================
+echo   Step 3/4: Building Solution (Debug)
+echo  =====================================================
+echo  [INFO] Running MSBuild on full solution...
+echo.
+
+"!MSBUILD_PATH!" "%SLN_FILE%" ^
+    /p:Configuration=Debug ^
+    /p:Platform="Any CPU" ^
+    /p:DeployOnBuild=false ^
+    /m ^
+    /nologo ^
+    /verbosity:minimal ^
+    /flp:LogFile="%SCRIPT_DIR%build_output.log";Verbosity=detailed ^
+    2>&1
+
+if %errorLevel% neq 0 (
+    echo.
+    echo  =====================================================
+    echo   [ERROR] Build FAILED
+    echo  =====================================================
+    echo  Check build_output.log for full details.
+    echo.
+    echo  Common fixes:
+    echo    - Missing .NET 4.7.2 targeting pack:
+    echo      choco install netfx-4.7.2-devpack -y
+    echo    - Missing a NuGet package:
+    echo      Run nuget.exe restore RobloxWebSite.sln again
+    echo    - TypeScript errors:
+    echo      choco install typescript -y
+    echo.
+    echo  [ERROR] MSBuild failed with code %errorLevel% >> "%LOG_FILE%"
+    pause
+    exit /b 1
+)
+
+echo.
+echo  =====================================================
+echo   [OK] Build SUCCEEDED
+echo  =====================================================
+
+:: -- LAUNCH DEV SERVER --
+echo.
+echo  =====================================================
+echo   Step 4/4: Launching IIS Express Dev Server
+echo  =====================================================
+
+set "IISEXPRESS_PATH="
+for %%p in (
+    "C:\Program Files\IIS Express\iisexpress.exe"
+    "C:\Program Files (x86)\IIS Express\iisexpress.exe"
+) do (
+    if exist %%p set "IISEXPRESS_PATH=%%~p"
+)
+
+if defined IISEXPRESS_PATH (
+    echo  [OK]    IIS Express found: !IISEXPRESS_PATH!
+    echo  [INFO]  Starting server on http://localhost:5000 ...
+    echo.
+    echo  Open your browser to:  http://localhost:5000
+    echo  Press Ctrl+C to stop.
+    echo.
+    "!IISEXPRESS_PATH!" /path:"%SCRIPT_DIR%RobloxWebSite" /port:5000 /clr:v4.0
+) else (
+    echo  [WARN]  IIS Express not found.
+    echo  [INFO]  To install IIS Express:
+    echo          choco install iis-express -y
+    echo  [INFO]  Then re-run this script.
+    echo.
+    echo  [INFO]  Alternatively, open the solution in Visual Studio
+    echo          and press F5 to run with IIS Express.
+)
+
+:: -- CLEANUP FLAG --
+if exist "%FLAG_FILE%" del "%FLAG_FILE%"
+
+echo.
+echo  [DONE] All steps completed. Log saved to: setup_build.log
+echo         Build log saved to:  build_output.log
+echo.
+pause
+exit /b 0
