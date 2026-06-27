@@ -14,11 +14,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
-      - name: Setup .NET SDK
-        uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '7.0.x'
+     
+      - name: Install .NET Framework Targeting Pack
+        run: |
+           # Install the .NET Framework 4.7.2 developer pack
+           choco install netfx-4.7.2-devpack -y
       - name: Setup MSBuild
         uses: microsoft/setup-msbuild@v2
         with:
