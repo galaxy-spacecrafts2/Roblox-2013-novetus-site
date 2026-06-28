@@ -524,9 +524,6 @@
     <Compile Include="Help\Builderman.aspx.designer.cs">
       <DependentUpon>Builderman.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Install\GetInstallerCdns.ashx.cs">
-      <DependentUpon>GetInstallerCdns.ashx</DependentUpon>
-    </Compile>
     <Compile Include="KeepAlives\www.ashx.cs">
       <DependentUpon>www.ashx</DependentUpon>
     </Compile>
@@ -2932,7 +2929,6 @@
     <Content Include="API\Comments.ashx" />
     <Content Include="Game\Tools\InsertAsset.ashx" />
     <Content Include="Game\Tools\ThumbnailAsset.ashx" />
-    <Content Include="Install\GetInstallerCdns.ashx" />
     <Content Include="Login\Negotiate.ashx" />
     <Content Include="Login\RequestAuth.ashx" />
     <EmbeddedResource Include="App_GlobalResources\Authentication.ResetPassword.resx">

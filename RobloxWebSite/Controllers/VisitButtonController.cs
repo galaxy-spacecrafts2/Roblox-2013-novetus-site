@@ -8,7 +8,7 @@ using Roblox.Website.ViewModels.VisitButtons;
 namespace Roblox.Website.Controllers
 {
     [RoutePrefix("VisitButton")]
-    [Route("{action}")]
+    [Route("{action}.aspx")]
     public class VisitButtonController : Controller
     {
         // GET: VisitButton/LaunchUniverse

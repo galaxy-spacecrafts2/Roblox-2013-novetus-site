@@ -11,7 +11,7 @@ using System.Collections.Generic;
 namespace Roblox.Website.Controllers
 {
     [RoutePrefix("UserCheck")]
-    [Route("{action}")]
+    [Route("{action}.aspx")]
     // [CookieConstraintAttributeWithRedirect] // Not found
     public class UserCheckController : Controller
     {

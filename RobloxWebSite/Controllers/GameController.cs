@@ -16,7 +16,7 @@ namespace Roblox.Website.Controllers
             return View();
         }
 
-        [Route("validate-machine")]
+        [Route("validate-machine.aspx")]
         [HttpPost]
         public JsonResult ValidateMachine(ValidateMachineRequest request)
         {

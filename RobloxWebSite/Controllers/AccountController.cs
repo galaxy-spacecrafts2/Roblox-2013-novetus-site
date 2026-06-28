@@ -7,7 +7,7 @@ using System.Web.Mvc;
 namespace Roblox.Website.Controllers
 {
     [RoutePrefix("Account")]
-    [Route("{action}")]
+    [Route("{action}.aspx")]
     public class AccountController : Controller
     {
         // GET: Account/SignupRedir

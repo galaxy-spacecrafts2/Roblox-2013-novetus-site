@@ -14,7 +14,7 @@ namespace Roblox.Website.Controllers
     public class UserAdsController : Controller
     {
         // GET: UserAds
-        [Route("{adType}")]
+        [Route("{adType}.aspx")]
         public ActionResult Index(int adType)
         {
             return View();

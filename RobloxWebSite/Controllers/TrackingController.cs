@@ -8,7 +8,7 @@ using Roblox.Web.Mvc;
 namespace Roblox.Website.Controllers
 {
     [RoutePrefix("Tracking")]
-    [Route("{action}")]
+    [Route("{action}.aspx")]
     [CookieConstraintAttributeWithRedirect]
     public class TrackingController : Controller
     {

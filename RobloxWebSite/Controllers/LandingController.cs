@@ -10,7 +10,7 @@ using Roblox.Website.WebCode;
 namespace Roblox.Website.Controllers
 {
     [RoutePrefix("Landing")]
-    [Route("{action}")]
+    [Route("{action}.aspx")]
     [CookieConstraintAttributeWithRedirect]
     public class LandingController : Controller
     {

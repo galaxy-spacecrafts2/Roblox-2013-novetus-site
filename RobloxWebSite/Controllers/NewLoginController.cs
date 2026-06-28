@@ -8,7 +8,7 @@ using Roblox.Website.ViewModels;
 
 namespace Roblox.Website.Controllers
 {
-    [RoutePrefix("NewLogin")]
+    [RoutePrefix("NewLogin.aspx")]
     [CookieConstraintAttributeWithRedirect]
     public class NewLoginController : Controller
     {

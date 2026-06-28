@@ -19,13 +19,13 @@ namespace Roblox.Website {
 
             routes.MapRoute(
                 name: "FetchCSS",
-                url: "CSS/Base/CSS/FetchCSS",
+                url: "CSS/Base/CSS/FetchCSS.aspx",
                 defaults: new { controller = "ReplicatedCss", action = "GetFile" }
             );
 
             routes.MapRoute(
                 name: "NewFetchCSS",
-                url: "css/{path}/fetch",
+                url: "css/{path}/fetch.aspx",
                 defaults: new { controller = "ReplicatedCss", action = "GetFile" }
             );
 

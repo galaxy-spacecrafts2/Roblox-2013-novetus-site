@@ -8,7 +8,7 @@ using Roblox.Web.Mvc;
 namespace Roblox.Website.Controllers
 {
     [RoutePrefix("Reference")]
-    [Route("{action}")]
+    [Route("{action}.aspx")]
     [CookieConstraintAttributeWithRedirect]
     public class ReferenceController : Controller
     {

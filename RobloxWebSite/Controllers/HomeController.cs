@@ -7,7 +7,7 @@ using Roblox.Web.Mvc;
 
 namespace Roblox.Website.Controllers
 {
-    [RoutePrefix("Home")]
+    [RoutePrefix("Home.aspx")]
     [CookieConstraintAttributeWithRedirect]
     public class HomeController : Controller
     {

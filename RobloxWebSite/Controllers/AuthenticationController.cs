@@ -9,7 +9,7 @@ using Roblox.Web.Mvc;
 namespace Roblox.Website.Controllers
 {
     [RoutePrefix("Authentication")]
-    [Route("{action}")]
+    [Route("{action}.aspx")]
     [CookieConstraintAttributeWithRedirect]
     public class AuthenticationController : Controller
     {

@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 
 namespace Roblox.Website.Controllers {
-    [RoutePrefix("thumbnails")]
+    [RoutePrefix("thumbnails.aspx")]
     public class ThumbnailsController : Controller {
         
     }
