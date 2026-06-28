@@ -1,0 +1,1798 @@
+PS C:\> powershell -Command "cd 'C:\Roblox-2013-novetus-site'; & 'C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\MSBuild.exe' RobloxWebSite.sln /p:Configuration=Debug 2>&1"
+Versão do MSBuild 17.14.40+3e7442088 para .NET Framework
+Compilação de 28/06/2026 11:52:19 iniciada.
+
+Projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" no nó 1 (destinos padrão).
+ValidateSolutionConfiguration:
+  Compilando a configuração de solução "Debug|Any CPU".
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\RobloxWebSit
+e\Roblox.Website.csproj" (2) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\".
+  Criando o diretório "obj\Debug\".
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\Assets\Roblox.Assets\Roblox.Assets.csproj" (3:2) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Assets.dll /subsystemversion:6.00 /target:library
+   /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Assets
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Assets\Roblox.Assets\obj\Debug\Roblox.Assets.dll" para
+  "C:\Roblox-2013-novetus-site\Assemblies\Assets\Roblox.Assets\bin\Debug\Roblox.Assets.dll".
+  Roblox.Assets -> C:\Roblox-2013-novetus-site\Assemblies\Assets\Roblox.Assets\bin\Debug\Roblox.Assets.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Assets\Roblox.Assets\obj\Debug\Roblox.Assets.pdb" para
+  "C:\Roblox-2013-novetus-site\Assemblies\Assets\Roblox.Assets\bin\Debug\Roblox.Assets.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Assets\Roblox.Assets\Roblox.Assets.csproj" (destin
+os padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\Caching\Roblox.Caching\Roblox.Caching.csproj" (4:2) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Caching.dll /subsystemversion:6.00 /target:librar
+  y /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Caching
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Caching\Roblox.Caching\obj\Debug\Roblox.Caching.dll" pa
+  ra "C:\Roblox-2013-novetus-site\Assemblies\Caching\Roblox.Caching\bin\Debug\Roblox.Caching.dll".
+  Roblox.Caching -> C:\Roblox-2013-novetus-site\Assemblies\Caching\Roblox.Caching\bin\Debug\Roblox.Caching.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Caching\Roblox.Caching\obj\Debug\Roblox.Caching.pdb" pa
+  ra "C:\Roblox-2013-novetus-site\Assemblies\Caching\Roblox.Caching\bin\Debug\Roblox.Caching.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Caching\Roblox.Caching\Roblox.Caching.csproj" (des
+tinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\Common\Roblox.Common.Web\Roblox.Common.Web.csproj" (5:2) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Common.Web.dll /subsystemversion:6.00 /target:lib
+  rary /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Common.Web
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Common\Roblox.Common.Web\obj\Debug\Roblox.Common.Web.dl
+  l" para "C:\Roblox-2013-novetus-site\Assemblies\Common\Roblox.Common.Web\bin\Debug\Roblox.Common.Web.dll".
+  Roblox.Common.Web -> C:\Roblox-2013-novetus-site\Assemblies\Common\Roblox.Common.Web\bin\Debug\Roblox.Common.Web.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Common\Roblox.Common.Web\obj\Debug\Roblox.Common.Web.pd
+  b" para "C:\Roblox-2013-novetus-site\Assemblies\Common\Roblox.Common.Web\bin\Debug\Roblox.Common.Web.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Common\Roblox.Common.Web\Roblox.Common.Web.csproj"
+ (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\Common\Roblox.Common\Roblox.Common.csproj" (6:2) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Common.dll /subsystemversion:6.00 /target:library
+   /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Common
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Common\Roblox.Common\obj\Debug\Roblox.Common.dll" para
+  "C:\Roblox-2013-novetus-site\Assemblies\Common\Roblox.Common\bin\Debug\Roblox.Common.dll".
+  Roblox.Common -> C:\Roblox-2013-novetus-site\Assemblies\Common\Roblox.Common\bin\Debug\Roblox.Common.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Common\Roblox.Common\obj\Debug\Roblox.Common.pdb" para
+  "C:\Roblox-2013-novetus-site\Assemblies\Common\Roblox.Common\bin\Debug\Roblox.Common.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Common\Roblox.Common\Roblox.Common.csproj" (destin
+os padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\Configuration\Roblox.Configuration\Roblox.Configuration.csproj" (7:2) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Configuration.dll /subsystemversion:6.00 /target:
+  library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Configuration
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Configuration\Roblox.Configuration\obj\Debug\Roblox.Con
+  figuration.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Configuration\Roblox.Configuration\bin\Debug\Roblox.Conf
+  iguration.dll".
+  Roblox.Configuration -> C:\Roblox-2013-novetus-site\Assemblies\Configuration\Roblox.Configuration\bin\Debug\Roblox.Co
+  nfiguration.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Configuration\Roblox.Configuration\obj\Debug\Roblox.Con
+  figuration.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Configuration\Roblox.Configuration\bin\Debug\Roblox.Conf
+  iguration.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Configuration\Roblox.Configuration\Roblox.Configur
+ation.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\DataV2\Core\Roblox.DataV2.Core\Roblox.DataV2.Core.csproj" (8:2) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.DataV2.Core.dll /subsystemversion:6.00 /target:li
+  brary /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.DataV2.Core
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\DataV2\Core\Roblox.DataV2.Core\obj\Debug\Roblox.DataV2.
+  Core.dll" para "C:\Roblox-2013-novetus-site\Assemblies\DataV2\Core\Roblox.DataV2.Core\bin\Debug\Roblox.DataV2.Core.dl
+  l".
+  Roblox.DataV2.Core -> C:\Roblox-2013-novetus-site\Assemblies\DataV2\Core\Roblox.DataV2.Core\bin\Debug\Roblox.DataV2.C
+  ore.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\DataV2\Core\Roblox.DataV2.Core\obj\Debug\Roblox.DataV2.
+  Core.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\DataV2\Core\Roblox.DataV2.Core\bin\Debug\Roblox.DataV2.Core.pd
+  b".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\DataV2\Core\Roblox.DataV2.Core\Roblox.DataV2.Core.
+csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\Data\Roblox.Data\Roblox.Data.csproj" (9:2) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Data.dll /subsystemversion:6.00 /target:library /
+  utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Data
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Data\Roblox.Data\obj\Debug\Roblox.Data.dll" para "C:\Ro
+  blox-2013-novetus-site\Assemblies\Data\Roblox.Data\bin\Debug\Roblox.Data.dll".
+  Roblox.Data -> C:\Roblox-2013-novetus-site\Assemblies\Data\Roblox.Data\bin\Debug\Roblox.Data.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Data\Roblox.Data\obj\Debug\Roblox.Data.pdb" para "C:\Ro
+  blox-2013-novetus-site\Assemblies\Data\Roblox.Data\bin\Debug\Roblox.Data.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Data\Roblox.Data\Roblox.Data.csproj" (destinos pad
+rão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\EntityFrameworkCore\Roblox.EntityFrameworkCore\Roblox.EntityFrameworkCore.csproj" (10:2) no nó 1 (dest
+inos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.EntityFrameworkCore.dll /subsystemversion:6.00 /t
+  arget:library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.EntityFrameworkCore
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\EntityFrameworkCore\Roblox.EntityFrameworkCore\obj\Debu
+  g\Roblox.EntityFrameworkCore.dll" para "C:\Roblox-2013-novetus-site\Assemblies\EntityFrameworkCore\Roblox.EntityFrame
+  workCore\bin\Debug\Roblox.EntityFrameworkCore.dll".
+  Roblox.EntityFrameworkCore -> C:\Roblox-2013-novetus-site\Assemblies\EntityFrameworkCore\Roblox.EntityFrameworkCore\b
+  in\Debug\Roblox.EntityFrameworkCore.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\EntityFrameworkCore\Roblox.EntityFrameworkCore\obj\Debu
+  g\Roblox.EntityFrameworkCore.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\EntityFrameworkCore\Roblox.EntityFrame
+  workCore\bin\Debug\Roblox.EntityFrameworkCore.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\EntityFrameworkCore\Roblox.EntityFrameworkCore\Rob
+lox.EntityFrameworkCore.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\EventLog\Roblox.EventLog.Extended\Roblox.EventLog.Extended.csproj" (11:2) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.EventLog.Extended.dll /subsystemversion:6.00 /tar
+  get:library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.EventLog.Extended
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\EventLog\Roblox.EventLog.Extended\obj\Debug\Roblox.Even
+  tLog.Extended.dll" para "C:\Roblox-2013-novetus-site\Assemblies\EventLog\Roblox.EventLog.Extended\bin\Debug\Roblox.Ev
+  entLog.Extended.dll".
+  Roblox.EventLog.Extended -> C:\Roblox-2013-novetus-site\Assemblies\EventLog\Roblox.EventLog.Extended\bin\Debug\Roblox
+  .EventLog.Extended.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\EventLog\Roblox.EventLog.Extended\obj\Debug\Roblox.Even
+  tLog.Extended.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\EventLog\Roblox.EventLog.Extended\bin\Debug\Roblox.Ev
+  entLog.Extended.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\EventLog\Roblox.EventLog.Extended\Roblox.EventLog.
+Extended.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\EventLog\Roblox.EventLog\Roblox.EventLog.csproj" (12:2) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.EventLog.dll /subsystemversion:6.00 /target:libra
+  ry /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.EventLog
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\EventLog\Roblox.EventLog\obj\Debug\Roblox.EventLog.dll"
+   para "C:\Roblox-2013-novetus-site\Assemblies\EventLog\Roblox.EventLog\bin\Debug\Roblox.EventLog.dll".
+  Roblox.EventLog -> C:\Roblox-2013-novetus-site\Assemblies\EventLog\Roblox.EventLog\bin\Debug\Roblox.EventLog.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\EventLog\Roblox.EventLog\obj\Debug\Roblox.EventLog.pdb"
+   para "C:\Roblox-2013-novetus-site\Assemblies\EventLog\Roblox.EventLog\bin\Debug\Roblox.EventLog.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\EventLog\Roblox.EventLog\Roblox.EventLog.csproj" (
+destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\Hashing\Roblox.Hashing\Roblox.Hashing.csproj" (13:2) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Hashing.dll /subsystemversion:6.00 /target:librar
+  y /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Hashing
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Hashing\Roblox.Hashing\obj\Debug\Roblox.Hashing.dll" pa
+  ra "C:\Roblox-2013-novetus-site\Assemblies\Hashing\Roblox.Hashing\bin\Debug\Roblox.Hashing.dll".
+  Roblox.Hashing -> C:\Roblox-2013-novetus-site\Assemblies\Hashing\Roblox.Hashing\bin\Debug\Roblox.Hashing.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Hashing\Roblox.Hashing\obj\Debug\Roblox.Hashing.pdb" pa
+  ra "C:\Roblox-2013-novetus-site\Assemblies\Hashing\Roblox.Hashing\bin\Debug\Roblox.Hashing.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Hashing\Roblox.Hashing\Roblox.Hashing.csproj" (des
+tinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\Infrastructure\Roblox.Farms\Roblox.Farms.csproj" (14:2) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NE
+  TFramework\v4.7.2\System.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramewo
+  rk\v4.7.2\System.Web.dll" /debug+ /out:obj\Debug\Roblox.Farms.dll /subsystemversion:6.00 /target:library /utf8output
+  /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Farms
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Infrastructure\Roblox.Farms\obj\Debug\Roblox.Farms.dll"
+   para "C:\Roblox-2013-novetus-site\Assemblies\Infrastructure\Roblox.Farms\bin\Debug\Roblox.Farms.dll".
+  Roblox.Farms -> C:\Roblox-2013-novetus-site\Assemblies\Infrastructure\Roblox.Farms\bin\Debug\Roblox.Farms.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Infrastructure\Roblox.Farms\obj\Debug\Roblox.Farms.pdb"
+   para "C:\Roblox-2013-novetus-site\Assemblies\Infrastructure\Roblox.Farms\bin\Debug\Roblox.Farms.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Infrastructure\Roblox.Farms\Roblox.Farms.csproj" (
+destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\Moderation\Roblox.Moderation\Roblox.Moderation.csproj" (15:2) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Moderation.dll /subsystemversion:6.00 /target:lib
+  rary /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Moderation
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Moderation\Roblox.Moderation\obj\Debug\Roblox.Moderatio
+  n.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Moderation\Roblox.Moderation\bin\Debug\Roblox.Moderation.dll".
+  Roblox.Moderation -> C:\Roblox-2013-novetus-site\Assemblies\Moderation\Roblox.Moderation\bin\Debug\Roblox.Moderation.
+  dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Moderation\Roblox.Moderation\obj\Debug\Roblox.Moderatio
+  n.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Moderation\Roblox.Moderation\bin\Debug\Roblox.Moderation.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Moderation\Roblox.Moderation\Roblox.Moderation.csp
+roj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\Mssql\Roblox.MssqlDatabases\Roblox.MssqlDatabases.csproj" (16:2) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.MssqlDatabases.dll /subsystemversion:6.00 /target
+  :library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.MssqlDatabases
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Mssql\Roblox.MssqlDatabases\obj\Debug\Roblox.MssqlDatab
+  ases.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Mssql\Roblox.MssqlDatabases\bin\Debug\Roblox.MssqlDatabases.dl
+  l".
+  Roblox.MssqlDatabases -> C:\Roblox-2013-novetus-site\Assemblies\Mssql\Roblox.MssqlDatabases\bin\Debug\Roblox.MssqlDat
+  abases.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Mssql\Roblox.MssqlDatabases\obj\Debug\Roblox.MssqlDatab
+  ases.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Mssql\Roblox.MssqlDatabases\bin\Debug\Roblox.MssqlDatabases.pd
+  b".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Mssql\Roblox.MssqlDatabases\Roblox.MssqlDatabases.
+csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\Platform\Authentication\Roblox.Platform.Authentication.Core\Roblox.Platform.Authentication.Core.csproj
+" (17:2) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Platform.Authentication.Core.dll /subsystemversio
+  n:6.00 /target:library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttribute
+  s.cs"
+  CompilerServer: server - server processed compilation - Roblox.Platform.Authentication.Core
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Authentication\Roblox.Platform.Authentication.
+  Core\obj\Debug\Roblox.Platform.Authentication.Core.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Authent
+  ication\Roblox.Platform.Authentication.Core\bin\Debug\Roblox.Platform.Authentication.Core.dll".
+  Roblox.Platform.Authentication.Core -> C:\Roblox-2013-novetus-site\Assemblies\Platform\Authentication\Roblox.Platform
+  .Authentication.Core\bin\Debug\Roblox.Platform.Authentication.Core.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Authentication\Roblox.Platform.Authentication.
+  Core\obj\Debug\Roblox.Platform.Authentication.Core.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Authent
+  ication\Roblox.Platform.Authentication.Core\bin\Debug\Roblox.Platform.Authentication.Core.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Platform\Authentication\Roblox.Platform.Authentica
+tion.Core\Roblox.Platform.Authentication.Core.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\Platform\Authentication\Roblox.Platform.Authentication\Roblox.Platform.Authentication.csproj" (18:2) n
+o nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Platform.Authentication.dll /subsystemversion:6.0
+  0 /target:library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Platform.Authentication
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Authentication\Roblox.Platform.Authentication\
+  obj\Debug\Roblox.Platform.Authentication.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Authentication\Ro
+  blox.Platform.Authentication\bin\Debug\Roblox.Platform.Authentication.dll".
+  Roblox.Platform.Authentication -> C:\Roblox-2013-novetus-site\Assemblies\Platform\Authentication\Roblox.Platform.Auth
+  entication\bin\Debug\Roblox.Platform.Authentication.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Authentication\Roblox.Platform.Authentication\
+  obj\Debug\Roblox.Platform.Authentication.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Authentication\Ro
+  blox.Platform.Authentication\bin\Debug\Roblox.Platform.Authentication.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Platform\Authentication\Roblox.Platform.Authentica
+tion\Roblox.Platform.Authentication.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\Platform\Core\Roblox.Platform.Core\Roblox.Platform.Core.csproj" (19:2) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Platform.Core.dll /subsystemversion:6.00 /target:
+  library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Platform.Core
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Core\Roblox.Platform.Core\obj\Debug\Roblox.Pla
+  tform.Core.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Core\Roblox.Platform.Core\bin\Debug\Roblox.Plat
+  form.Core.dll".
+  Roblox.Platform.Core -> C:\Roblox-2013-novetus-site\Assemblies\Platform\Core\Roblox.Platform.Core\bin\Debug\Roblox.Pl
+  atform.Core.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Core\Roblox.Platform.Core\obj\Debug\Roblox.Pla
+  tform.Core.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Core\Roblox.Platform.Core\bin\Debug\Roblox.Plat
+  form.Core.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Platform\Core\Roblox.Platform.Core\Roblox.Platform
+.Core.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\Platform\Email\Roblox.Platform.Email.Core\Roblox.Platform.Email.Core.csproj" (20:2) no nó 1 (destinos
+padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Platform.Email.Core.dll /subsystemversion:6.00 /t
+  arget:library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Platform.Email.Core
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Email.Core\obj\Debug\Rob
+  lox.Platform.Email.Core.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Email.Core\b
+  in\Debug\Roblox.Platform.Email.Core.dll".
+  Roblox.Platform.Email.Core -> C:\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Email.Core\bin\De
+  bug\Roblox.Platform.Email.Core.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Email.Core\obj\Debug\Rob
+  lox.Platform.Email.Core.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Email.Core\b
+  in\Debug\Roblox.Platform.Email.Core.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Email.Core\Roblox.P
+latform.Email.Core.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\Platform\Email\Roblox.Platform.Email\Roblox.Platform.Email.csproj" (21:2) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+O projeto "C:\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Email\Roblox.Platform.Email.csproj" (2
+1:2) está compilando "C:\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox.Platform.Membership\Roblox.Plat
+form.Membership.csproj" (23:3) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Platform.Membership.dll /subsystemversion:6.00 /t
+  arget:library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Platform.Membership
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox.Platform.Membership\obj\Debu
+  g\Roblox.Platform.Membership.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox.Platform.Me
+  mbership\bin\Debug\Roblox.Platform.Membership.dll".
+  Roblox.Platform.Membership -> C:\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox.Platform.Membership\b
+  in\Debug\Roblox.Platform.Membership.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox.Platform.Membership\obj\Debu
+  g\Roblox.Platform.Membership.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox.Platform.Me
+  mbership\bin\Debug\Roblox.Platform.Membership.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox.Platform.Membership\Rob
+lox.Platform.Membership.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Email\Roblox.Platform.Email.csproj" (2
+1:2) está compilando "C:\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox.Platform.Membership.Core\Roblox
+.Platform.Membership.Core.csproj" (22:3) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Platform.Membership.Core.dll /subsystemversion:6.
+  00 /target:library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs
+  "
+  CompilerServer: server - server processed compilation - Roblox.Platform.Membership.Core
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox.Platform.Membership.Core\obj
+  \Debug\Roblox.Platform.Membership.Core.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox.P
+  latform.Membership.Core\bin\Debug\Roblox.Platform.Membership.Core.dll".
+  Roblox.Platform.Membership.Core -> C:\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox.Platform.Members
+  hip.Core\bin\Debug\Roblox.Platform.Membership.Core.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox.Platform.Membership.Core\obj
+  \Debug\Roblox.Platform.Membership.Core.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox.P
+  latform.Membership.Core\bin\Debug\Roblox.Platform.Membership.Core.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox.Platform.Membership.Cor
+e\Roblox.Platform.Membership.Core.csproj" (destinos padrão).
+
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:C:\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox
+  .Platform.Membership.Core\bin\Debug\Roblox.Platform.Membership.Core.dll /reference:C:\Roblox-2013-novetus-site\Assemb
+  lies\Platform\Membership\Roblox.Platform.Membership\bin\Debug\Roblox.Platform.Membership.dll /reference:"C:\Program F
+  iles (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Core.dll" /reference:"C:\Program File
+  s (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll" /debug+ /out:obj\Debug\Roblox.Platf
+  orm.Email.dll /subsystemversion:6.00 /target:library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Ve
+  rsion=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Platform.Email
+_CopyFilesMarkedCopyLocal:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox.Platform.Membership.Core\bin
+  \Debug\Roblox.Platform.Membership.Core.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platfo
+  rm.Email\bin\Debug\Roblox.Platform.Membership.Core.dll".
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox.Platform.Membership\bin\Debu
+  g\Roblox.Platform.Membership.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Email\b
+  in\Debug\Roblox.Platform.Membership.dll".
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox.Platform.Membership\bin\Debu
+  g\Roblox.Platform.Membership.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Email\b
+  in\Debug\Roblox.Platform.Membership.pdb".
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox.Platform.Membership.Core\bin
+  \Debug\Roblox.Platform.Membership.Core.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platfo
+  rm.Email\bin\Debug\Roblox.Platform.Membership.Core.pdb".
+  Criando "C:\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Email\obj\Debug\Roblox.P.367911C9.Up2D
+  ate" porque "AlwaysCreate" foi especificado.
+  Tocando "C:\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Email\obj\Debug\Roblox.P.367911C9.Up2D
+  ate".
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Email\obj\Debug\Roblox.P
+  latform.Email.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Email\bin\Debug\Roblox
+  .Platform.Email.dll".
+  Roblox.Platform.Email -> C:\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Email\bin\Debug\Roblox
+  .Platform.Email.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Email\obj\Debug\Roblox.P
+  latform.Email.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Email\bin\Debug\Roblox
+  .Platform.Email.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Email\Roblox.Platfo
+rm.Email.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\Platform\Roles\Roblox.Platform.Roles.Core\Roblox.Platform.Roles.Core.csproj" (24:2) no nó 1 (destinos
+padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Platform.Roles.Core.dll /subsystemversion:6.00 /t
+  arget:library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Platform.Roles.Core
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Platform.Roles.Core\obj\Debug\Rob
+  lox.Platform.Roles.Core.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Platform.Roles.Core\b
+  in\Debug\Roblox.Platform.Roles.Core.dll".
+  Roblox.Platform.Roles.Core -> C:\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Platform.Roles.Core\bin\De
+  bug\Roblox.Platform.Roles.Core.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Platform.Roles.Core\obj\Debug\Rob
+  lox.Platform.Roles.Core.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Platform.Roles.Core\b
+  in\Debug\Roblox.Platform.Roles.Core.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Platform.Roles.Core\Roblox.P
+latform.Roles.Core.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\Platform\Roles\Roblox.Platform.Roles\Roblox.Platform.Roles.csproj" (25:2) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:C:\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox
+  .Platform.Membership\bin\Debug\Roblox.Platform.Membership.dll /reference:"C:\Program Files (x86)\Reference Assemblies
+  \Microsoft\Framework\.NETFramework\v4.7.2\System.Core.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Mi
+  crosoft\Framework\.NETFramework\v4.7.2\System.dll" /debug+ /out:obj\Debug\Roblox.Platform.Roles.dll /subsystemversion
+  :6.00 /target:library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes
+  .cs"
+  CompilerServer: server - server processed compilation - Roblox.Platform.Roles
+_CopyFilesMarkedCopyLocal:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox.Platform.Membership\bin\Debu
+  g\Roblox.Platform.Membership.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Platform.Roles\b
+  in\Debug\Roblox.Platform.Membership.dll".
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox.Platform.Membership\bin\Debu
+  g\Roblox.Platform.Membership.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Platform.Roles\b
+  in\Debug\Roblox.Platform.Membership.pdb".
+  Criando "C:\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Platform.Roles\obj\Debug\Roblox.P.56911BB4.Up2D
+  ate" porque "AlwaysCreate" foi especificado.
+  Tocando "C:\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Platform.Roles\obj\Debug\Roblox.P.56911BB4.Up2D
+  ate".
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Platform.Roles\obj\Debug\Roblox.P
+  latform.Roles.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Platform.Roles\bin\Debug\Roblox
+  .Platform.Roles.dll".
+  Roblox.Platform.Roles -> C:\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Platform.Roles\bin\Debug\Roblox
+  .Platform.Roles.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Platform.Roles\obj\Debug\Roblox.P
+  latform.Roles.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Platform.Roles\bin\Debug\Roblox
+  .Platform.Roles.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Platform.Roles\Roblox.Platfo
+rm.Roles.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\Platform\Security\Roblox.Platform.Security\Roblox.Platform.Security.csproj" (26:2) no nó 1 (destinos p
+adrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Platform.Security.dll /subsystemversion:6.00 /tar
+  get:library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Platform.Security
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Security\Roblox.Platform.Security\obj\Debug\Ro
+  blox.Platform.Security.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Security\Roblox.Platform.Security\b
+  in\Debug\Roblox.Platform.Security.dll".
+  Roblox.Platform.Security -> C:\Roblox-2013-novetus-site\Assemblies\Platform\Security\Roblox.Platform.Security\bin\Deb
+  ug\Roblox.Platform.Security.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Security\Roblox.Platform.Security\obj\Debug\Ro
+  blox.Platform.Security.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Security\Roblox.Platform.Security\b
+  in\Debug\Roblox.Platform.Security.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Platform\Security\Roblox.Platform.Security\Roblox.
+Platform.Security.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\Server Class Library\Roblox Class Library\Roblox Server Class Library.csproj" (27:2) no nó 1 (destinos
+ padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NE
+  TFramework\v4.7.2\System.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramewo
+  rk\v4.7.2\System.Web.ApplicationServices.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Frame
+  work\.NETFramework\v4.7.2\System.Web.dll" /debug+ /out:"obj\Debug\Roblox Server Class Library.dll" /subsystemversion:
+  6.00 /target:library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.
+  cs"
+  CompilerServer: server - server processed compilation - Roblox Server Class Library
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Server Class Library\Roblox Class Library\obj\Debug\Rob
+  lox Server Class Library.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Server Class Library\Roblox Class Library\
+  bin\Debug\Roblox Server Class Library.dll".
+  Roblox Server Class Library -> C:\Roblox-2013-novetus-site\Assemblies\Server Class Library\Roblox Class Library\bin\D
+  ebug\Roblox Server Class Library.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Server Class Library\Roblox Class Library\obj\Debug\Rob
+  lox Server Class Library.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Server Class Library\Roblox Class Library\
+  bin\Debug\Roblox Server Class Library.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Server Class Library\Roblox Class Library\Roblox S
+erver Class Library.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\Showcases\Roblox.Showcases\Roblox.Showcases.csproj" (28:2) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Showcases.dll /subsystemversion:6.00 /target:libr
+  ary /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Showcases
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Showcases\Roblox.Showcases\obj\Debug\Roblox.Showcases.d
+  ll" para "C:\Roblox-2013-novetus-site\Assemblies\Showcases\Roblox.Showcases\bin\Debug\Roblox.Showcases.dll".
+  Roblox.Showcases -> C:\Roblox-2013-novetus-site\Assemblies\Showcases\Roblox.Showcases\bin\Debug\Roblox.Showcases.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Showcases\Roblox.Showcases\obj\Debug\Roblox.Showcases.p
+  db" para "C:\Roblox-2013-novetus-site\Assemblies\Showcases\Roblox.Showcases\bin\Debug\Roblox.Showcases.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Showcases\Roblox.Showcases\Roblox.Showcases.csproj
+" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\Configuration\Roblox.WebsiteSettings\Roblox.WebsiteSettings.csproj" (29:2) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.WebsiteSettings.dll /subsystemversion:6.00 /targe
+  t:library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.WebsiteSettings
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Configuration\Roblox.WebsiteSettings\obj\Debug\Roblox.W
+  ebsiteSettings.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Configuration\Roblox.WebsiteSettings\bin\Debug\Roblo
+  x.WebsiteSettings.dll".
+  Roblox.WebsiteSettings -> C:\Roblox-2013-novetus-site\Assemblies\Configuration\Roblox.WebsiteSettings\bin\Debug\Roblo
+  x.WebsiteSettings.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Configuration\Roblox.WebsiteSettings\obj\Debug\Roblox.W
+  ebsiteSettings.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Configuration\Roblox.WebsiteSettings\bin\Debug\Roblo
+  x.WebsiteSettings.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Configuration\Roblox.WebsiteSettings\Roblox.Websit
+eSettings.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\Users\Roblox.Users.Old\Roblox.Users.Old.csproj" (30:2) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Users.Old.dll /subsystemversion:6.00 /target:libr
+  ary /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Users.Old
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Users\Roblox.Users.Old\obj\Debug\Roblox.Users.Old.dll"
+  para "C:\Roblox-2013-novetus-site\Assemblies\Users\Roblox.Users.Old\bin\Debug\Roblox.Users.Old.dll".
+  Roblox.Users.Old -> C:\Roblox-2013-novetus-site\Assemblies\Users\Roblox.Users.Old\bin\Debug\Roblox.Users.Old.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Users\Roblox.Users.Old\obj\Debug\Roblox.Users.Old.pdb"
+  para "C:\Roblox-2013-novetus-site\Assemblies\Users\Roblox.Users.Old\bin\Debug\Roblox.Users.Old.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Users\Roblox.Users.Old\Roblox.Users.Old.csproj" (d
+estinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\Users\Roblox.Users\Roblox.Users.csproj" (31:2) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Users.dll /subsystemversion:6.00 /target:library
+  /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Users
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Users\Roblox.Users\obj\Debug\Roblox.Users.dll" para "C:
+  \Roblox-2013-novetus-site\Assemblies\Users\Roblox.Users\bin\Debug\Roblox.Users.dll".
+  Roblox.Users -> C:\Roblox-2013-novetus-site\Assemblies\Users\Roblox.Users\bin\Debug\Roblox.Users.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Users\Roblox.Users\obj\Debug\Roblox.Users.pdb" para "C:
+  \Roblox-2013-novetus-site\Assemblies\Users\Roblox.Users\bin\Debug\Roblox.Users.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Users\Roblox.Users\Roblox.Users.csproj" (destinos
+padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\Web\Code\Roblox.Web.Code\Roblox.Web.Code.csproj" (32:2) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Web.Code.dll /subsystemversion:6.00 /target:libra
+  ry /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Web.Code
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Web\Code\Roblox.Web.Code\obj\Debug\Roblox.Web.Code.dll"
+   para "C:\Roblox-2013-novetus-site\Assemblies\Web\Code\Roblox.Web.Code\bin\Debug\Roblox.Web.Code.dll".
+  Roblox.Web.Code -> C:\Roblox-2013-novetus-site\Assemblies\Web\Code\Roblox.Web.Code\bin\Debug\Roblox.Web.Code.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Web\Code\Roblox.Web.Code\obj\Debug\Roblox.Web.Code.pdb"
+   para "C:\Roblox-2013-novetus-site\Assemblies\Web\Code\Roblox.Web.Code\bin\Debug\Roblox.Web.Code.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Web\Code\Roblox.Web.Code\Roblox.Web.Code.csproj" (
+destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\Web\HttpModules\Roblox.Web.HttpModules\Roblox.Web.HttpModules.csproj" (33:2) no nó 1 (destinos padrão)
+.
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Web.HttpModules.dll /subsystemversion:6.00 /targe
+  t:library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Web.HttpModules
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Web\HttpModules\Roblox.Web.HttpModules\obj\Debug\Roblox
+  .Web.HttpModules.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Web\HttpModules\Roblox.Web.HttpModules\bin\Debug\R
+  oblox.Web.HttpModules.dll".
+  Roblox.Web.HttpModules -> C:\Roblox-2013-novetus-site\Assemblies\Web\HttpModules\Roblox.Web.HttpModules\bin\Debug\Rob
+  lox.Web.HttpModules.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Web\HttpModules\Roblox.Web.HttpModules\obj\Debug\Roblox
+  .Web.HttpModules.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Web\HttpModules\Roblox.Web.HttpModules\bin\Debug\R
+  oblox.Web.HttpModules.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Web\HttpModules\Roblox.Web.HttpModules\Roblox.Web.
+HttpModules.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\Web\Maintenance\Roblox.Web.Maintenance.NetFramework\Roblox.Web.Maintenance.csproj" (34:2) no nó 1 (des
+tinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NE
+  TFramework\v4.7.2\System.dll" /debug+ /out:obj\Debug\Roblox.Web.Maintenance.dll /subsystemversion:6.00 /target:librar
+  y /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Web.Maintenance
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Web\Maintenance\Roblox.Web.Maintenance.NetFramework\obj
+  \Debug\Roblox.Web.Maintenance.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Web\Maintenance\Roblox.Web.Maintenanc
+  e.NetFramework\bin\Debug\Roblox.Web.Maintenance.dll".
+  Roblox.Web.Maintenance -> C:\Roblox-2013-novetus-site\Assemblies\Web\Maintenance\Roblox.Web.Maintenance.NetFramework\
+  bin\Debug\Roblox.Web.Maintenance.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Web\Maintenance\Roblox.Web.Maintenance.NetFramework\obj
+  \Debug\Roblox.Web.Maintenance.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Web\Maintenance\Roblox.Web.Maintenanc
+  e.NetFramework\bin\Debug\Roblox.Web.Maintenance.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Web\Maintenance\Roblox.Web.Maintenance.NetFramewor
+k\Roblox.Web.Maintenance.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Roblox.Web.Mvc.csproj" (35:2) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+ResolveAssemblyReferences:
+  Referência principal "System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArc
+  hitecture=MSIL".
+C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targ
+ets(2433,5): warning MSB3245: Não foi possível resolver esta diferença. Não foi possível localizar o assembly "System.W
+eb.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL". Verifique se el
+e está no disco. Se ela for exigida pelo seu código, poderão ocorrer erros de compilação. [C:\Roblox-2013-novetus-site\
+Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Roblox.Web.Mvc.csproj]
+          Para SearchPath "{HintPathFromItem}".
+          "C:\Roblox-2013-novetus-site\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll" foi considerad
+  o, mas ele não existe.
+          Para SearchPath "{TargetFrameworkDirectory}".
+          "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.Mvc.winmd" f
+  oi considerado, mas ele não existe.
+          "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.Mvc.dll" foi
+   considerado, mas ele não existe.
+          "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.Mvc.exe" foi
+   considerado, mas ele não existe.
+          "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Facades\System.Web.Mvc.
+  winmd" foi considerado, mas ele não existe.
+          "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Facades\System.Web.Mvc.
+  dll" foi considerado, mas ele não existe.
+          "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Facades\System.Web.Mvc.
+  exe" foi considerado, mas ele não existe.
+          Para SearchPath "{Registry:Software\Microsoft\.NETFramework,v4.7.2,AssemblyFoldersEx}".
+          Localizações de AssemblyFoldersEx consideradas.
+          Para SearchPath "{AssemblyFolders}".
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\System.Web.Mvc.winmd" foi considerado, mas ele
+  não existe.
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\System.Web.Mvc.dll" foi considerado, mas ele nã
+  o existe.
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2902.0\System.Web.Mvc.exe" foi considerado, mas ele nã
+  o existe.
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2903.0\System.Web.Mvc.winmd" foi considerado, mas ele
+  não existe.
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2903.0\System.Web.Mvc.dll" foi considerado, mas ele nã
+  o existe.
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2903.0\System.Web.Mvc.exe" foi considerado, mas ele nã
+  o existe.
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2904.0\System.Web.Mvc.winmd" foi considerado, mas ele
+  não existe.
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2904.0\System.Web.Mvc.dll" foi considerado, mas ele nã
+  o existe.
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2904.0\System.Web.Mvc.exe" foi considerado, mas ele nã
+  o existe.
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2905.0\System.Web.Mvc.winmd" foi considerado, mas ele
+  não existe.
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2905.0\System.Web.Mvc.dll" foi considerado, mas ele nã
+  o existe.
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2905.0\System.Web.Mvc.exe" foi considerado, mas ele nã
+  o existe.
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2906.0\System.Web.Mvc.winmd" foi considerado, mas ele
+  não existe.
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2906.0\System.Web.Mvc.dll" foi considerado, mas ele nã
+  o existe.
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2906.0\System.Web.Mvc.exe" foi considerado, mas ele nã
+  o existe.
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2907.0\System.Web.Mvc.winmd" foi considerado, mas ele
+  não existe.
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2907.0\System.Web.Mvc.dll" foi considerado, mas ele nã
+  o existe.
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2907.0\System.Web.Mvc.exe" foi considerado, mas ele nã
+  o existe.
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2908.0\System.Web.Mvc.winmd" foi considerado, mas ele
+  não existe.
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2908.0\System.Web.Mvc.dll" foi considerado, mas ele nã
+  o existe.
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2908.0\System.Web.Mvc.exe" foi considerado, mas ele nã
+  o existe.
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2909.0\System.Web.Mvc.winmd" foi considerado, mas ele
+  não existe.
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2909.0\System.Web.Mvc.dll" foi considerado, mas ele nã
+  o existe.
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2909.0\System.Web.Mvc.exe" foi considerado, mas ele nã
+  o existe.
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2910.0\System.Web.Mvc.winmd" foi considerado, mas ele
+  não existe.
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2910.0\System.Web.Mvc.dll" foi considerado, mas ele nã
+  o existe.
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2910.0\System.Web.Mvc.exe" foi considerado, mas ele nã
+  o existe.
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2911.0\System.Web.Mvc.winmd" foi considerado, mas ele
+  não existe.
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2911.0\System.Web.Mvc.dll" foi considerado, mas ele nã
+  o existe.
+          "C:\WINDOWS\Microsoft.NET\DirectX for Managed Code\1.0.2911.0\System.Web.Mvc.exe" foi considerado, mas ele nã
+  o existe.
+          "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\System.Web.Mvc.winmd" foi considerado,
+  mas ele não existe.
+          "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\System.Web.Mvc.dll" foi considerado, ma
+  s ele não existe.
+          "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.0\System.Web.Mvc.exe" foi considerado, ma
+  s ele não existe.
+          "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\System.Web.Mvc.winmd" foi considerado,
+  mas ele não existe.
+          "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\System.Web.Mvc.dll" foi considerado, ma
+  s ele não existe.
+          "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\v3.5\System.Web.Mvc.exe" foi considerado, ma
+  s ele não existe.
+          "C:\Program Files\IIS\Microsoft Web Deploy V3\System.Web.Mvc.winmd" foi considerado, mas ele não existe.
+          "C:\Program Files\IIS\Microsoft Web Deploy V3\System.Web.Mvc.dll" foi considerado, mas ele não existe.
+          "C:\Program Files\IIS\Microsoft Web Deploy V3\System.Web.Mvc.exe" foi considerado, mas ele não existe.
+          Para SearchPath "{GAC}".
+          "System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSI
+  L" foi considerado, mas não foi encontrado no GAC.
+          Para SearchPath "{RawFileName}".
+          Foi considerado o tratamento de "System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad3
+  64e35, processorArchitecture=MSIL" como nome de arquivo, mas ele não existe.
+          Para SearchPath "bin\Debug\".
+          "bin\Debug\System.Web.Mvc.winmd" foi considerado, mas ele não existe.
+          "bin\Debug\System.Web.Mvc.dll" foi considerado, mas ele não existe.
+          "bin\Debug\System.Web.Mvc.exe" foi considerado, mas ele não existe.
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NE
+  TFramework\v4.7.2\System.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramewo
+  rk\v4.7.2\System.Web.dll" /debug+ /out:obj\Debug\Roblox.Web.Mvc.dll /subsystemversion:6.00 /target:library /utf8outpu
+  t /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+C:\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Stub.cs(2,18): error CS0234: O nome de tipo
+ou namespace "Mvc" não existe no namespace "System.Web" (você está sem uma referência de assembly?) [C:\Roblox-2013-nov
+etus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Roblox.Web.Mvc.csproj]
+C:\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Stub.cs(14,67): error CS0246: O nome do tipo
+ ou do namespace "ActionFilterAttribute" não pode ser encontrado (está faltando uma diretiva using ou uma referência de
+ assembly?) [C:\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Roblox.Web.Mvc.csproj]
+C:\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Stub.cs(24,48): error CS0246: O nome do tipo
+ ou do namespace "Controller" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly?)
+ [C:\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Roblox.Web.Mvc.csproj]
+C:\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Stub.cs(19,46): error CS0246: O nome do tipo
+ ou do namespace "ActionFilterAttribute" não pode ser encontrado (está faltando uma diretiva using ou uma referência de
+ assembly?) [C:\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Roblox.Web.Mvc.csproj]
+C:\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Stub.cs(21,48): error CS0246: O nome do tipo
+ ou do namespace "ActionExecutingContext" não pode ser encontrado (está faltando uma diretiva using ou uma referência d
+e assembly?) [C:\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Roblox.Web.Mvc.csproj]
+C:\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Stub.cs(13,6): error CS0641: Atributo "Attri
+buteUsage" é somente válido em classes derivadas de System.Attribute [C:\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Ro
+blox.Web.Mvc.NetFramework\Roblox.Web.Mvc.csproj]
+C:\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Stub.cs(16,48): error CS0246: O nome do tipo
+ ou do namespace "ActionExecutingContext" não pode ser encontrado (está faltando uma diretiva using ou uma referência d
+e assembly?) [C:\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Roblox.Web.Mvc.csproj]
+  CompilerServer: server - server processed compilation - Roblox.Web.Mvc
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Roblox.Web.Mvc
+.csproj" (destinos padrão) -- FALHA.
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando "C:\Roblox-2013-novetus
+-site\Assemblies\Web\StaticContent\Roblox.Web.StaticContent\Roblox.Web.StaticContent.csproj" (36:2) no nó 1 (destinos p
+adrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Web.StaticContent.dll /subsystemversion:6.00 /tar
+  get:library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Web.StaticContent
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Web\StaticContent\Roblox.Web.StaticContent\obj\Debug\Ro
+  blox.Web.StaticContent.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Web\StaticContent\Roblox.Web.StaticContent\b
+  in\Debug\Roblox.Web.StaticContent.dll".
+  Roblox.Web.StaticContent -> C:\Roblox-2013-novetus-site\Assemblies\Web\StaticContent\Roblox.Web.StaticContent\bin\Deb
+  ug\Roblox.Web.StaticContent.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Web\StaticContent\Roblox.Web.StaticContent\obj\Debug\Ro
+  blox.Web.StaticContent.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Web\StaticContent\Roblox.Web.StaticContent\b
+  in\Debug\Roblox.Web.StaticContent.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Web\StaticContent\Roblox.Web.StaticContent\Roblox.
+Web.StaticContent.csproj" (destinos padrão).
+
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (destinos padrão) -- FAL
+HA.
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\I
+nstrumentation\Roblox.Instrumentation\Roblox.Instrumentation.csproj" (37) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Instrumentation.dll /subsystemversion:6.00 /targe
+  t:library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Instrumentation
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Instrumentation\Roblox.Instrumentation\obj\Debug\Roblox
+  .Instrumentation.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Instrumentation\Roblox.Instrumentation\bin\Debug\R
+  oblox.Instrumentation.dll".
+  Roblox.Instrumentation -> C:\Roblox-2013-novetus-site\Assemblies\Instrumentation\Roblox.Instrumentation\bin\Debug\Rob
+  lox.Instrumentation.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Instrumentation\Roblox.Instrumentation\obj\Debug\Roblox
+  .Instrumentation.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Instrumentation\Roblox.Instrumentation\bin\Debug\R
+  oblox.Instrumentation.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Instrumentation\Roblox.Instrumentation\Roblox.Inst
+rumentation.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\A
+gents\Roblox.Agents\Roblox.Agents.csproj" (38) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Agents.dll /subsystemversion:6.00 /target:library
+   /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Agents
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Agents\Roblox.Agents\obj\Debug\Roblox.Agents.dll" para
+  "C:\Roblox-2013-novetus-site\Assemblies\Agents\Roblox.Agents\bin\Debug\Roblox.Agents.dll".
+  Roblox.Agents -> C:\Roblox-2013-novetus-site\Assemblies\Agents\Roblox.Agents\bin\Debug\Roblox.Agents.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Agents\Roblox.Agents\obj\Debug\Roblox.Agents.pdb" para
+  "C:\Roblox-2013-novetus-site\Assemblies\Agents\Roblox.Agents\bin\Debug\Roblox.Agents.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Agents\Roblox.Agents\Roblox.Agents.csproj" (destin
+os padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\H
+ttp\Roblox.Http\Roblox.Http.csproj" (39) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Http.dll /subsystemversion:6.00 /target:library /
+  utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Http
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http\obj\Debug\Roblox.Http.dll" para "C:\Ro
+  blox-2013-novetus-site\Assemblies\Http\Roblox.Http\bin\Debug\Roblox.Http.dll".
+  Roblox.Http -> C:\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http\bin\Debug\Roblox.Http.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http\obj\Debug\Roblox.Http.pdb" para "C:\Ro
+  blox-2013-novetus-site\Assemblies\Http\Roblox.Http\bin\Debug\Roblox.Http.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http\Roblox.Http.csproj" (destinos pad
+rão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\M
+arketing\Roblox.Marketing\Roblox.Marketing.csproj" (40) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Marketing.dll /subsystemversion:6.00 /target:libr
+  ary /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Marketing
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Marketing\Roblox.Marketing\obj\Debug\Roblox.Marketing.d
+  ll" para "C:\Roblox-2013-novetus-site\Assemblies\Marketing\Roblox.Marketing\bin\Debug\Roblox.Marketing.dll".
+  Roblox.Marketing -> C:\Roblox-2013-novetus-site\Assemblies\Marketing\Roblox.Marketing\bin\Debug\Roblox.Marketing.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Marketing\Roblox.Marketing\obj\Debug\Roblox.Marketing.p
+  db" para "C:\Roblox-2013-novetus-site\Assemblies\Marketing\Roblox.Marketing\bin\Debug\Roblox.Marketing.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Marketing\Roblox.Marketing\Roblox.Marketing.csproj
+" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\E
+conomy\Roblox.Economy.Common\Roblox.Economy.Common.csproj" (41) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Economy.Common.dll /subsystemversion:6.00 /target
+  :library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Economy.Common
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Economy\Roblox.Economy.Common\obj\Debug\Roblox.Economy.
+  Common.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Economy\Roblox.Economy.Common\bin\Debug\Roblox.Economy.Commo
+  n.dll".
+  Roblox.Economy.Common -> C:\Roblox-2013-novetus-site\Assemblies\Economy\Roblox.Economy.Common\bin\Debug\Roblox.Econom
+  y.Common.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Economy\Roblox.Economy.Common\obj\Debug\Roblox.Economy.
+  Common.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Economy\Roblox.Economy.Common\bin\Debug\Roblox.Economy.Commo
+  n.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Economy\Roblox.Economy.Common\Roblox.Economy.Commo
+n.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\R
+equestContext\Roblox.RequestContext\Roblox.RequestContext.csproj" (42) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.RequestContext.dll /subsystemversion:6.00 /target
+  :library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.RequestContext
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\RequestContext\Roblox.RequestContext\obj\Debug\Roblox.R
+  equestContext.dll" para "C:\Roblox-2013-novetus-site\Assemblies\RequestContext\Roblox.RequestContext\bin\Debug\Roblox
+  .RequestContext.dll".
+  Roblox.RequestContext -> C:\Roblox-2013-novetus-site\Assemblies\RequestContext\Roblox.RequestContext\bin\Debug\Roblox
+  .RequestContext.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\RequestContext\Roblox.RequestContext\obj\Debug\Roblox.R
+  equestContext.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\RequestContext\Roblox.RequestContext\bin\Debug\Roblox
+  .RequestContext.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\RequestContext\Roblox.RequestContext\Roblox.Reques
+tContext.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\G
+rid\Roblox.Grid.Client\Roblox.Grid.Client.csproj" (43) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Grid.Client.dll /subsystemversion:6.00 /target:li
+  brary /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Grid.Client
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Grid\Roblox.Grid.Client\obj\Debug\Roblox.Grid.Client.dl
+  l" para "C:\Roblox-2013-novetus-site\Assemblies\Grid\Roblox.Grid.Client\bin\Debug\Roblox.Grid.Client.dll".
+  Roblox.Grid.Client -> C:\Roblox-2013-novetus-site\Assemblies\Grid\Roblox.Grid.Client\bin\Debug\Roblox.Grid.Client.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Grid\Roblox.Grid.Client\obj\Debug\Roblox.Grid.Client.pd
+  b" para "C:\Roblox-2013-novetus-site\Assemblies\Grid\Roblox.Grid.Client\bin\Debug\Roblox.Grid.Client.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Grid\Roblox.Grid.Client\Roblox.Grid.Client.csproj"
+ (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\G
+rid\Roblox.Grid.Common\Roblox.Grid.Common.csproj" (44) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Grid.Common.dll /subsystemversion:6.00 /target:li
+  brary /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Grid.Common
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Grid\Roblox.Grid.Common\obj\Debug\Roblox.Grid.Common.dl
+  l" para "C:\Roblox-2013-novetus-site\Assemblies\Grid\Roblox.Grid.Common\bin\Debug\Roblox.Grid.Common.dll".
+  Roblox.Grid.Common -> C:\Roblox-2013-novetus-site\Assemblies\Grid\Roblox.Grid.Common\bin\Debug\Roblox.Grid.Common.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Grid\Roblox.Grid.Common\obj\Debug\Roblox.Grid.Common.pd
+  b" para "C:\Roblox-2013-novetus-site\Assemblies\Grid\Roblox.Grid.Common\bin\Debug\Roblox.Grid.Common.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Grid\Roblox.Grid.Common\Roblox.Grid.Common.csproj"
+ (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\G
+rid\Arbiter\Roblox.Grid.Arbiter.Common\Roblox.Grid.Arbiter.Common.csproj" (45) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Grid.Arbiter.Common.dll /subsystemversion:6.00 /t
+  arget:library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Grid.Arbiter.Common
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Grid\Arbiter\Roblox.Grid.Arbiter.Common\obj\Debug\Roblo
+  x.Grid.Arbiter.Common.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Grid\Arbiter\Roblox.Grid.Arbiter.Common\bin\D
+  ebug\Roblox.Grid.Arbiter.Common.dll".
+  Roblox.Grid.Arbiter.Common -> C:\Roblox-2013-novetus-site\Assemblies\Grid\Arbiter\Roblox.Grid.Arbiter.Common\bin\Debu
+  g\Roblox.Grid.Arbiter.Common.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Grid\Arbiter\Roblox.Grid.Arbiter.Common\obj\Debug\Roblo
+  x.Grid.Arbiter.Common.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Grid\Arbiter\Roblox.Grid.Arbiter.Common\bin\D
+  ebug\Roblox.Grid.Arbiter.Common.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Grid\Arbiter\Roblox.Grid.Arbiter.Common\Roblox.Gri
+d.Arbiter.Common.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\C
+ore\Roblox.Web.Core\Roblox.Web.Core.csproj" (46) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Web.Core.dll /subsystemversion:6.00 /target:libra
+  ry /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Web.Core
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Core\Roblox.Web.Core\obj\Debug\Roblox.Web.Core.dll" par
+  a "C:\Roblox-2013-novetus-site\Assemblies\Core\Roblox.Web.Core\bin\Debug\Roblox.Web.Core.dll".
+  Roblox.Web.Core -> C:\Roblox-2013-novetus-site\Assemblies\Core\Roblox.Web.Core\bin\Debug\Roblox.Web.Core.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Core\Roblox.Web.Core\obj\Debug\Roblox.Web.Core.pdb" par
+  a "C:\Roblox-2013-novetus-site\Assemblies\Core\Roblox.Web.Core\bin\Debug\Roblox.Web.Core.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Core\Roblox.Web.Core\Roblox.Web.Core.csproj" (dest
+inos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\C
+aching\Roblox.MultiCastToMemcached\Roblox.MultiCastToMemcached.csproj" (47) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.MultiCastToMemcached.dll /subsystemversion:6.00 /
+  target:library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.MultiCastToMemcached
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Caching\Roblox.MultiCastToMemcached\obj\Debug\Roblox.Mu
+  ltiCastToMemcached.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Caching\Roblox.MultiCastToMemcached\bin\Debug\Ro
+  blox.MultiCastToMemcached.dll".
+  Roblox.MultiCastToMemcached -> C:\Roblox-2013-novetus-site\Assemblies\Caching\Roblox.MultiCastToMemcached\bin\Debug\R
+  oblox.MultiCastToMemcached.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Caching\Roblox.MultiCastToMemcached\obj\Debug\Roblox.Mu
+  ltiCastToMemcached.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Caching\Roblox.MultiCastToMemcached\bin\Debug\Ro
+  blox.MultiCastToMemcached.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Caching\Roblox.MultiCastToMemcached\Roblox.MultiCa
+stToMemcached.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\F
+iles\Roblox.Files\Roblox.Files.csproj" (48) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Files.dll /subsystemversion:6.00 /target:library
+  /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Files
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Files\Roblox.Files\obj\Debug\Roblox.Files.dll" para "C:
+  \Roblox-2013-novetus-site\Assemblies\Files\Roblox.Files\bin\Debug\Roblox.Files.dll".
+  Roblox.Files -> C:\Roblox-2013-novetus-site\Assemblies\Files\Roblox.Files\bin\Debug\Roblox.Files.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Files\Roblox.Files\obj\Debug\Roblox.Files.pdb" para "C:
+  \Roblox-2013-novetus-site\Assemblies\Files\Roblox.Files\bin\Debug\Roblox.Files.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Files\Roblox.Files\Roblox.Files.csproj" (destinos
+padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\C
+aching\Emcaster\Emcaster.csproj" (49) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Emcaster.dll /subsystemversion:6.00 /target:library /utf
+  8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Emcaster
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Caching\Emcaster\obj\Debug\Emcaster.dll" para "C:\Roblo
+  x-2013-novetus-site\Assemblies\Caching\Emcaster\bin\Debug\Emcaster.dll".
+  Emcaster -> C:\Roblox-2013-novetus-site\Assemblies\Caching\Emcaster\bin\Debug\Emcaster.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Caching\Emcaster\obj\Debug\Emcaster.pdb" para "C:\Roblo
+  x-2013-novetus-site\Assemblies\Caching\Emcaster\bin\Debug\Emcaster.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Caching\Emcaster\Emcaster.csproj" (destinos padrão
+).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\M
+ssql\Roblox.Mssql\Roblox.Mssql.csproj" (50) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Mssql.dll /subsystemversion:6.00 /target:library
+  /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Mssql
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Mssql\Roblox.Mssql\obj\Debug\Roblox.Mssql.dll" para "C:
+  \Roblox-2013-novetus-site\Assemblies\Mssql\Roblox.Mssql\bin\Debug\Roblox.Mssql.dll".
+  Roblox.Mssql -> C:\Roblox-2013-novetus-site\Assemblies\Mssql\Roblox.Mssql\bin\Debug\Roblox.Mssql.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Mssql\Roblox.Mssql\obj\Debug\Roblox.Mssql.pdb" para "C:
+  \Roblox-2013-novetus-site\Assemblies\Mssql\Roblox.Mssql\bin\Debug\Roblox.Mssql.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Mssql\Roblox.Mssql\Roblox.Mssql.csproj" (destinos
+padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\S
+entinels\Roblox.Sentinels\Roblox.Sentinels.csproj" (51) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Sentinels.dll /subsystemversion:6.00 /target:libr
+  ary /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Sentinels
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Sentinels\Roblox.Sentinels\obj\Debug\Roblox.Sentinels.d
+  ll" para "C:\Roblox-2013-novetus-site\Assemblies\Sentinels\Roblox.Sentinels\bin\Debug\Roblox.Sentinels.dll".
+  Roblox.Sentinels -> C:\Roblox-2013-novetus-site\Assemblies\Sentinels\Roblox.Sentinels\bin\Debug\Roblox.Sentinels.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Sentinels\Roblox.Sentinels\obj\Debug\Roblox.Sentinels.p
+  db" para "C:\Roblox-2013-novetus-site\Assemblies\Sentinels\Roblox.Sentinels\bin\Debug\Roblox.Sentinels.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Sentinels\Roblox.Sentinels\Roblox.Sentinels.csproj
+" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\E
+ntities\Roblox.Entities.Mssql\Roblox.Entities.Mssql.csproj" (52) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Entities.Mssql.dll /subsystemversion:6.00 /target
+  :library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Entities.Mssql
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Entities\Roblox.Entities.Mssql\obj\Debug\Roblox.Entitie
+  s.Mssql.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Entities\Roblox.Entities.Mssql\bin\Debug\Roblox.Entities.Ms
+  sql.dll".
+  Roblox.Entities.Mssql -> C:\Roblox-2013-novetus-site\Assemblies\Entities\Roblox.Entities.Mssql\bin\Debug\Roblox.Entit
+  ies.Mssql.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Entities\Roblox.Entities.Mssql\obj\Debug\Roblox.Entitie
+  s.Mssql.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Entities\Roblox.Entities.Mssql\bin\Debug\Roblox.Entities.Ms
+  sql.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Entities\Roblox.Entities.Mssql\Roblox.Entities.Mss
+ql.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\P
+latform\Membership\Roblox.Platform.Membership.Commands\Roblox.Platform.Membership.Commands.csproj" (53) no nó 1 (destin
+os padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Platform.Membership.Commands.dll /subsystemversio
+  n:6.00 /target:library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttribute
+  s.cs"
+  CompilerServer: server - server processed compilation - Roblox.Platform.Membership.Commands
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox.Platform.Membership.Commands
+  \obj\Debug\Roblox.Platform.Membership.Commands.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Membership\
+  Roblox.Platform.Membership.Commands\bin\Debug\Roblox.Platform.Membership.Commands.dll".
+  Roblox.Platform.Membership.Commands -> C:\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox.Platform.Mem
+  bership.Commands\bin\Debug\Roblox.Platform.Membership.Commands.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox.Platform.Membership.Commands
+  \obj\Debug\Roblox.Platform.Membership.Commands.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Membership\
+  Roblox.Platform.Membership.Commands\bin\Debug\Roblox.Platform.Membership.Commands.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox.Platform.Membership.Com
+mands\Roblox.Platform.Membership.Commands.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\I
+pAddresses\Roblox.IpAddresses\Roblox.IpAddresses.csproj" (54) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.IpAddresses.dll /subsystemversion:6.00 /target:li
+  brary /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.IpAddresses
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\IpAddresses\Roblox.IpAddresses\obj\Debug\Roblox.IpAddre
+  sses.dll" para "C:\Roblox-2013-novetus-site\Assemblies\IpAddresses\Roblox.IpAddresses\bin\Debug\Roblox.IpAddresses.dl
+  l".
+  Roblox.IpAddresses -> C:\Roblox-2013-novetus-site\Assemblies\IpAddresses\Roblox.IpAddresses\bin\Debug\Roblox.IpAddres
+  ses.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\IpAddresses\Roblox.IpAddresses\obj\Debug\Roblox.IpAddre
+  sses.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\IpAddresses\Roblox.IpAddresses\bin\Debug\Roblox.IpAddresses.pd
+  b".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\IpAddresses\Roblox.IpAddresses\Roblox.IpAddresses.
+csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\C
+aching\MemCachedClient\Roblox.MemcachedClient\Roblox.MemcachedClient.csproj" (55) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.MemcachedClient.dll /subsystemversion:6.00 /targe
+  t:library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.MemcachedClient
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Caching\MemCachedClient\Roblox.MemcachedClient\obj\Debu
+  g\Roblox.MemcachedClient.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Caching\MemCachedClient\Roblox.MemcachedCl
+  ient\bin\Debug\Roblox.MemcachedClient.dll".
+  Roblox.MemcachedClient -> C:\Roblox-2013-novetus-site\Assemblies\Caching\MemCachedClient\Roblox.MemcachedClient\bin\D
+  ebug\Roblox.MemcachedClient.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Caching\MemCachedClient\Roblox.MemcachedClient\obj\Debu
+  g\Roblox.MemcachedClient.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Caching\MemCachedClient\Roblox.MemcachedCl
+  ient\bin\Debug\Roblox.MemcachedClient.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Caching\MemCachedClient\Roblox.MemcachedClient\Rob
+lox.MemcachedClient.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\L
+ightUtils\Roblox.LightUtils\Roblox.LightUtils.csproj" (56) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.LightUtils.dll /subsystemversion:6.00 /target:lib
+  rary /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.LightUtils
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\LightUtils\Roblox.LightUtils\obj\Debug\Roblox.LightUtil
+  s.dll" para "C:\Roblox-2013-novetus-site\Assemblies\LightUtils\Roblox.LightUtils\bin\Debug\Roblox.LightUtils.dll".
+  Roblox.LightUtils -> C:\Roblox-2013-novetus-site\Assemblies\LightUtils\Roblox.LightUtils\bin\Debug\Roblox.LightUtils.
+  dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\LightUtils\Roblox.LightUtils\obj\Debug\Roblox.LightUtil
+  s.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\LightUtils\Roblox.LightUtils\bin\Debug\Roblox.LightUtils.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\LightUtils\Roblox.LightUtils\Roblox.LightUtils.csp
+roj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\L
+ightUtils\Redis\Roblox.LightUtils.Redis\Roblox.LightUtils.Redis.csproj" (57) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.LightUtils.Redis.dll /subsystemversion:6.00 /targ
+  et:library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.LightUtils.Redis
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\LightUtils\Redis\Roblox.LightUtils.Redis\obj\Debug\Robl
+  ox.LightUtils.Redis.dll" para "C:\Roblox-2013-novetus-site\Assemblies\LightUtils\Redis\Roblox.LightUtils.Redis\bin\De
+  bug\Roblox.LightUtils.Redis.dll".
+  Roblox.LightUtils.Redis -> C:\Roblox-2013-novetus-site\Assemblies\LightUtils\Redis\Roblox.LightUtils.Redis\bin\Debug\
+  Roblox.LightUtils.Redis.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\LightUtils\Redis\Roblox.LightUtils.Redis\obj\Debug\Robl
+  ox.LightUtils.Redis.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\LightUtils\Redis\Roblox.LightUtils.Redis\bin\De
+  bug\Roblox.LightUtils.Redis.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\LightUtils\Redis\Roblox.LightUtils.Redis\Roblox.Li
+ghtUtils.Redis.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\R
+edis\Roblox.Redis\Roblox.Redis.csproj" (58) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Redis.dll /subsystemversion:6.00 /target:library
+  /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Redis
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Redis\Roblox.Redis\obj\Debug\Roblox.Redis.dll" para "C:
+  \Roblox-2013-novetus-site\Assemblies\Redis\Roblox.Redis\bin\Debug\Roblox.Redis.dll".
+  Roblox.Redis -> C:\Roblox-2013-novetus-site\Assemblies\Redis\Roblox.Redis\bin\Debug\Roblox.Redis.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Redis\Roblox.Redis\obj\Debug\Roblox.Redis.pdb" para "C:
+  \Roblox-2013-novetus-site\Assemblies\Redis\Roblox.Redis\bin\Debug\Roblox.Redis.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Redis\Roblox.Redis\Roblox.Redis.csproj" (destinos
+padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\C
+ommon\Roblox.Common.NetStandard\Roblox.Common.NetStandard.csproj" (59) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Common.NetStandard.dll /subsystemversion:6.00 /ta
+  rget:library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Common.NetStandard
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Common\Roblox.Common.NetStandard\obj\Debug\Roblox.Commo
+  n.NetStandard.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Common\Roblox.Common.NetStandard\bin\Debug\Roblox.Com
+  mon.NetStandard.dll".
+  Roblox.Common.NetStandard -> C:\Roblox-2013-novetus-site\Assemblies\Common\Roblox.Common.NetStandard\bin\Debug\Roblox
+  .Common.NetStandard.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Common\Roblox.Common.NetStandard\obj\Debug\Roblox.Commo
+  n.NetStandard.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Common\Roblox.Common.NetStandard\bin\Debug\Roblox.Com
+  mon.NetStandard.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Common\Roblox.Common.NetStandard\Roblox.Common.Net
+Standard.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\D
+atabases\Roblox.Databases\Roblox.Databases.csproj" (60) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Databases.dll /subsystemversion:6.00 /target:libr
+  ary /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Databases
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Databases\Roblox.Databases\obj\Debug\Roblox.Databases.d
+  ll" para "C:\Roblox-2013-novetus-site\Assemblies\Databases\Roblox.Databases\bin\Debug\Roblox.Databases.dll".
+  Roblox.Databases -> C:\Roblox-2013-novetus-site\Assemblies\Databases\Roblox.Databases\bin\Debug\Roblox.Databases.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Databases\Roblox.Databases\obj\Debug\Roblox.Databases.p
+  db" para "C:\Roblox-2013-novetus-site\Assemblies\Databases\Roblox.Databases\bin\Debug\Roblox.Databases.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Databases\Roblox.Databases\Roblox.Databases.csproj
+" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\H
+ttp\Roblox.Http.Client\Roblox.Http.Client.csproj" (61) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Http.Client.dll /subsystemversion:6.00 /target:li
+  brary /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Http.Client
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http.Client\obj\Debug\Roblox.Http.Client.dl
+  l" para "C:\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http.Client\bin\Debug\Roblox.Http.Client.dll".
+  Roblox.Http.Client -> C:\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http.Client\bin\Debug\Roblox.Http.Client.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http.Client\obj\Debug\Roblox.Http.Client.pd
+  b" para "C:\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http.Client\bin\Debug\Roblox.Http.Client.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http.Client\Roblox.Http.Client.csproj"
+ (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\H
+ttp\Roblox.Http.Client.Monitoring\Roblox.Http.Client.Monitoring.csproj" (62) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Http.Client.Monitoring.dll /subsystemversion:6.00
+   /target:library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Http.Client.Monitoring
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http.Client.Monitoring\obj\Debug\Roblox.Htt
+  p.Client.Monitoring.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http.Client.Monitoring\bin\Debug\Ro
+  blox.Http.Client.Monitoring.dll".
+  Roblox.Http.Client.Monitoring -> C:\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http.Client.Monitoring\bin\Debug\
+  Roblox.Http.Client.Monitoring.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http.Client.Monitoring\obj\Debug\Roblox.Htt
+  p.Client.Monitoring.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http.Client.Monitoring\bin\Debug\Ro
+  blox.Http.Client.Monitoring.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http.Client.Monitoring\Roblox.Http.Cli
+ent.Monitoring.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\H
+ttp\Roblox.Http.ServiceClient\Roblox.Http.ServiceClient.csproj" (63) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Http.ServiceClient.dll /subsystemversion:6.00 /ta
+  rget:library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Http.ServiceClient
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http.ServiceClient\obj\Debug\Roblox.Http.Se
+  rviceClient.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http.ServiceClient\bin\Debug\Roblox.Http.Se
+  rviceClient.dll".
+  Roblox.Http.ServiceClient -> C:\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http.ServiceClient\bin\Debug\Roblox.H
+  ttp.ServiceClient.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http.ServiceClient\obj\Debug\Roblox.Http.Se
+  rviceClient.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http.ServiceClient\bin\Debug\Roblox.Http.Se
+  rviceClient.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http.ServiceClient\Roblox.Http.Service
+Client.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\P
+ipeline\Roblox.Pipeline\Roblox.Pipeline.csproj" (64) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Pipeline.dll /subsystemversion:6.00 /target:libra
+  ry /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Pipeline
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Pipeline\Roblox.Pipeline\obj\Debug\Roblox.Pipeline.dll"
+   para "C:\Roblox-2013-novetus-site\Assemblies\Pipeline\Roblox.Pipeline\bin\Debug\Roblox.Pipeline.dll".
+  Roblox.Pipeline -> C:\Roblox-2013-novetus-site\Assemblies\Pipeline\Roblox.Pipeline\bin\Debug\Roblox.Pipeline.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Pipeline\Roblox.Pipeline\obj\Debug\Roblox.Pipeline.pdb"
+   para "C:\Roblox-2013-novetus-site\Assemblies\Pipeline\Roblox.Pipeline\bin\Debug\Roblox.Pipeline.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Pipeline\Roblox.Pipeline\Roblox.Pipeline.csproj" (
+destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\T
+racing\Roblox.Tracing.Core\Roblox.Tracing.Core.csproj" (65) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Tracing.Core.dll /subsystemversion:6.00 /target:l
+  ibrary /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Tracing.Core
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Tracing\Roblox.Tracing.Core\obj\Debug\Roblox.Tracing.Co
+  re.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Tracing\Roblox.Tracing.Core\bin\Debug\Roblox.Tracing.Core.dll".
+  Roblox.Tracing.Core -> C:\Roblox-2013-novetus-site\Assemblies\Tracing\Roblox.Tracing.Core\bin\Debug\Roblox.Tracing.Co
+  re.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Tracing\Roblox.Tracing.Core\obj\Debug\Roblox.Tracing.Co
+  re.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Tracing\Roblox.Tracing.Core\bin\Debug\Roblox.Tracing.Core.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Tracing\Roblox.Tracing.Core\Roblox.Tracing.Core.cs
+proj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\A
+piControlPlane\Roblox.ApiControlPlane\Roblox.ApiControlPlane.csproj" (66) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.ApiControlPlane.dll /subsystemversion:6.00 /targe
+  t:library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.ApiControlPlane
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\ApiControlPlane\Roblox.ApiControlPlane\obj\Debug\Roblox
+  .ApiControlPlane.dll" para "C:\Roblox-2013-novetus-site\Assemblies\ApiControlPlane\Roblox.ApiControlPlane\bin\Debug\R
+  oblox.ApiControlPlane.dll".
+  Roblox.ApiControlPlane -> C:\Roblox-2013-novetus-site\Assemblies\ApiControlPlane\Roblox.ApiControlPlane\bin\Debug\Rob
+  lox.ApiControlPlane.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\ApiControlPlane\Roblox.ApiControlPlane\obj\Debug\Roblox
+  .ApiControlPlane.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\ApiControlPlane\Roblox.ApiControlPlane\bin\Debug\R
+  oblox.ApiControlPlane.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\ApiControlPlane\Roblox.ApiControlPlane\Roblox.ApiC
+ontrolPlane.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\P
+latform\Security\Roblox.Platform.Security.Core\Roblox.Platform.Security.Core.csproj" (67) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Platform.Security.Core.dll /subsystemversion:6.00
+   /target:library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Platform.Security.Core
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Security\Roblox.Platform.Security.Core\obj\Deb
+  ug\Roblox.Platform.Security.Core.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Security\Roblox.Platform.
+  Security.Core\bin\Debug\Roblox.Platform.Security.Core.dll".
+  Roblox.Platform.Security.Core -> C:\Roblox-2013-novetus-site\Assemblies\Platform\Security\Roblox.Platform.Security.Co
+  re\bin\Debug\Roblox.Platform.Security.Core.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Security\Roblox.Platform.Security.Core\obj\Deb
+  ug\Roblox.Platform.Security.Core.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Security\Roblox.Platform.
+  Security.Core\bin\Debug\Roblox.Platform.Security.Core.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Platform\Security\Roblox.Platform.Security.Core\Ro
+blox.Platform.Security.Core.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\P
+latform\Email\Roblox.Platform.Email.Entities\Roblox.Platform.Email.Entities.csproj" (68) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Platform.Email.Entities.dll /subsystemversion:6.0
+  0 /target:library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Platform.Email.Entities
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Email.Entities\obj\Debug
+  \Roblox.Platform.Email.Entities.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Emai
+  l.Entities\bin\Debug\Roblox.Platform.Email.Entities.dll".
+  Roblox.Platform.Email.Entities -> C:\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Email.Entitie
+  s\bin\Debug\Roblox.Platform.Email.Entities.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Email.Entities\obj\Debug
+  \Roblox.Platform.Email.Entities.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Emai
+  l.Entities\bin\Debug\Roblox.Platform.Email.Entities.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Email.Entities\Robl
+ox.Platform.Email.Entities.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\P
+latform\Roles\Roblox.Platform.Roles.Entities\Roblox.Platform.Roles.Entities.csproj" (69) no nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Platform.Roles.Entities.dll /subsystemversion:6.0
+  0 /target:library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Platform.Roles.Entities
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Platform.Roles.Entities\obj\Debug
+  \Roblox.Platform.Roles.Entities.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Platform.Role
+  s.Entities\bin\Debug\Roblox.Platform.Roles.Entities.dll".
+  Roblox.Platform.Roles.Entities -> C:\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Platform.Roles.Entitie
+  s\bin\Debug\Roblox.Platform.Roles.Entities.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Platform.Roles.Entities\obj\Debug
+  \Roblox.Platform.Roles.Entities.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Platform.Role
+  s.Entities\bin\Debug\Roblox.Platform.Roles.Entities.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Platform.Roles.Entities\Robl
+ox.Platform.Roles.Entities.csproj" (destinos padrão).
+
+O projeto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Roblox-2013-novetus-site\Assemblies\P
+latform\Authentication\Roblox.Platform.Authentication.Entities\Roblox.Platform.Authentication.Entities.csproj" (70) no
+nó 1 (destinos padrão).
+PrepareForBuild:
+  Criando o diretório "bin\Debug\".
+  Criando o diretório "obj\Debug\".
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /highentropyva+ /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Fram
+  ework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Core.dll" /debug+ /out:obj\Debug\Roblox.Platform.Authentication.Entities.dll /subsystemve
+  rsion:6.00 /target:library /utf8output /langversion:7.3 Stub.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttri
+  butes.cs"
+  CompilerServer: server - server processed compilation - Roblox.Platform.Authentication.Entities
+CopyFilesToOutputDirectory:
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Authentication\Roblox.Platform.Authentication.
+  Entities\obj\Debug\Roblox.Platform.Authentication.Entities.dll" para "C:\Roblox-2013-novetus-site\Assemblies\Platform
+  \Authentication\Roblox.Platform.Authentication.Entities\bin\Debug\Roblox.Platform.Authentication.Entities.dll".
+  Roblox.Platform.Authentication.Entities -> C:\Roblox-2013-novetus-site\Assemblies\Platform\Authentication\Roblox.Plat
+  form.Authentication.Entities\bin\Debug\Roblox.Platform.Authentication.Entities.dll
+  Copiando o arquivo de "C:\Roblox-2013-novetus-site\Assemblies\Platform\Authentication\Roblox.Platform.Authentication.
+  Entities\obj\Debug\Roblox.Platform.Authentication.Entities.pdb" para "C:\Roblox-2013-novetus-site\Assemblies\Platform
+  \Authentication\Roblox.Platform.Authentication.Entities\bin\Debug\Roblox.Platform.Authentication.Entities.pdb".
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\Assemblies\Platform\Authentication\Roblox.Platform.Authentica
+tion.Entities\Roblox.Platform.Authentication.Entities.csproj" (destinos padrão).
+
+Projeto de compilação pronto "C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (destinos padrão) -- FALHA.
+
+
+FALHA da compilação.
+
+"C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (destino padrão) (1) ->
+"C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (destino padrão) (2) ->
+"C:\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Roblox.Web.Mvc.csproj" (destino padrão) (35
+:2) ->
+(ResolveAssemblyReferences destino) ->
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.ta
+rgets(2433,5): warning MSB3245: Não foi possível resolver esta diferença. Não foi possível localizar o assembly "System
+.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL". Verifique se
+ele está no disco. Se ela for exigida pelo seu código, poderão ocorrer erros de compilação. [C:\Roblox-2013-novetus-sit
+e\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Roblox.Web.Mvc.csproj]
+
+
+"C:\Roblox-2013-novetus-site\RobloxWebSite.sln" (destino padrão) (1) ->
+"C:\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (destino padrão) (2) ->
+"C:\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Roblox.Web.Mvc.csproj" (destino padrão) (35
+:2) ->
+(CoreCompile destino) ->
+  C:\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Stub.cs(2,18): error CS0234: O nome de tip
+o ou namespace "Mvc" não existe no namespace "System.Web" (você está sem uma referência de assembly?) [C:\Roblox-2013-n
+ovetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Roblox.Web.Mvc.csproj]
+  C:\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Stub.cs(14,67): error CS0246: O nome do ti
+po ou do namespace "ActionFilterAttribute" não pode ser encontrado (está faltando uma diretiva using ou uma referência
+de assembly?) [C:\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Roblox.Web.Mvc.csproj]
+  C:\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Stub.cs(24,48): error CS0246: O nome do ti
+po ou do namespace "Controller" não pode ser encontrado (está faltando uma diretiva using ou uma referência de assembly
+?) [C:\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Roblox.Web.Mvc.csproj]
+  C:\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Stub.cs(19,46): error CS0246: O nome do ti
+po ou do namespace "ActionFilterAttribute" não pode ser encontrado (está faltando uma diretiva using ou uma referência
+de assembly?) [C:\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Roblox.Web.Mvc.csproj]
+  C:\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Stub.cs(21,48): error CS0246: O nome do ti
+po ou do namespace "ActionExecutingContext" não pode ser encontrado (está faltando uma diretiva using ou uma referência
+ de assembly?) [C:\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Roblox.Web.Mvc.csproj]
+  C:\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Stub.cs(13,6): error CS0641: Atributo "Att
+ributeUsage" é somente válido em classes derivadas de System.Attribute [C:\Roblox-2013-novetus-site\Assemblies\Web\Mvc\
+Roblox.Web.Mvc.NetFramework\Roblox.Web.Mvc.csproj]
+  C:\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Stub.cs(16,48): error CS0246: O nome do ti
+po ou do namespace "ActionExecutingContext" não pode ser encontrado (está faltando uma diretiva using ou uma referência
+ de assembly?) [C:\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Roblox.Web.Mvc.csproj]
+
+    1 Aviso(s)
+    7 Erro(s)
+
+Tempo Decorrido 00:00:03.01
+PS C:\>
