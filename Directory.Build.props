@@ -1,7 +1,9 @@
 <Project>
-  <PropertyGroup>
+  <PropertyGroup Condition="'$(OS)' != 'Windows_NT'">
     <MonoLib>/nix/store/wd70x8ir601n1ycvahw5w8ma7g5dfrrb-mono-6.14.1/lib/mono/4.7.2-api</MonoLib>
     <FrameworkPathOverride>$(MonoLib)/</FrameworkPathOverride>
+  </PropertyGroup>
+  <PropertyGroup>
     <VSToolsPath Condition="!Exists('$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets')">$(MSBuildThisFileDirectory)MSBuildStubs</VSToolsPath>
   </PropertyGroup>
 </Project>

@@ -13,6 +13,7 @@ namespace Roblox.Platform.Membership
     public static class AccountStatusExtensions
     {
         public static int OkId { get { return (int)AccountStatus.Ok; } }
+        public static byte TranslateToByte(this AccountStatus status) { return (byte)status; }
     }
 
     public enum AgeBracket

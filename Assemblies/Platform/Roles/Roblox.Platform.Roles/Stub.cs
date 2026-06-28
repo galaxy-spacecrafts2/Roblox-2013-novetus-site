@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-// using Roblox.Platform.Membership;
+using Roblox.Platform.Membership;
 
 namespace Roblox.Platform.Roles
 {

@@ -15,6 +15,7 @@ namespace Roblox.WebsiteSettings
             public string CookieConstraint_RedirectDomain { get; set; }
             public string CookieConstraint_RedirectURL { get; set; }
             public string CookieConstraint_ProtectedPageExtension { get; set; }
+            public string ClientInstallHost { get; set; }
 
             public Settings()
             {
@@ -26,6 +27,7 @@ namespace Roblox.WebsiteSettings
                 CookieConstraint_RedirectDomain = string.Empty;
                 CookieConstraint_RedirectURL = string.Empty;
                 CookieConstraint_ProtectedPageExtension = string.Empty;
+                ClientInstallHost = string.Empty;
             }
         }
 

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -35,7 +35,7 @@ namespace Roblox.Website.UserControls.UserContent
         // protected ICollection<IAsset> GetShowcasedPlaces()
         protected ICollection<object> GetShowcasedPlaces()
         {
-            var showcase = Showcase.GetOrCreate(ShowcaseType.Place, CreatorType.User, Model.UserID);
+            var showcase = Showcase.GetOrCreate(ShowcaseType.Places, CreatorType.User, Model.UserID);
             var showcaseItems = ShowcaseItem.GetShowcaseItemsByShowcaseIDPaged(0, 20, showcase.ID);
 
             // var places = new List<IAsset>();

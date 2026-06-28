@@ -28,8 +28,6 @@
   <ItemGroup>
     <Compile Include="Stub.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Membership\Roblox.Platform.Membership\Roblox.Platform.Membership.csproj" />
-  </ItemGroup>
+
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

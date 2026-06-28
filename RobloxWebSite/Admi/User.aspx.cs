@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -42,7 +42,7 @@ namespace Roblox.Website.Admi
             var punishments = Punishment.GetActivePunishmentsByUserIDPaged(0, 1, (int)UserID);
             PunishmentType accountState = PunishmentType.None;
 
-            if (punishments.Count > 0)
+            if (punishments.Any())
             {
                 var punishment = punishments.First();
                 accountState = punishment.PunishmentType;

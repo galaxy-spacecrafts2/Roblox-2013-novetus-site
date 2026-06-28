@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -64,7 +64,7 @@ namespace Roblox.Website.UserControls.UserContent
             {
                 // TODO: Use AssetImage class in Roblox.Thumbs
                 //PrimaryGroupAssetImage.AssetID = profile.PrimaryGroupId; // TODO: Get Group Emblem from Group ID
-                PrimaryGroupAssetImage.NavigateUrl = String.Format(PrimaryGroupAssetImage.NavigateUrl, UserProfile.PrimaryGroupId);
+                // PrimaryGroupAssetImage.NavigateUrl = String.Format(PrimaryGroupAssetImage.NavigateUrl, UserProfile.PrimaryGroupId);
                 HyperLink1.NavigateUrl = String.Format(HyperLink1.NavigateUrl, UserProfile.PrimaryGroupId);
             }
 

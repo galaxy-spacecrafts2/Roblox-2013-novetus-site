@@ -1,4 +1,4 @@
-﻿using Roblox.Website.WebCode;
+using Roblox.Website.WebCode;
 
 namespace Roblox.Website.ViewModels
 {
@@ -78,5 +78,10 @@ namespace Roblox.Website.ViewModels
                 SkipUrl = "/Install/Unsupported.aspx"; // TODO: Get from setting?
             }
         }
+    }
+
+    internal static class GlobalProperties
+    {
+        public const string CLSID32Bit = "{76D50901-375A-4318-8E99-521D67C65F87}";
     }
 }

@@ -1,5 +1,5 @@
 using System;
-// using System.Web.Mvc;
+using System.Web.Mvc;
 
 namespace Roblox.Web.Mvc
 {
@@ -9,10 +9,6 @@ namespace Roblox.Web.Mvc
     //     public override void OnActionExecuting(ActionExecutingContext filterContext) { }
     // }
     
-    public class CookieConstraintAttributeWithRedirect : Attribute
-    {
-        public CookieConstraintAttributeWithRedirect() { }
-    }
 
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
     public class CookieConstraintAttributeWithRedirectAttribute : ActionFilterAttribute

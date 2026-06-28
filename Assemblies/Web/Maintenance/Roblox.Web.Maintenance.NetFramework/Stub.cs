@@ -26,4 +26,10 @@ namespace Roblox.Web.Maintenance
             Func<string> getIpBypassRangeCsv,
             Func<string> getAllowedButtonValuesCsv) { }
     }
+
+    public static class CookieConstraintManager
+    {
+        public static bool IsRequesterConstrained() { return false; }
+        public static void LiftConstraint(string password, string buttonText) { }
+    }
 }
