@@ -12,13 +12,19 @@ namespace Roblox.Platform.Membership
 
     public static class AccountStatusExtensions
     {
-        public static int OkId => (int)AccountStatus.Ok;
+        public static int OkId { get { return (int)AccountStatus.Ok; } }
     }
 
     public enum AgeBracket
     {
         AgeUnder13 = 0,
         Age13OrOver = 1
+    }
+
+    public interface IRoleSet
+    {
+        string Name { get; }
+        long Id { get; }
     }
 
     public interface IUser
@@ -42,7 +48,7 @@ namespace Roblox.Platform.Membership
 
     public interface IRoleSetValidator
     {
-        IEnumerable<object> GetRoleSets(IUser user);
+        IEnumerable<IRoleSet> GetRoleSets(IUser user);
         bool IsInRole(IUser user, string roleName);
         bool IsPrivilegedUser(IUser user);
     }
@@ -53,5 +59,9 @@ namespace Roblox.Platform.Membership
         public IRoleSetValidator RoleSetValidator { get; set; }
 
         public MembershipDomainFactories() { }
+        public MembershipDomainFactories(
+            object logger = null,
+            object rolesDomainFactories = null,
+            object emailDomainFactories = null) { }
     }
 }

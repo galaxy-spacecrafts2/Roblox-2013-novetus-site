@@ -13,6 +13,11 @@ namespace Roblox.Platform.Email
         bool IsValid { get; }
     }
 
+    public interface IEmailAddressFactory
+    {
+        IEmailAddress GetEmailAddressByAddress(string address);
+    }
+
     public interface IUserEmailFactory
     {
         // IUserEmail GetCurrentVerified(IUser user);
@@ -22,6 +27,9 @@ namespace Roblox.Platform.Email
     public class EmailDomainFactories
     {
         public IUserEmailFactory UserEmailFactory { get; set; }
+        public IEmailAddressFactory EmailAddressFactory { get; set; }
+
         public EmailDomainFactories() { }
+        public EmailDomainFactories(object logger = null) { }
     }
 }
