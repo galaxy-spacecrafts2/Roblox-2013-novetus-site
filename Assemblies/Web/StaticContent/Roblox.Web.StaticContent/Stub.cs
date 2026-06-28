@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Web;
 
 namespace Roblox.Web.StaticContent
 {
@@ -35,6 +36,16 @@ namespace Roblox.Web.StaticContent
         public static List<string> PageScripts { get { return _pageScripts; } }
         public static bool MergeFiles { get; set; }
 
+        public static HtmlString RenderBundle(string name)
+        {
+            return new HtmlString(string.Empty);
+        }
+
+        public static HtmlString Render(RobloxScriptBundle bundle)
+        {
+            return new HtmlString(string.Empty);
+        }
+
         public static RobloxScriptBundle CreateBundle(string name, IEnumerable<string> files, bool minify)
         {
             return new RobloxScriptBundle { Name = name };
@@ -46,6 +57,16 @@ namespace Roblox.Web.StaticContent
         private static readonly List<string> _pageCSS = new List<string>();
         public static List<string> PageCSS { get { return _pageCSS; } }
         public static bool MergeFiles { get; set; }
+
+        public static HtmlString RenderBundle(string name)
+        {
+            return new HtmlString(string.Empty);
+        }
+
+        public static HtmlString Render(RobloxCSSBundle bundle)
+        {
+            return new HtmlString(string.Empty);
+        }
 
         public static RobloxCSSBundle CreateBundle(string name, IEnumerable<string> files, bool minify)
         {

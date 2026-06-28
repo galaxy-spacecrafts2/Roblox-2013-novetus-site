@@ -54,15 +54,39 @@ namespace Roblox.Platform.Membership
         bool IsPrivilegedUser(IUser user);
     }
 
+    public class StubUserFactory : IUserFactory
+    {
+        public IUser GetUserByName(string username) { return null; }
+        public IUser GetUser(long userId) { return null; }
+        public IUser MustGetUser(long userId) { return null; }
+        public IUser GetCurrentUser() { return null; }
+    }
+
+    public class StubRoleSetValidator : IRoleSetValidator
+    {
+        public System.Collections.Generic.IEnumerable<IRoleSet> GetRoleSets(IUser user) { return new IRoleSet[0]; }
+        public bool IsInRole(IUser user, string roleName) { return false; }
+        public bool IsPrivilegedUser(IUser user) { return false; }
+    }
+
     public class MembershipDomainFactories
     {
         public IUserFactory UserFactory { get; set; }
         public IRoleSetValidator RoleSetValidator { get; set; }
 
-        public MembershipDomainFactories() { }
+        public MembershipDomainFactories()
+        {
+            UserFactory = new StubUserFactory();
+            RoleSetValidator = new StubRoleSetValidator();
+        }
+
         public MembershipDomainFactories(
             object logger = null,
             object rolesDomainFactories = null,
-            object emailDomainFactories = null) { }
+            object emailDomainFactories = null)
+        {
+            UserFactory = new StubUserFactory();
+            RoleSetValidator = new StubRoleSetValidator();
+        }
     }
 }

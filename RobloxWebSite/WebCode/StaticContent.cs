@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Web;
 using Roblox.Web.StaticContent;
@@ -24,6 +24,16 @@ namespace Roblox.Website
 
         public static void CreateCSSBundle(string name, params string[] files)
         {
+        }
+
+        public static RobloxCSSBundle GetPageCSSBundle()
+        {
+            return new RobloxCSSBundle { Name = "page" };
+        }
+
+        public static RobloxScriptBundle GetPageScriptBundle()
+        {
+            return new RobloxScriptBundle { Name = "page" };
         }
     }
 }

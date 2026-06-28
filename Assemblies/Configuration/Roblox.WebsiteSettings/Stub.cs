@@ -37,10 +37,25 @@ namespace Roblox.WebsiteSettings
             public static Layout Default { get { return _default; } }
 
             public bool IsUpdatedInstallationInstructionsModalEnabled { get; set; }
+            public bool UseMVCNavBar { get; set; }
 
             public Layout()
             {
                 IsUpdatedInstallationInstructionsModalEnabled = false;
+                UseMVCNavBar = false;
+            }
+        }
+
+        public class GoogleAnalytics
+        {
+            private static GoogleAnalytics _default = new GoogleAnalytics();
+            public static GoogleAnalytics Default { get { return _default; } }
+
+            public string GoogleAnalyticsAccountCode { get; set; }
+
+            public GoogleAnalytics()
+            {
+                GoogleAnalyticsAccountCode = string.Empty;
             }
         }
 
