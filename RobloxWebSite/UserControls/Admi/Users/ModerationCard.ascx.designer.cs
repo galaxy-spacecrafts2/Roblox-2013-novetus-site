@@ -21,7 +21,7 @@ namespace Roblox.Website.UserControls.Admi.Users
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Roblox.Controls.Panel pnlModerationCard;
+        protected global::System.Web.UI.WebControls.Panel pnlModerationCard;
 
         /// <summary>
         /// rbxAvatarImage control.
@@ -30,7 +30,7 @@ namespace Roblox.Website.UserControls.Admi.Users
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Roblox.Controls.Image rbxAvatarImage;
+        protected global::System.Web.UI.WebControls.Image rbxAvatarImage;
 
         /// <summary>
         /// iOnlineStatus control.

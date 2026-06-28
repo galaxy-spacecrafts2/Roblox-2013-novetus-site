@@ -1,16 +1,13 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="PunishmentsPane.ascx.cs" Inherits="Roblox.Website.UserControls.Admi.Users.PunishmentsPane" %>
-<%@ Register assembly="Roblox.Controls" namespace="Roblox.Controls" tagprefix="rbx" %>
+<%-- <%@ Register assembly="Roblox.Controls" namespace="Roblox.Controls" tagprefix="rbx" %> --%>
 
-<rbx:Panel ID="PunishmentsPanel"
+<asp:Panel ID="PunishmentsPanel"
     Width="550px"
     runat="server">
-    <Header>
-        <span class="caption">
-            Past Punishments
-        </span>
-    </Header>
-    <Content>
-        <asp:GridView ID="PunishmentsGridView"
+    <h3 class="caption">
+        Past Punishments
+    </h3>
+    <asp:GridView ID="PunishmentsGridView"
             CellPadding="4"
             GridLines="None"
             AutoGenerateColumns="false"
@@ -56,8 +53,7 @@
                     DataField="Expiration" />
             </Columns>
         </asp:GridView>
-    </Content>
-</rbx:Panel>
+</asp:Panel>
 
 <script language="javascript" type="text/javascript">
     /**

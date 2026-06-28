@@ -19,5 +19,8 @@
   <ItemGroup>
     <Compile Include="Stub.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

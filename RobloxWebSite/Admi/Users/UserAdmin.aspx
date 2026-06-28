@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admi/Admi.Master" AutoEventWireup="true" CodeBehind="UserAdmin.aspx.cs" Inherits="Roblox.Website.Admi.Users.UserAdmin" %>
-<%@ Register Assembly="Roblox.Controls" Namespace="Roblox.Controls" TagPrefix="rbx" %>
+<%-- <%@ Register Assembly="Roblox.Controls" Namespace="Roblox.Controls" TagPrefix="rbx" %> --%>
 <%@ Register Src="~/UserControls/Admi/UserAdmin/AccountSummaryPane.ascx" TagName="AccountSummaryPane" TagPrefix="rbx"%>
 <%@ Register Src="~/UserControls/Admi/UserAdmin/BillingInfoPane.ascx" TagName="BillingInfoPane" TagPrefix="rbx"%>
 <%@ Register Src="~/UserControls/Admi/UserAdmin/PunishmentsPane.ascx" TagName="PunishmentsPane" TagPrefix="rbx"%>

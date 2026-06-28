@@ -9,7 +9,8 @@ namespace Roblox.Website.UserControls
 {
     public partial class VisitButtons : System.Web.UI.UserControl
     {
-        public IAsset Place { get; set; }
+        // public IAsset Place { get; set; } // IAsset not found
+        public object Place { get; set; }
         public bool CanMPVisit { get; set; }
         public bool CanBuild { get; set; }
         public bool CanEdit { get; set; }

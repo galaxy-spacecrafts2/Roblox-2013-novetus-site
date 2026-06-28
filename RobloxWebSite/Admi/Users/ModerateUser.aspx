@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Admi/AdmiSimple.Master" AutoEventWireup="true" CodeBehind="ModerateUser.aspx.cs" Inherits="Roblox.Website.Admi.Users.ModerateUser" %>
-<%@ Register assembly="Roblox.Controls" namespace="Roblox.Controls" tagprefix="rbx" %>
+<%-- <%@ Register assembly="Roblox.Controls" namespace="Roblox.Controls" tagprefix="rbx" %> --%>
 <%@ Register Src="~/UserControls/Admi/Users/ModerationCard.ascx" TagName="ModerationCard" TagPrefix="rbx"%>
 <%@ Register Src="~/UserControls/Admi/Users/CheatDetections.ascx" TagName="CheatDetections" TagPrefix="rbx"%>
 <%@ Register Src="~/UserControls/Admi/Users/PunishmentsPane.ascx" TagName="PunishmentsPane" TagPrefix="rbx"%>
@@ -7,32 +7,23 @@
 <asp:Content ID="Content" ContentPlaceHolderID="cphRoblox" runat="server">
     <asp:Panel ID="container" ClientIDMode="Static" runat="server">
         <%-- TODO: Make this into a UserControl somewhere down the line once we have AbuseReviewTasks or whatever they're called implemented --%>
-        <rbx:Panel ID="pnlPageHeader" BorderStyle="None" runat="server">
-            <Header>
-                <span class="caption">
-                    Current abuses to review for <%# IUser.Name %>
-                </span>
-            </Header>
-            <Content>
-                <br />
-                <asp:Panel ID="pnlAbuses" runat="server">
-                    <rbx:Panel ID="pnlAbuse"
-                        HeaderStyle-BackColor="Black" HeaderStyle-ForeColor="White"
-                        BackColor="White" runat="server">
-                        <Header>
-                            <span class="caption">
-                                Privacy (UserStatus)
-                            </span>
-                        </Header>
-                        <Content>
-                            <div class="text">
-                                i guess i cant use windows 7 for roblox wont let me change my password im so bleepin mad
-                            </div>
-                        </Content>
-                    </rbx:Panel>
+        <asp:Panel ID="pnlPageHeader" BorderStyle="None" runat="server">
+            <h3 class="caption">
+                Current abuses to review for <%# IUser.Name %>
+            </h3>
+            <br />
+            <asp:Panel ID="pnlAbuses" runat="server">
+                <asp:Panel ID="pnlAbuse"
+                    BackColor="White" runat="server">
+                    <h3 class="caption" style="background-color: Black; color: White;">
+                        Privacy (UserStatus)
+                    </h3>
+                    <div class="text">
+                        i guess i cant use windows 7 for roblox wont let me change my password im so bleepin mad
+                    </div>
                 </asp:Panel>
-            </Content>
-        </rbx:Panel>
+            </asp:Panel>
+        </asp:Panel>
         <br />
         <table id="tblModerationControls" runat="server">
             <tr>

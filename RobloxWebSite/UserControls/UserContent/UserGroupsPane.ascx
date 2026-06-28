@@ -12,7 +12,7 @@
                 <div class="groupEmblemThumbnail" style="width:85px; overflow:hidden;margin:15px">
                     <div class="groupEmblemImage notranslate" style="width: 85px; height:87px; margin: 0px; padding-top: 0px; background-repeat:no-repeat; background-image:none ">
                         <%--rbx:AssetImage ID="AssetImage1" AssetID='<%#Eval("ID") %>' NavigateUrl='<%#Eval("ID", "~/Groups/group.aspx?gid={0}") %>' Width="75" Height="75" runat="server" /--%>
-                        <!--a id="ctl00_cphRoblox_rbxUserGroupsPane_GroupListView_ctrl0_AssetImage1" title=" I ♥ Fried Chicken" href="/Groups/group.aspx?gid=481260" style="display:inline-block;height:75px;width:75px;cursor:pointer;"><img src="http://t3.rbxcdn.com/0df0c468506c7a440a389b5c66d00442" height="75" width="75" border="0" onerror="return Roblox.Controls.Image.OnError(this)" alt=" I ♥ Fried Chicken" /></a-->
+                        <!--a id="ctl00_cphRoblox_rbxUserGroupsPane_GroupListView_ctrl0_AssetImage1" title=" I ♥ Fried Chicken" href="/Groups/group.aspx?gid=481260" style="display:inline-block;height:75px;width:75px;cursor:pointer;"><img src="http://t3.rbxcdn.com/0df0c468506c7a440a389b5c66d00442" height="75" width="75" border="0" alt=" I ♥ Fried Chicken" /></a-->
                     </div>
                 </div>
 	        </div>

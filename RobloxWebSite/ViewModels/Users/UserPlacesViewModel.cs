@@ -9,7 +9,8 @@ namespace Roblox.Website.ViewModels.Users
     public class UserPlacesViewModel
     {
         public long UserID { get; set; }
-        public ICollection<IAsset> Places { get; set; }
+        // public ICollection<IAsset> Places { get; set; } // IAsset not found
+        public ICollection<object> Places { get; set; }
         public int ShowcasePagerPageSize { get; set; }
         public bool DisplayShowcasePager { get; set; }
         public IUser AuthenticatedUser { get; set; }

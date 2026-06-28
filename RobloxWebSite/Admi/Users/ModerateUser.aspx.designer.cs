@@ -30,7 +30,7 @@ namespace Roblox.Website.Admi.Users
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Roblox.Controls.Panel pnlPageHeader;
+        protected global::System.Web.UI.WebControls.Panel pnlPageHeader;
 
         /// <summary>
         /// pnlAbuses control.
@@ -48,7 +48,7 @@ namespace Roblox.Website.Admi.Users
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Roblox.Controls.Panel pnlAbuse;
+        protected global::System.Web.UI.WebControls.Panel pnlAbuse;
 
         /// <summary>
         /// tblModerationControls control.

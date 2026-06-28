@@ -32,15 +32,18 @@ namespace Roblox.Website.UserControls.UserContent
             DataBind();
         }
 
-        protected ICollection<IAsset> GetShowcasedPlaces()
+        // protected ICollection<IAsset> GetShowcasedPlaces()
+        protected ICollection<object> GetShowcasedPlaces()
         {
             var showcase = Showcase.GetOrCreate(ShowcaseType.Place, CreatorType.User, Model.UserID);
             var showcaseItems = ShowcaseItem.GetShowcaseItemsByShowcaseIDPaged(0, 20, showcase.ID);
 
-            var places = new List<IAsset>();
+            // var places = new List<IAsset>();
+            var places = new List<object>();
             foreach (var item in showcaseItems)
             {
-                places.Add(item.Asset);
+                // places.Add(item.Asset);
+                places.Add(null); // Placeholder since IAsset not found
             }
 
             return places;

@@ -3244,10 +3244,6 @@
       <Project>{916cbe49-5760-4e93-95d5-4c17fbba8c2f}</Project>
       <Name>Roblox.Showcases</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Assemblies\UI\Roblox.Controls\Roblox.Controls.csproj">
-      <Project>{353670ab-e0f1-4009-80b9-6e968be335d3}</Project>
-      <Name>Roblox.Controls</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Assemblies\Configuration\Roblox.WebsiteSettings\Roblox.WebsiteSettings.csproj">
       <Project>{92e5ada3-716f-413a-82ce-ee664a371ee6}</Project>
       <Name>Roblox.WebsiteSettings</Name>

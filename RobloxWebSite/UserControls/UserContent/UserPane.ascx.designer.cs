@@ -75,7 +75,7 @@ namespace Roblox.Website.UserControls.UserContent
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Roblox.Controls.Image AvatarImage;
+        protected global::System.Web.UI.WebControls.Image AvatarImage;
 
         /// <summary>
         /// PrimaryGroupAssetImage control.
@@ -84,7 +84,7 @@ namespace Roblox.Website.UserControls.UserContent
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Roblox.Controls.Image PrimaryGroupAssetImage;
+        protected global::System.Web.UI.WebControls.Image PrimaryGroupAssetImage;
 
         /// <summary>
         /// HyperLink1 control.

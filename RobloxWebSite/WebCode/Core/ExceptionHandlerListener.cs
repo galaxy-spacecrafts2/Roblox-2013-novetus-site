@@ -5,7 +5,8 @@ using System.Web;
 
 namespace Roblox.Website
 {
-    public class ExceptionHandlerListener : IExceptionHandlerListener
+    // public class ExceptionHandlerListener : IExceptionHandlerListener
+    public class ExceptionHandlerListener
     {
         public void exceptionLogged()
         {

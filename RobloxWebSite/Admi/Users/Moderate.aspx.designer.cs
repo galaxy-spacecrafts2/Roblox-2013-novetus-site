@@ -21,6 +21,6 @@ namespace Roblox.Website.Admi.Users
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Roblox.Controls.Panel SpecificationsPanel;
+        protected global::System.Web.UI.WebControls.Panel SpecificationsPanel;
     }
 }

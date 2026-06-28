@@ -1,4 +1,4 @@
-using Roblox.Platform.Membership;
+// using Roblox.Platform.Membership;
 
 namespace Roblox.Platform.Email
 {
@@ -15,7 +15,8 @@ namespace Roblox.Platform.Email
 
     public interface IUserEmailFactory
     {
-        IUserEmail GetCurrentVerified(IUser user);
+        // IUserEmail GetCurrentVerified(IUser user);
+        object GetCurrentVerified(object user);
     }
 
     public class EmailDomainFactories

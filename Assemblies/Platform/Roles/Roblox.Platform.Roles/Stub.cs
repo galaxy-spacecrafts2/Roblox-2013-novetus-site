@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Roblox.Platform.Membership;
+// using Roblox.Platform.Membership;
 
 namespace Roblox.Platform.Roles
 {
@@ -19,7 +19,8 @@ namespace Roblox.Platform.Roles
     public class RolesDomainFactories
     {
         public IRoleSetReader RoleSetReader { get; set; }
-        public IRoleSetValidator RoleSetValidator { get; set; }
+        // public IRoleSetValidator RoleSetValidator { get; set; }
+        public object RoleSetValidator { get; set; }
 
         public RolesDomainFactories() { }
     }

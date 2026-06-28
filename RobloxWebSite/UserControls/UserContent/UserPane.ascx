@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="UserPane.ascx.cs" Inherits="Roblox.Website.UserControls.UserContent.UserPane" %>
 <%@ Import Namespace="Roblox.Website.ViewModels.Users.Shared" %>
 <%@ Import Namespace="Roblox.Web.Code.Util" %>
-<%@ Register Assembly="Roblox.Controls" Namespace="Roblox.Controls" TagPrefix="rbx" %>
+<%-- <%@ Register Assembly="Roblox.Controls" Namespace="Roblox.Controls" TagPrefix="rbx" %> --%>
 <%@ Register Src="~/UserControls/UserContent/PublicUser.ascx" TagName="PublicUser" TagPrefix="rbx"%>
 <%@ Register Src="~/UserControls/Abuse/ReportAbuseButton.ascx" TagName="ReportAbuseButton" TagPrefix="rbx"%>
 <%@ Register Src="~/UserControls/Alerts.ascx" TagName="Alerts" TagPrefix="rbx"%>
@@ -28,8 +28,8 @@
                             <asp:HyperLink NavigateUrl="~/User.aspx?ID={0}&ForcePublicView=true" ID="lnkPublicView" runat="server" />
                         </asp:Panel>
                     </div>
-                    <rbx:Image ID="AvatarImage" Enabled="False" Width="352" Height="352" runat="server" />
-                    <!--a id="ctl00_cphRoblox_rbxUserPane_AvatarImage" disabled="disabled" class=" notranslate" title="LonelyJewel" class=" notranslate" onclick="return false" style="display:inline-block;height:352px;width:352px;"><img src="/Images/Accounts/boy.png" height="352" width="352" border="0" onerror="return Roblox.Controls.Image.OnError(this)" alt="LonelyJewel" class=" notranslate" /><img src="/images/icons/overlay_obcOnly.png" align="left" style="position:relative;top:-19px;" /></a-->
+                    <asp:Image ID="AvatarImage" Enabled="False" Width="352" Height="352" runat="server" />
+                    <!--a id="ctl00_cphRoblox_rbxUserPane_AvatarImage" disabled="disabled" class=" notranslate" title="LonelyJewel" class=" notranslate" onclick="return false" style="display:inline-block;height:352px;width:352px;"><img src="/Images/Accounts/boy.png" height="352" width="352" border="0" alt="LonelyJewel" class=" notranslate" /><img src="/images/icons/overlay_obcOnly.png" align="left" style="position:relative;top:-19px;" /></a-->
                     <br />
                     <% if (UserProfile.CanSeePoints) { %>
                     <div class="PointsContainer">
@@ -46,7 +46,7 @@
                         <div>
                             <b><%=Resources.GetString("LabelPrimaryGroup")%>:</b>
                             <br />
-                            <rbx:Image ID="PrimaryGroupAssetImage" NavigateUrl="/groups/group.aspx?gid={0}" Width="42" Height="42" runat="server" />
+                            <asp:Image ID="PrimaryGroupAssetImage" Width="42" Height="42" runat="server" />
                             <br />
                             <asp:HyperLink ID="HyperLink1" NavigateUrl="groups/group.aspx?gid={0}" runat="server" />
                         </div>

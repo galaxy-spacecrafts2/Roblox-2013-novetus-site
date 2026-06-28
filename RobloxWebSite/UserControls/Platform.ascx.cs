@@ -9,7 +9,8 @@ namespace Roblox.Website.UserControls
 {
     public partial class Platform : System.Web.UI.UserControl
     {
-        public IAsset Place { get; set; }
+        // public IAsset Place { get; set; } // IAsset not found
+        public object Place { get; set; }
         public User AuthenticatedUser { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)

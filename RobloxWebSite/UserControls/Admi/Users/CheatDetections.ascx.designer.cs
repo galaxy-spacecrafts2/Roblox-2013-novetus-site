@@ -21,7 +21,7 @@ namespace Roblox.Website.UserControls.Admi.Users
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Roblox.Controls.Panel pnlCheatDetections;
+        protected global::System.Web.UI.WebControls.Panel pnlCheatDetections;
 
         /// <summary>
         /// rbxCheatDetectionsTable control.
