@@ -70,7 +70,7 @@ namespace Roblox.Website.Admi.Users
             {
                 ID = IUser.Id,
                 Name = IUser.Name,
-                ModerationStatus = AccountStatus.MustGet(IUser.AccountStatus.TranslateToByte()).Value,
+                ModerationStatus = AccountStatusEntity.MustGet(IUser.AccountStatus.TranslateToByte()).Value,
                 IsPremiumUser = false,
                 MembershipType = "N/A",
                 MembershipExpirationDate = "N/A",
@@ -102,7 +102,7 @@ namespace Roblox.Website.Admi.Users
 
         protected void PopulateUpdateUserPane()
         {
-            var emailAddress = _userEmailFactory.GetCurrentVerified(IUser);
+            var userEmail = _userEmailFactory.GetCurrentVerified(IUser) as IUserEmail;
             // HACK: Do we even need IsApproved anymore?
             var account = AccountEntity.MustGet(IUser.AccountId);
 
@@ -110,8 +110,8 @@ namespace Roblox.Website.Admi.Users
             {
                 ID = IUser.Id,
                 Blurb = IUser.Description,
-                EmailAddress = emailAddress != null ? emailAddress.EmailAddress.Address : "",
-                IsEmailVerified = emailAddress != null ? emailAddress.IsValid : false,
+                EmailAddress = userEmail != null ? userEmail.EmailAddress.Address : "",
+                IsEmailVerified = userEmail != null ? userEmail.IsValid : false,
                 Created = IUser.Created,
                 LastLocation = null,
                 LastActivityDate = null,

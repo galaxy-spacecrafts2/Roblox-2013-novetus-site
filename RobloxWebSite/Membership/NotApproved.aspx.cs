@@ -7,6 +7,8 @@ using System.Web.UI.WebControls;
 using System.Web.Security;
 using Roblox.Moderation;
 
+using AccountStatusEntity = Roblox.Users.Entities.AccountStatus;
+
 namespace Roblox.Website
 {
     public partial class NotApproved : System.Web.UI.Page
@@ -19,7 +21,7 @@ namespace Roblox.Website
 
         private Roblox.User _user;
         private Roblox.Account _account;
-        private ICollection<Punishment> _punishments;
+        private IEnumerable<Punishment> _punishments;
 
         protected void Page_Init(object sender, EventArgs e)
         {
@@ -34,7 +36,7 @@ namespace Roblox.Website
             {
 
                 // HACK: Average user should never have a long amount of punishments, only an int amount
-                _punishments = Punishment.GetPunishmentsByUserIDPaged((int)punishmentCount - 1, 1, _user.ID);
+                _punishments = Punishment.GetPunishmentsByUserIDPaged((int)punishmentCount - 1, 1, (int)_user.ID);
 
                 Punishment = _punishments.Last();
                 var punishType = Punishment.PunishmentType;
@@ -92,7 +94,7 @@ namespace Roblox.Website
 
         protected void ButtonAgree_Click(object sender, EventArgs e)
         {
-            if (_account.AccountStatusID != AccountStatus.OkId)
+            if (_account.AccountStatusID != AccountStatusEntity.Ok.ID)
             {
                 var activePunsihmentsCount = Punishment.GetTotalNumberOfActivePunishmentsByUserID(_user.ID);
 
@@ -100,7 +102,7 @@ namespace Roblox.Website
                     return;
 
                 // Bypass punishment screen provided there are no active punishments
-                _account.AccountStatusID = AccountStatus.OkId;
+                _account.AccountStatusID = AccountStatusEntity.Ok.ID;
                 _account.Save();
             }
 

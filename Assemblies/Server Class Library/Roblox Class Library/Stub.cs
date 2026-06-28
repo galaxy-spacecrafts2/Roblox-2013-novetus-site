@@ -37,6 +37,7 @@ namespace Roblox
         public string Name { get; set; }
         public string UserName { get; set; }
         public string Email { get; set; }
+        public byte AccountStatusID { get; set; }
 
         public static MembershipUser Get(string username) { return null; }
         public static MembershipUser Get(int accountId) { return null; }
@@ -47,6 +48,8 @@ namespace Roblox
         }
 
         public static Account GetCurrent() { return null; }
+
+        public void Save() { }
     }
 
     public class User

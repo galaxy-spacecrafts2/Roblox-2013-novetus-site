@@ -31,6 +31,19 @@ namespace Roblox.WebsiteSettings
             }
         }
 
+        public class Layout
+        {
+            private static Layout _default = new Layout();
+            public static Layout Default { get { return _default; } }
+
+            public bool IsUpdatedInstallationInstructionsModalEnabled { get; set; }
+
+            public Layout()
+            {
+                IsUpdatedInstallationInstructionsModalEnabled = false;
+            }
+        }
+
         public class WebsiteBootstrapSettings
         {
             private static WebsiteBootstrapSettings _default = new WebsiteBootstrapSettings();

@@ -9,6 +9,8 @@ using Roblox.Platform.Membership;
 using Roblox.Website.ModelFactories.Moderation;
 
 using UserEntity = Roblox.Users.Entities.User;
+using AccountEntity = Roblox.Users.Entities.Account;
+using AccountStatusEntity = Roblox.Users.Entities.AccountStatus;
 
 namespace Roblox.Website.Admi
 {
@@ -19,13 +21,13 @@ namespace Roblox.Website.Admi
         private IUser _IUser;
         private IUserFactory _userFactory;
 
-        public ICollection<PunishmentType> GetPunishmentTypes() => PunishmentType.AllPunishmentTypes;
+        public IEnumerable<PunishmentType> GetPunishmentTypes() => PunishmentType.AllPunishmentTypes;
 
         protected void Page_Init(object sender, EventArgs e)
         {
             int id;
             if (!int.TryParse(Request["ID"], out id))
-                id = Roblox.User.RobloxAccountID;
+                id = 1;
 
             _userFactory = Global.MembershipDomainFactories.UserFactory;
             _IUser = _userFactory.GetUser(id);
@@ -75,8 +77,8 @@ namespace Roblox.Website.Admi
                 {
                     // Overrides the account state to treat user as though they aren't punished
                     var user = UserEntity.MustGet(UserID);
-                    var account = user.Account;
-                    account.AccountStatusID = AccountStatus.OkId;
+                    var account = AccountEntity.MustGet(user.AccountID);
+                    account.AccountStatusID = AccountStatusEntity.Ok.ID;
                     account.Save();
                 }
                 else

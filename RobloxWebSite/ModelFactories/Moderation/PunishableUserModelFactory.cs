@@ -26,7 +26,7 @@ namespace Roblox.Website.ModelFactories.Moderation
         {
 
             var roleSet = _roleSetReader.GetHighestRoleSetForAccountId(user.AccountId);
-            var userEmail = _userEmailFactory.GetCurrentVerified(user);
+            var userEmail = _userEmailFactory.GetCurrentVerified(user) as IUserEmail;
             var emailAddress = userEmail != null ? userEmail.EmailAddress.Address : null;
 
             var model = new PunishableUserModel

@@ -3,6 +3,21 @@ using System.Collections.Generic;
 
 namespace Roblox.Moderation
 {
+    public class UserModerationNote
+    {
+        public long ID { get; set; }
+        public int UserID { get; set; }
+        public int ModeratorID { get; set; }
+        public string Text { get; set; }
+        public DateTime Created { get; set; }
+
+        public void Save() { }
+
+        public static IEnumerable<UserModerationNote> GetUserModerationNotesByUserIDPaged(
+            int startRowIndex, int maximumRows, int userId)
+            => new List<UserModerationNote>();
+    }
+
     public class PunishmentType
     {
         public byte ID { get; set; }
