@@ -7,18 +7,23 @@ namespace Roblox.Web.Maintenance
         public class Settings
         {
             private static Settings _default = new Settings();
-            public static Settings Default => _default;
-            public string CookieConstraintIpBypassRangeCsv { get; set; } = string.Empty;
+            public static Settings Default { get { return _default; } }
+            public string CookieConstraintIpBypassRangeCsv { get; set; }
+
+            public Settings() { CookieConstraintIpBypassRangeCsv = string.Empty; }
         }
     }
 
     public static class CookieConstraintSettings
     {
         public static void SetCookieConstraintSettings(
-            bool isEnabled,
-            string cookieName,
-            string password,
-            string allowedButtonValuesCsv,
-            string ipBypassRangeCsv) { }
+            Func<bool> getIsEnabled,
+            Func<string> getCookieName,
+            Func<string> getPassword,
+            Func<string> getRedirectDomain,
+            Func<string> getRedirectUrl,
+            Func<string> getProtectedPageExtension,
+            Func<string> getIpBypassRangeCsv,
+            Func<string> getAllowedButtonValuesCsv) { }
     }
 }

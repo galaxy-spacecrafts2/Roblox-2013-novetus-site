@@ -5,12 +5,20 @@ namespace Roblox.Web.Code
         public class Settings
         {
             private static Settings _default = new Settings();
-            public static Settings Default => _default;
+            public static Settings Default { get { return _default; } }
 
-            public bool IsCookieConstraintEnabled { get; set; } = false;
-            public string CookieConstraintCookieName { get; set; } = string.Empty;
-            public string CookieConstraintPassword { get; set; } = string.Empty;
-            public string CookieConstraint_AllowedButtonValuesCSV { get; set; } = string.Empty;
+            public bool IsCookieConstraintEnabled { get; set; }
+            public string CookieConstraintCookieName { get; set; }
+            public string CookieConstraintPassword { get; set; }
+            public string CookieConstraint_AllowedButtonValuesCSV { get; set; }
+
+            public Settings()
+            {
+                IsCookieConstraintEnabled = false;
+                CookieConstraintCookieName = string.Empty;
+                CookieConstraintPassword = string.Empty;
+                CookieConstraint_AllowedButtonValuesCSV = string.Empty;
+            }
         }
     }
 
@@ -18,7 +26,7 @@ namespace Roblox.Web.Code
     {
         public static class Abbreviate
         {
-            public static string GetTruncValue(int value) => value.ToString();
+            public static string GetTruncValue(int value) { return value.ToString(); }
         }
     }
 }

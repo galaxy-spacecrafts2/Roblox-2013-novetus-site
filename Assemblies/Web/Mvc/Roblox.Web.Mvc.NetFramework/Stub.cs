@@ -8,4 +8,17 @@ namespace Roblox.Web.Mvc
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext) { }
     }
+
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method)]
+    public class CookieConstraintAttributeWithRedirectAttribute : ActionFilterAttribute
+    {
+        public override void OnActionExecuting(ActionExecutingContext filterContext) { }
+    }
+
+    public class BaseActionFilterAttribute : ActionFilterAttribute
+    {
+        public override void OnActionExecuting(ActionExecutingContext filterContext) { }
+    }
+
+    public class ReplicatedCssControllerBase : Controller { }
 }

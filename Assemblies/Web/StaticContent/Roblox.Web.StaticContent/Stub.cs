@@ -7,26 +7,49 @@ namespace Roblox.Web.StaticContent
         public class Settings
         {
             private static Settings _default = new Settings();
-            public static Settings Default => _default;
-            public bool MinifyJavascript { get; set; } = false;
-            public bool MinifyCss { get; set; } = false;
+            public static Settings Default { get { return _default; } }
+            public bool MinifyJavascript { get; set; }
+            public bool MinifyCss { get; set; }
+            public Settings() { MinifyJavascript = false; MinifyCss = false; }
         }
+    }
+
+    public class RobloxScriptBundle
+    {
+        public string Name { get; set; }
+    }
+
+    public class RobloxCSSBundle
+    {
+        public string Name { get; set; }
     }
 
     public static class StaticContentV1
     {
-        public static string GetUrl(string fileName) => "/" + fileName;
+        public static string GetUrl(string fileName) { return "/" + fileName; }
     }
 
     public static class RobloxScripts
     {
-        public static List<string> PageScripts { get; } = new List<string>();
-        public static object CreateBundle(string name, IEnumerable<string> files, bool minify) => null;
+        private static readonly List<string> _pageScripts = new List<string>();
+        public static List<string> PageScripts { get { return _pageScripts; } }
+        public static bool MergeFiles { get; set; }
+
+        public static RobloxScriptBundle CreateBundle(string name, IEnumerable<string> files, bool minify)
+        {
+            return new RobloxScriptBundle { Name = name };
+        }
     }
 
     public static class RobloxCSS
     {
-        public static List<string> PageCSS { get; } = new List<string>();
-        public static object CreateBundle(string name, IEnumerable<string> files, bool minify) => null;
+        private static readonly List<string> _pageCSS = new List<string>();
+        public static List<string> PageCSS { get { return _pageCSS; } }
+        public static bool MergeFiles { get; set; }
+
+        public static RobloxCSSBundle CreateBundle(string name, IEnumerable<string> files, bool minify)
+        {
+            return new RobloxCSSBundle { Name = name };
+        }
     }
 }

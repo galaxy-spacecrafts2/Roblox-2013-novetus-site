@@ -3,12 +3,6 @@ using Roblox.Platform.Membership;
 
 namespace Roblox.Platform.Roles
 {
-    public interface IRoleSet
-    {
-        string Name { get; }
-        long Id { get; }
-    }
-
     public interface IRoleSetReader
     {
         IRoleSet GetRoleSet(string roleName);
@@ -22,5 +16,6 @@ namespace Roblox.Platform.Roles
         public IRoleSetValidator RoleSetValidator { get; set; }
 
         public RolesDomainFactories() { }
+        public RolesDomainFactories(object logger = null) { }
     }
 }
