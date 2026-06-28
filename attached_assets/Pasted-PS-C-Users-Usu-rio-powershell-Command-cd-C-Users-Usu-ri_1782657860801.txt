@@ -1,0 +1,1521 @@
+PS C:\Users\Usuário> powershell -Command "cd 'C:\Users\Usuário\Downloads\Roblox-2013-novetus-site'; & 'C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\MSBuild.exe' RobloxWebSite.sln /p:Configuration=Debug 2>&1"
+Versão do MSBuild 17.14.40+3e7442088 para .NET Framework
+Compilação de 28/06/2026 11:43:24 iniciada.
+
+Projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" no nó 1 (destinos padrão).
+ValidateSolutionConfiguration:
+  Compilando a configuração de solução "Debug|Any CPU".
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) no nó 1 (destinos padrão).
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Assets\Roblox.Assets\Roblox.Assets.csproj" (3:2) no nó
+ 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Assets -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Assets\Roblox.Assets\bin\Debug\Roblox
+  .Assets.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Assets\Roblox.Assets\Roblo
+x.Assets.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Caching\Roblox.Caching\Roblox.Caching.csproj" (4:2) no
+ nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Caching -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Caching\Roblox.Caching\bin\Debug\Rob
+  lox.Caching.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Caching\Roblox.Caching\Rob
+lox.Caching.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Common\Roblox.Common.Web\Roblox.Common.Web.csproj" (5:
+2) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Common.Web -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Common\Roblox.Common.Web\bin\Debu
+  g\Roblox.Common.Web.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Common\Roblox.Common.Web\R
+oblox.Common.Web.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Common\Roblox.Common\Roblox.Common.csproj" (6:2) no nó
+ 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Common -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Common\Roblox.Common\bin\Debug\Roblox
+  .Common.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Common\Roblox.Common\Roblo
+x.Common.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Configuration\Roblox.Configuration\Roblox.Configuratio
+n.csproj" (7:2) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Configuration -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Configuration\Roblox.Configura
+  tion\bin\Debug\Roblox.Configuration.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Configuration\Roblox.Confi
+guration\Roblox.Configuration.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\DataV2\Core\Roblox.DataV2.Core\Roblox.DataV2.Core.cspr
+oj" (8:2) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.DataV2.Core -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\DataV2\Core\Roblox.DataV2.Core\b
+  in\Debug\Roblox.DataV2.Core.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\DataV2\Core\Roblox.DataV2.
+Core\Roblox.DataV2.Core.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Data\Roblox.Data\Roblox.Data.csproj" (9:2) no nó 1 (de
+stinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Data -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Data\Roblox.Data\bin\Debug\Roblox.Data.
+  dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Data\Roblox.Data\Roblox.Da
+ta.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\EntityFrameworkCore\Roblox.EntityFrameworkCore\Roblox.
+EntityFrameworkCore.csproj" (10:2) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.EntityFrameworkCore -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\EntityFrameworkCore\Robl
+  ox.EntityFrameworkCore\bin\Debug\Roblox.EntityFrameworkCore.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\EntityFrameworkCore\Roblox
+.EntityFrameworkCore\Roblox.EntityFrameworkCore.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\EventLog\Roblox.EventLog.Extended\Roblox.EventLog.Exte
+nded.csproj" (11:2) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.EventLog.Extended -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\EventLog\Roblox.EventLog.E
+  xtended\bin\Debug\Roblox.EventLog.Extended.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\EventLog\Roblox.EventLog.E
+xtended\Roblox.EventLog.Extended.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\EventLog\Roblox.EventLog\Roblox.EventLog.csproj" (12:2
+) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.EventLog -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\EventLog\Roblox.EventLog\bin\Debug\
+  Roblox.EventLog.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\EventLog\Roblox.EventLog\R
+oblox.EventLog.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Hashing\Roblox.Hashing\Roblox.Hashing.csproj" (13:2) n
+o nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Hashing -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Hashing\Roblox.Hashing\bin\Debug\Rob
+  lox.Hashing.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Hashing\Roblox.Hashing\Rob
+lox.Hashing.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Infrastructure\Roblox.Farms\Roblox.Farms.csproj" (14:2
+) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Farms -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Infrastructure\Roblox.Farms\bin\Debug\
+  Roblox.Farms.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Infrastructure\Roblox.Farm
+s\Roblox.Farms.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Moderation\Roblox.Moderation\Roblox.Moderation.csproj"
+ (15:2) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Moderation -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Moderation\Roblox.Moderation\bin\
+  Debug\Roblox.Moderation.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Moderation\Roblox.Moderati
+on\Roblox.Moderation.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Mssql\Roblox.MssqlDatabases\Roblox.MssqlDatabases.cspr
+oj" (16:2) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.MssqlDatabases -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Mssql\Roblox.MssqlDatabases\b
+  in\Debug\Roblox.MssqlDatabases.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Mssql\Roblox.MssqlDatabase
+s\Roblox.MssqlDatabases.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Authentication\Roblox.Platform.Authentication
+.Core\Roblox.Platform.Authentication.Core.csproj" (17:2) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Platform.Authentication.Core -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Authen
+  tication\Roblox.Platform.Authentication.Core\bin\Debug\Roblox.Platform.Authentication.Core.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Authentication\Ro
+blox.Platform.Authentication.Core\Roblox.Platform.Authentication.Core.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Authentication\Roblox.Platform.Authentication
+\Roblox.Platform.Authentication.csproj" (18:2) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Platform.Authentication -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Authenticat
+  ion\Roblox.Platform.Authentication\bin\Debug\Roblox.Platform.Authentication.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Authentication\Ro
+blox.Platform.Authentication\Roblox.Platform.Authentication.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Core\Roblox.Platform.Core\Roblox.Platform.Cor
+e.csproj" (19:2) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Platform.Core -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Core\Roblox.Platform.
+  Core\bin\Debug\Roblox.Platform.Core.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Core\Roblox.Platf
+orm.Core\Roblox.Platform.Core.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Email.Core\Roblox.Platf
+orm.Email.Core.csproj" (20:2) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Platform.Email.Core -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Pl
+  atform.Email.Core\bin\Debug\Roblox.Platform.Email.Core.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Plat
+form.Email.Core\Roblox.Platform.Email.Core.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Email\Roblox.Platform.E
+mail.csproj" (21:2) no nó 1 (destinos padrão).
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Email\Roblox.P
+latform.Email.csproj" (21:2) está compilando "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\M
+embership\Roblox.Platform.Membership\Roblox.Platform.Membership.csproj" (23:3) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Platform.Membership -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Robl
+  ox.Platform.Membership\bin\Debug\Roblox.Platform.Membership.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox
+.Platform.Membership\Roblox.Platform.Membership.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Email\Roblox.P
+latform.Email.csproj" (21:2) está compilando "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\M
+embership\Roblox.Platform.Membership.Core\Roblox.Platform.Membership.Core.csproj" (22:3) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Platform.Membership.Core -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Membership
+  \Roblox.Platform.Membership.Core\bin\Debug\Roblox.Platform.Membership.Core.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox
+.Platform.Membership.Core\Roblox.Platform.Membership.Core.csproj" (destinos padrão).
+
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Platform.Email -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platfor
+  m.Email\bin\Debug\Roblox.Platform.Email.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Plat
+form.Email\Roblox.Platform.Email.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Platform.Roles.Core\Roblox.Platf
+orm.Roles.Core.csproj" (24:2) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Platform.Roles.Core -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Pl
+  atform.Roles.Core\bin\Debug\Roblox.Platform.Roles.Core.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Plat
+form.Roles.Core\Roblox.Platform.Roles.Core.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Platform.Roles\Roblox.Platform.R
+oles.csproj" (25:2) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Platform.Roles -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Platfor
+  m.Roles\bin\Debug\Roblox.Platform.Roles.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Plat
+form.Roles\Roblox.Platform.Roles.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Security\Roblox.Platform.Security\Roblox.Plat
+form.Security.csproj" (26:2) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Platform.Security -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Security\Roblox.P
+  latform.Security\bin\Debug\Roblox.Platform.Security.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Security\Roblox.P
+latform.Security\Roblox.Platform.Security.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Server Class Library\Roblox Class Library\Roblox Serve
+r Class Library.csproj" (27:2) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox Server Class Library -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Server Class Library\Ro
+  blox Class Library\bin\Debug\Roblox Server Class Library.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Server Class Library\Roblo
+x Class Library\Roblox Server Class Library.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Showcases\Roblox.Showcases\Roblox.Showcases.csproj" (2
+8:2) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Showcases -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Showcases\Roblox.Showcases\bin\Deb
+  ug\Roblox.Showcases.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Showcases\Roblox.Showcases
+\Roblox.Showcases.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Configuration\Roblox.WebsiteSettings\Roblox.WebsiteSet
+tings.csproj" (29:2) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.WebsiteSettings -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Configuration\Roblox.Website
+  Settings\bin\Debug\Roblox.WebsiteSettings.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Configuration\Roblox.Websi
+teSettings\Roblox.WebsiteSettings.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Users\Roblox.Users.Old\Roblox.Users.Old.csproj" (30:2)
+ no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Users.Old -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Users\Roblox.Users.Old\bin\Debug\R
+  oblox.Users.Old.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Users\Roblox.Users.Old\Rob
+lox.Users.Old.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Users\Roblox.Users\Roblox.Users.csproj" (31:2) no nó 1
+ (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Users -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Users\Roblox.Users\bin\Debug\Roblox.Us
+  ers.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Users\Roblox.Users\Roblox.
+Users.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Web\Code\Roblox.Web.Code\Roblox.Web.Code.csproj" (32:2
+) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Web.Code -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Web\Code\Roblox.Web.Code\bin\Debug\
+  Roblox.Web.Code.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Web\Code\Roblox.Web.Code\R
+oblox.Web.Code.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Web\HttpModules\Roblox.Web.HttpModules\Roblox.Web.Http
+Modules.csproj" (33:2) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Web.HttpModules -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Web\HttpModules\Roblox.Web.H
+  ttpModules\bin\Debug\Roblox.Web.HttpModules.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Web\HttpModules\Roblox.Web
+.HttpModules\Roblox.Web.HttpModules.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Web\Maintenance\Roblox.Web.Maintenance.NetFramework\Ro
+blox.Web.Maintenance.csproj" (34:2) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Web.Maintenance -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Web\Maintenance\Roblox.Web.M
+  aintenance.NetFramework\bin\Debug\Roblox.Web.Maintenance.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Web\Maintenance\Roblox.Web
+.Maintenance.NetFramework\Roblox.Web.Maintenance.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\Roblox.Web.Mvc.csp
+roj" (35:2) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Web.Mvc -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.NetFramework\
+  bin\Debug\Roblox.Web.Mvc.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.Mvc.Net
+Framework\Roblox.Web.Mvc.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (2) está compilando
+ "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Web\StaticContent\Roblox.Web.StaticContent\Roblox.Web.
+StaticContent.csproj" (36:2) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Web.StaticContent -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Web\StaticContent\Roblox.W
+  eb.StaticContent\bin\Debug\Roblox.Web.StaticContent.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Web\StaticContent\Roblox.W
+eb.StaticContent\Roblox.Web.StaticContent.csproj" (destinos padrão).
+
+CoreResGen:
+  Não há recursos desatualizados em relação a seus arquivos de origem. Ignorando geração de recurso.
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+  C:\Program Files (x86)\Microsoft Visual Studio\2022\BuildTools\MSBuild\Current\Bin\Roslyn\csc.exe /noconfig /nowarn:1
+  701,1702 /fullpaths /nostdlib+ /errorreport:prompt /warn:4 /define:DEBUG;TRACE /highentropyva+ /reference:"C:\Users\U
+  suário\Downloads\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll" /reference:"C:\Users\Usuário\Downloads\packages\Azure
+  .Core.1.35.0\lib\net472\Azure.Core.dll" /reference:"C:\Users\Usuário\Downloads\packages\Azure.Identity.1.10.3\lib\net
+  standard2.0\Azure.Identity.dll" /reference:"C:\Users\Usuário\Downloads\packages\BCrypt.Net-Next.4.0.3\lib\net472\BCry
+  pt.Net-Next.dll" /reference:"C:\Users\Usuário\Downloads\packages\Microsoft.AspNetCore.Cryptography.Internal.6.0.3\lib
+  \net461\Microsoft.AspNetCore.Cryptography.Internal.dll" /reference:"C:\Users\Usuário\Downloads\packages\Microsoft.Bcl
+  .AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll" /reference:"C:\Users\Usuário\Downloads\packages\
+  Microsoft.Bcl.HashCode.1.1.1\lib\net461\Microsoft.Bcl.HashCode.dll" /reference:"C:\Users\Usuário\Downloads\Client.Leg
+  acyAssemblies\Microsoft.Ccr.Core.dll" /reference:"C:\Users\Usuário\Downloads\packages\Microsoft.CodeDom.Providers.Dot
+  NetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll" /reference:"C:\Program Fi
+  les (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Microsoft.CSharp.dll" /reference:"C:\Users\Us
+  uário\Downloads\packages\Microsoft.Data.SqlClient.5.2.0\lib\net462\Microsoft.Data.SqlClient.dll" /reference:"C:\Users
+  \Usuário\Downloads\packages\Microsoft.Data.Sqlite.Core.3.1.32\lib\netstandard2.0\Microsoft.Data.Sqlite.dll" /referenc
+  e:"C:\Users\Usuário\Downloads\packages\Microsoft.DotNet.PlatformAbstractions.3.1.6\lib\net45\Microsoft.DotNet.Platfor
+  mAbstractions.dll" /reference:"C:\Users\Usuário\Downloads\packages\Microsoft.EntityFrameworkCore.Abstractions.3.1.32\
+  lib\netstandard2.0\Microsoft.EntityFrameworkCore.Abstractions.dll" /reference:"C:\Users\Usuário\Downloads\packages\Mi
+  crosoft.EntityFrameworkCore.3.1.32\lib\netstandard2.0\Microsoft.EntityFrameworkCore.dll" /reference:"C:\Users\Usuário
+  \Downloads\packages\Microsoft.EntityFrameworkCore.Relational.3.1.32\lib\netstandard2.0\Microsoft.EntityFrameworkCore.
+  Relational.dll" /reference:"C:\Users\Usuário\Downloads\packages\Microsoft.EntityFrameworkCore.Sqlite.Core.3.1.32\lib\
+  netstandard2.0\Microsoft.EntityFrameworkCore.Sqlite.dll" /reference:"C:\Users\Usuário\Downloads\packages\Microsoft.En
+  tityFrameworkCore.SqlServer.3.1.32\lib\netstandard2.0\Microsoft.EntityFrameworkCore.SqlServer.dll" /reference:"C:\Use
+  rs\Usuário\Downloads\packages\Microsoft.Extensions.Caching.Abstractions.3.1.32\lib\netstandard2.0\Microsoft.Extension
+  s.Caching.Abstractions.dll" /reference:"C:\Users\Usuário\Downloads\packages\Microsoft.Extensions.Caching.Memory.3.1.3
+  2\lib\netstandard2.0\Microsoft.Extensions.Caching.Memory.dll" /reference:"C:\Users\Usuário\Downloads\packages\Microso
+  ft.Extensions.Configuration.Abstractions.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Configuration.Abstractions.dl
+  l" /reference:"C:\Users\Usuário\Downloads\packages\Microsoft.Extensions.Configuration.Binder.3.1.32\lib\netstandard2.
+  0\Microsoft.Extensions.Configuration.Binder.dll" /reference:"C:\Users\Usuário\Downloads\packages\Microsoft.Extensions
+  .Configuration.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Configuration.dll" /reference:"C:\Users\Usuário\Downloa
+  ds\packages\Microsoft.Extensions.DependencyInjection.Abstractions.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Depe
+  ndencyInjection.Abstractions.dll" /reference:"C:\Users\Usuário\Downloads\packages\Microsoft.Extensions.DependencyInje
+  ction.3.1.32\lib\net461\Microsoft.Extensions.DependencyInjection.dll" /reference:"C:\Users\Usuário\Downloads\packages
+  \Microsoft.Extensions.DependencyModel.3.1.25\lib\net451\Microsoft.Extensions.DependencyModel.dll" /reference:"C:\User
+  s\Usuário\Downloads\packages\Microsoft.Extensions.Logging.Abstractions.3.1.32\lib\netstandard2.0\Microsoft.Extensions
+  .Logging.Abstractions.dll" /reference:"C:\Users\Usuário\Downloads\packages\Microsoft.Extensions.Logging.3.1.32\lib\ne
+  tstandard2.0\Microsoft.Extensions.Logging.dll" /reference:"C:\Users\Usuário\Downloads\packages\Microsoft.Extensions.O
+  ptions.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Options.dll" /reference:"C:\Users\Usuário\Downloads\packages\Mi
+  crosoft.Extensions.Primitives.3.1.32\lib\netstandard2.0\Microsoft.Extensions.Primitives.dll" /reference:"C:\Users\Usu
+  ário\Downloads\packages\Microsoft.Identity.Client.4.56.0\lib\net461\Microsoft.Identity.Client.dll" /reference:"C:\Use
+  rs\Usuário\Downloads\packages\Microsoft.Identity.Client.Extensions.Msal.4.56.0\lib\netstandard2.0\Microsoft.Identity.
+  Client.Extensions.Msal.dll" /reference:"C:\Users\Usuário\Downloads\packages\Microsoft.IdentityModel.Abstractions.6.35
+  .0\lib\net472\Microsoft.IdentityModel.Abstractions.dll" /reference:"C:\Users\Usuário\Downloads\packages\Microsoft.Ide
+  ntityModel.JsonWebTokens.6.35.0\lib\net472\Microsoft.IdentityModel.JsonWebTokens.dll" /reference:"C:\Users\Usuário\Do
+  wnloads\packages\Microsoft.IdentityModel.Logging.6.35.0\lib\net472\Microsoft.IdentityModel.Logging.dll" /reference:"C
+  :\Users\Usuário\Downloads\packages\Microsoft.IdentityModel.Protocols.6.35.0\lib\net472\Microsoft.IdentityModel.Protoc
+  ols.dll" /reference:"C:\Users\Usuário\Downloads\packages\Microsoft.IdentityModel.Protocols.OpenIdConnect.6.35.0\lib\n
+  et472\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll" /reference:"C:\Users\Usuário\Downloads\packages\Microsoft.
+  IdentityModel.Tokens.6.35.0\lib\net472\Microsoft.IdentityModel.Tokens.dll" /reference:"C:\Users\Usuário\Downloads\pac
+  kages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll" /reference:"C:\Program Files (
+  x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\mscorlib.dll" /reference:"C:\Users\Usuário\Downloa
+  ds\packages\MySqlConnector.0.69.10\lib\net471\MySqlConnector.dll" /reference:"C:\Users\Usuário\Downloads\packages\New
+  tonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll" /reference:"C:\Users\Usuário\Downloads\packages\Pomelo.EntityFrame
+  workCore.MySql.3.2.7\lib\netstandard2.0\Pomelo.EntityFrameworkCore.MySql.dll" /reference:"C:\Users\Usuário\Downloads\
+  packages\Pomelo.JsonObject.2.2.1\lib\netstandard2.0\Pomelo.JsonObject.dll" /reference:"C:\Users\Usuário\Downloads\Rob
+  lox-2013-novetus-site\Assemblies\Server Class Library\Roblox Class Library\bin\Debug\Roblox Server Class Library.dll"
+   /reference:"C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Assets\Roblox.Assets\bin\Debug\Roblox.Ass
+  ets.dll" /reference:"C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Caching\Roblox.Caching\bin\Debug\
+  Roblox.Caching.dll" /reference:"C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Common\Roblox.Common\b
+  in\Debug\Roblox.Common.dll" /reference:"C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Common\Roblox.
+  Common.Web\bin\Debug\Roblox.Common.Web.dll" /reference:"C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblie
+  s\Configuration\Roblox.Configuration\bin\Debug\Roblox.Configuration.dll" /reference:"C:\Users\Usuário\Downloads\Roblo
+  x-2013-novetus-site\Assemblies\Data\Roblox.Data\bin\Debug\Roblox.Data.dll" /reference:"C:\Users\Usuário\Downloads\Rob
+  lox-2013-novetus-site\Assemblies\DataV2\Core\Roblox.DataV2.Core\bin\Debug\Roblox.DataV2.Core.dll" /reference:"C:\User
+  s\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\EntityFrameworkCore\Roblox.EntityFrameworkCore\bin\Debug\Robl
+  ox.EntityFrameworkCore.dll" /reference:"C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\EventLog\Roblo
+  x.EventLog\bin\Debug\Roblox.EventLog.dll" /reference:"C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\
+  EventLog\Roblox.EventLog.Extended\bin\Debug\Roblox.EventLog.Extended.dll" /reference:"C:\Users\Usuário\Downloads\Robl
+  ox-2013-novetus-site\Assemblies\Infrastructure\Roblox.Farms\bin\Debug\Roblox.Farms.dll" /reference:"C:\Users\Usuário\
+  Downloads\Roblox-2013-novetus-site\Assemblies\Hashing\Roblox.Hashing\bin\Debug\Roblox.Hashing.dll" /reference:"C:\Use
+  rs\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Moderation\Roblox.Moderation\bin\Debug\Roblox.Moderation.dll
+  " /reference:"C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Mssql\Roblox.MssqlDatabases\bin\Debug\Ro
+  blox.MssqlDatabases.dll" /reference:"C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Authenti
+  cation\Roblox.Platform.Authentication.Core\bin\Debug\Roblox.Platform.Authentication.Core.dll" /reference:"C:\Users\Us
+  uário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Authentication\Roblox.Platform.Authentication\bin\Debug\
+  Roblox.Platform.Authentication.dll" /reference:"C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platfo
+  rm\Core\Roblox.Platform.Core\bin\Debug\Roblox.Platform.Core.dll" /reference:"C:\Users\Usuário\Downloads\Roblox-2013-n
+  ovetus-site\Assemblies\Platform\Email\Roblox.Platform.Email.Core\bin\Debug\Roblox.Platform.Email.Core.dll" /reference
+  :"C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Email\bin\Debug\Roblo
+  x.Platform.Email.dll" /reference:"C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Membership\
+  Roblox.Platform.Membership.Core\bin\Debug\Roblox.Platform.Membership.Core.dll" /reference:"C:\Users\Usuário\Downloads
+  \Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox.Platform.Membership\bin\Debug\Roblox.Platform.Members
+  hip.dll" /reference:"C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Platform.Ro
+  les.Core\bin\Debug\Roblox.Platform.Roles.Core.dll" /reference:"C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\As
+  semblies\Platform\Roles\Roblox.Platform.Roles\bin\Debug\Roblox.Platform.Roles.dll" /reference:"C:\Users\Usuário\Downl
+  oads\Roblox-2013-novetus-site\Assemblies\Platform\Security\Roblox.Platform.Security\bin\Debug\Roblox.Platform.Securit
+  y.dll" /reference:"C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Showcases\Roblox.Showcases\bin\Debu
+  g\Roblox.Showcases.dll" /reference:"C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Users\Roblox.Users
+  \bin\Debug\Roblox.Users.dll" /reference:"C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Users\Roblox.
+  Users.Old\bin\Debug\Roblox.Users.Old.dll" /reference:"C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\
+  Web\Code\Roblox.Web.Code\bin\Debug\Roblox.Web.Code.dll" /reference:"C:\Users\Usuário\Downloads\Roblox-2013-novetus-si
+  te\Assemblies\Web\HttpModules\Roblox.Web.HttpModules\bin\Debug\Roblox.Web.HttpModules.dll" /reference:"C:\Users\Usuár
+  io\Downloads\Roblox-2013-novetus-site\Assemblies\Web\Maintenance\Roblox.Web.Maintenance.NetFramework\bin\Debug\Roblox
+  .Web.Maintenance.dll" /reference:"C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Web\Mvc\Roblox.Web.M
+  vc.NetFramework\bin\Debug\Roblox.Web.Mvc.dll" /reference:"C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assembl
+  ies\Web\StaticContent\Roblox.Web.StaticContent\bin\Debug\Roblox.Web.StaticContent.dll" /reference:"C:\Users\Usuário\D
+  ownloads\Roblox-2013-novetus-site\Assemblies\Configuration\Roblox.WebsiteSettings\bin\Debug\Roblox.WebsiteSettings.dl
+  l" /reference:"C:\Users\Usuário\Downloads\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll" /reference:"C:
+  \Users\Usuário\Downloads\packages\System.Collections.Immutable.1.7.1\lib\net461\System.Collections.Immutable.dll" /re
+  ference:"C:\Users\Usuário\Downloads\packages\System.ComponentModel.Annotations.4.7.0\lib\net461\System.ComponentModel
+  .Annotations.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Sy
+  stem.ComponentModel.DataAnnotations.dll" /reference:"C:\Users\Usuário\Downloads\packages\System.Configuration.Configu
+  rationManager.7.0.0\lib\net462\System.Configuration.ConfigurationManager.dll" /reference:"C:\Program Files (x86)\Refe
+  rence Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Configuration.dll" /reference:"C:\Program Files (x86
+  )\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Core.dll" /reference:"C:\Program Files (x86)\R
+  eference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Facades\System.Data.Common.dll" /reference:"C:\Program F
+  iles (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.DataSetExtensions.dll" /referenc
+  e:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.dll" /reference:"
+  C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Data.OracleClient.dll" /r
+  eference:"C:\Users\Usuário\Downloads\packages\System.Diagnostics.DiagnosticSource.6.0.1\lib\net461\System.Diagnostics
+  .DiagnosticSource.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7
+  .2\System.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Syste
+  m.Drawing.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Syste
+  m.EnterpriseServices.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v
+  4.7.2\System.IdentityModel.dll" /reference:"C:\Users\Usuário\Downloads\packages\System.IdentityModel.Tokens.Jwt.6.35.
+  0\lib\net472\System.IdentityModel.Tokens.Jwt.dll" /reference:"C:\Users\Usuário\Downloads\packages\System.IO.FileSyste
+  m.AccessControl.5.0.0\lib\net461\System.IO.FileSystem.AccessControl.dll" /reference:"C:\Users\Usuário\Downloads\packa
+  ges\System.Memory.Data.1.0.2\lib\net461\System.Memory.Data.dll" /reference:"C:\Users\Usuário\Downloads\packages\Syste
+  m.Memory.4.5.4\lib\net461\System.Memory.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framew
+  ork\.NETFramework\v4.7.2\System.Net.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\
+  .NETFramework\v4.7.2\System.Net.Http.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework
+  \.NETFramework\v4.7.2\System.Net.Http.WebRequest.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microso
+  ft\Framework\.NETFramework\v4.7.2\System.Numerics.dll" /reference:"C:\Users\Usuário\Downloads\packages\System.Numeric
+  s.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll" /reference:"C:\Users\Usuário\Downloads\packages\System.Runtime
+  .CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll" /reference:"C:\Program Files (x
+  86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Facades\System.Runtime.InteropServices.RuntimeInfor
+  mation.dll" /reference:"C:\Users\Usuário\Downloads\packages\System.Security.AccessControl.6.0.0\lib\net461\System.Sec
+  urity.AccessControl.dll" /reference:"C:\Users\Usuário\Downloads\packages\System.Security.Cryptography.ProtectedData.4
+  .7.0\lib\net461\System.Security.Cryptography.ProtectedData.dll" /reference:"C:\Program Files (x86)\Reference Assembli
+  es\Microsoft\Framework\.NETFramework\v4.7.2\System.Security.dll" /reference:"C:\Users\Usuário\Downloads\packages\Syst
+  em.Security.Permissions.7.0.0\lib\net462\System.Security.Permissions.dll" /reference:"C:\Users\Usuário\Downloads\pack
+  ages\System.Security.Principal.Windows.5.0.0\lib\net461\System.Security.Principal.Windows.dll" /reference:"C:\Program
+   Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.ServiceProcess.dll" /reference:"C:\
+  Users\Usuário\Downloads\packages\System.Text.Encodings.Web.6.0.0\lib\net461\System.Text.Encodings.Web.dll" /reference
+  :"C:\Users\Usuário\Downloads\packages\System.Text.Json.5.0.2\lib\net461\System.Text.Json.dll" /reference:"C:\Users\Us
+  uário\Downloads\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll" /r
+  eference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Transactions.dl
+  l" /reference:"C:\Users\Usuário\Downloads\packages\System.ValueTuple.4.5.0\lib\net461\System.ValueTuple.dll" /referen
+  ce:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.Abstractions.dll"
+   /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.Web.Applicat
+  ionServices.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Sys
+  tem.Web.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.
+  Web.DynamicData.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2
+  \System.Web.Entity.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.
+  7.2\System.Web.Extensions.dll" /reference:"C:\Users\Usuário\Downloads\packages\Microsoft.AspNet.WebPages.3.2.7\lib\ne
+  t45\System.Web.Helpers.dll" /reference:"C:\Users\Usuário\Downloads\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\Syst
+  em.Web.Mvc.dll" /reference:"C:\Users\Usuário\Downloads\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\Sys
+  tem.Web.Optimization.dll" /reference:"C:\Users\Usuário\Downloads\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\Syst
+  em.Web.Razor.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Sy
+  stem.Web.Routing.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.
+  2\System.Web.Services.dll" /reference:"C:\Users\Usuário\Downloads\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\
+  System.Web.WebPages.Deployment.dll" /reference:"C:\Users\Usuário\Downloads\packages\Microsoft.AspNet.WebPages.3.2.7\l
+  ib\net45\System.Web.WebPages.dll" /reference:"C:\Users\Usuário\Downloads\packages\Microsoft.AspNet.WebPages.3.2.7\lib
+  \net45\System.Web.WebPages.Razor.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NE
+  TFramework\v4.7.2\System.Windows.Forms.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framewo
+  rk\.NETFramework\v4.7.2\System.Xml.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.
+  NETFramework\v4.7.2\System.Xml.Linq.dll" /reference:"C:\Users\Usuário\Downloads\packages\WebGrease.1.6.0\lib\WebGreas
+  e.dll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\WindowsBase.d
+  ll" /reference:"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\Facades\netstand
+  ard.dll" /debug+ /debug:full /optimize- /out:obj\Debug\Roblox.Website.dll /subsystemversion:6.00 /resource:obj\Debug\
+  Roblox.Website.App_GlobalResources.Authentication.ResetPassword.resources /target:library /utf8output /langversion:7.
+  3 AbuseReport\InGameChatHandler.ashx.cs Admi\AdmiSimple.Master.cs Admi\AdmiSimple.Master.designer.cs Admi\Admi.Master
+  .cs Admi\Admi.Master.designer.cs Admi\ChangeTheme.aspx.cs Admi\ChangeTheme.aspx.designer.cs Admi\Default.aspx.cs Admi
+  \Default.aspx.designer.cs Admi\Test.aspx.cs Admi\Test.aspx.designer.cs Admi\Users\Find.aspx.cs Admi\Users\Find.aspx.d
+  esigner.cs Admi\Users\Moderate.aspx.cs Admi\Users\Moderate.aspx.designer.cs Admi\Users\ModerateUser.aspx.cs Admi\User
+  s\ModerateUser.aspx.designer.cs Admi\Users\UserAdmin.aspx.cs Admi\Users\UserAdmin.aspx.designer.cs Admi\User.aspx.cs
+  Admi\User.aspx.designer.cs API\AvatarRules.ashx.cs API\Comments.ashx.cs API\Item.ashx.cs App_GlobalResources\Authenti
+  cation.Login.designer.cs App_GlobalResources\Authentication.ResetPassword.Designer.cs App_GlobalResources\Common.Aler
+  tsAndOptionsResources.Designer.cs App_GlobalResources\Common.VisitGame.designer.cs App_GlobalResources\CommonUI.Contr
+  ols.designer.cs App_GlobalResources\CommonUI.Features.designer.cs App_GlobalResources\Feature.Catalog.designer.cs App
+  _GlobalResources\Feature.GameLaunchGuestMode.designer.cs App_GlobalResources\Feature.Profile.designer.cs App_GlobalRe
+  sources\CommonUI.Messages.designer.cs App_Start\BundleConfig.cs App_Start\FilterConfig.cs App_Start\RouteConfig.cs Co
+  ntrollers\AccountController.cs Controllers\AuthenticationController.cs Controllers\BuildController.cs Controllers\Bun
+  dlesController.cs Controllers\GameController.cs Controllers\GamesController.cs Controllers\HomeController.cs Controll
+  ers\LandingController.cs Controllers\MobileAppApiController.cs Controllers\NewLoginController.cs Controllers\ProfileC
+  ontroller.cs Controllers\ReferenceController.cs Controllers\ReplicatedCssController.cs Controllers\ThumbnailControlle
+  r.cs Controllers\ThumbnailsController.cs Controllers\TrackerController.cs Controllers\TrackingController.cs Controlle
+  rs\UserAdsController.cs Controllers\UserCheckController.cs Controllers\VisitButtonController.cs CSS\AllCSS.ashx.cs De
+  fault.aspx.cs Default.aspx.designer.cs Empty.aspx.cs Empty.aspx.designer.cs Game\Badge\HasBadge.ashx.cs Game\ChatFilt
+  er.ashx.cs Game\Edit.ashx.cs Game\GameServer.ashx.cs Game\GetCurrentUser.ashx.cs Game\Join.ashx.cs Game\LoadPlaceInfo
+  .ashx.cs Game\LuaWebService\HandleSocialRequest.ashx.cs Game\Studio.ashx.cs Game\Tools\InsertAsset.ashx.cs Game\Tools
+  \ThumbnailAsset.ashx.cs Game\Visit.ashx.cs Global.asax.cs Help\Builderman.aspx.cs Help\Builderman.aspx.designer.cs In
+  stall\GetInstallerCdns.ashx.cs KeepAlives\www.ashx.cs LandingSignup.aspx.cs LandingSignup.aspx.designer.cs Login\Defa
+  ult.aspx.cs Login\Default.aspx.designer.cs Login\FulfillConstraint.aspx.cs Login\FulfillConstraint.aspx.designer.cs L
+  ogin\iFrameLogin.aspx.cs Login\iFrameLogin.aspx.designer.cs Login\Negotiate.ashx.cs Login\NewAge.aspx.cs Login\NewAge
+  .aspx.designer.cs Login\ReferralCodeCheck.ashx.cs Login\RequestAuth.ashx.cs Login\ResetPasswordRequest.aspx.cs Login\
+  ResetPasswordRequest.aspx.designer.cs Login\Signup.aspx.cs Login\Signup.aspx.designer.cs Membership\NotApproved.aspx.
+  cs Membership\NotApproved.aspx.designer.cs ModelFactories\Item\BundleItemModelFactory.cs ModelFactories\Item\BundleTh
+  umbnailModelFactory.cs ModelFactories\Item\ItemModelFactory.cs ModelFactories\Moderation\PunishableUserModelFactory.c
+  s ModelFactories\Moderation\PunishmentModelFactory.cs Models\Request\ValidateMachineRequest.cs My\Home.aspx.cs My\Hom
+  e.aspx.designer.cs Login\NewEmailPlz.aspx.cs Login\NewEmailPlz.aspx.designer.cs Parents\BuildersClub.aspx.cs Parents\
+  BuildersClub.aspx.designer.cs Properties\AssemblyInfo.cs Providers\RobloxMembershipProvider.cs Providers\RobloxRolePr
+  ovider.cs Reporting\Dashboard.asmx.cs RobloxDefaultErrorPage.aspx.cs RobloxDefaultErrorPage.aspx.designer.cs Simple.M
+  aster.cs Simple.Master.designer.cs Roblox.Master.cs Roblox.Master.designer.cs Services\Secure\LoginService.asmx.cs Sy
+  stemEnvironmentInfo.aspx.cs SystemEnvironmentInfo.aspx.designer.cs Thumbs\AssetMedia\PlaceMediaItemSortHandler.ashx.c
+  s Thumbs\Avatar.ashx.cs Thumbs\AvatarImage.ashx.cs Thumbs\ItemImage.ashx.cs Thumbs\ItemThumb.ashx.cs Thumbs\JsonAvata
+  r.ashx.cs Thumbs\RawAsset.ashx.cs Thumbs\UserAvatar.ashx.cs Upgrades\BuildersClubMemberships.aspx.cs Upgrades\Builder
+  sClubMemberships.aspx.designer.cs UploadMedia\PostImage.aspx.cs UploadMedia\PostImage.aspx.designer.cs User.aspx.cs U
+  ser.aspx.designer.cs UserControls\Abuse\ReportAbuseButton.ascx.cs UserControls\Abuse\ReportAbuseButton.ascx.designer.
+  cs UserControls\Admi\DashboardBanner.ascx.cs UserControls\Admi\DashboardBanner.ascx.designer.cs UserControls\Admi\Das
+  hboard.ascx.cs UserControls\Admi\Dashboard.ascx.designer.cs UserControls\Admi\UserAdmin\CheatDetectionsTable.ascx.cs
+  UserControls\Admi\UserAdmin\CheatDetectionsTable.ascx.designer.cs UserControls\Admi\UserAdmin\GiveAndTakePane.ascx.cs
+   UserControls\Admi\UserAdmin\GiveAndTakePane.ascx.designer.cs UserControls\Admi\UserAdmin\UpdateUserPane.ascx.cs User
+  Controls\Admi\UserAdmin\UpdateUserPane.ascx.designer.cs UserControls\Admi\UserAdmin\AccountSummaryPane.ascx.cs UserCo
+  ntrols\Admi\UserAdmin\AccountSummaryPane.ascx.designer.cs UserControls\Admi\UserAdmin\BillingInfoPane.ascx.cs UserCon
+  trols\Admi\UserAdmin\BillingInfoPane.ascx.designer.cs UserControls\Admi\UserAdmin\UserNotesPane.ascx.cs UserControls\
+  Admi\UserAdmin\UserNotesPane.ascx.designer.cs UserControls\Admi\UserAdmin\PunishmentsPane.ascx.cs UserControls\Admi\U
+  serAdmin\PunishmentsPane.ascx.designer.cs UserControls\Admi\Users\CheatDetections.ascx.cs UserControls\Admi\Users\Che
+  atDetections.ascx.designer.cs UserControls\Admi\Users\ModerationCard.ascx.cs UserControls\Admi\Users\ModerationCard.a
+  scx.designer.cs UserControls\Admi\Users\PunishmentsPane.ascx.cs UserControls\Admi\Users\PunishmentsPane.ascx.designer
+  .cs UserControls\Alerts.ascx.cs UserControls\Alerts.ascx.designer.cs UserControls\BonusRoundJavaScript.ascx.cs UserCo
+  ntrols\BonusRoundJavaScript.ascx.designer.cs UserControls\ClientInstaller.ascx.cs UserControls\ClientInstaller.ascx.d
+  esigner.cs UserControls\ItemPurchaseAjax.ascx.cs UserControls\ItemPurchaseAjax.ascx.designer.cs UserControls\Modals\G
+  enericModal.ascx.cs UserControls\Modals\GenericModal.ascx.designer.cs UserControls\Modals\InsufficientCurrencyOrBC\BC
+  OnlyModal.ascx.cs UserControls\Modals\InsufficientCurrencyOrBC\BCOnlyModal.ascx.designer.cs UserControls\Navigation\A
+  lertsAndOptionsAuthenticated.ascx.cs UserControls\Navigation\AlertsAndOptionsAuthenticated.ascx.designer.cs UserContr
+  ols\Navigation\MenuRedesign.ascx.cs UserControls\Navigation\MenuRedesign.ascx.designer.cs UserControls\Navigation\Ale
+  rtsAndOptionsAnonymous.ascx.cs UserControls\Navigation\AlertsAndOptionsAnonymous.ascx.designer.cs UserControls\Naviga
+  tion\UserSubmenu.ascx.cs UserControls\Navigation\UserSubmenu.ascx.designer.cs UserControls\Navigation\Footer.ascx.cs
+  UserControls\Navigation\Footer.ascx.designer.cs UserControls\Modals\ConfirmationModal.ascx.cs UserControls\Modals\Con
+  firmationModal.ascx.designer.cs UserControls\Modals\UpsellAdModal.ascx.cs UserControls\Modals\UpsellAdModal.ascx.desi
+  gner.cs UserControls\PlaceLauncher.ascx.cs UserControls\PlaceLauncher.ascx.designer.cs UserControls\SelectGenderPane.
+  ascx.cs UserControls\SelectGenderPane.ascx.designer.cs UserControls\SignupForm.ascx.cs UserControls\SignupForm.ascx.d
+  esigner.cs UserControls\TrackingPixels\GoogleAnalytics.ascx.cs UserControls\TrackingPixels\GoogleAnalytics.ascx.desig
+  ner.cs UserControls\TrackingPixels\RobloxEventManager.ascx.cs UserControls\TrackingPixels\RobloxEventManager.ascx.des
+  igner.cs UserControls\TrackingPixels\JavascriptErrorTracker.ascx.cs UserControls\TrackingPixels\JavascriptErrorTracke
+  r.ascx.designer.cs UserControls\TrackingPixels\UrchinTracker.ascx.cs UserControls\TrackingPixels\UrchinTracker.ascx.d
+  esigner.cs UserControls\UserContent\BadgesDisplay.ascx.cs UserControls\UserContent\BadgesDisplay.ascx.designer.cs Use
+  rControls\UserContent\FavoritesPane.ascx.cs UserControls\UserContent\FavoritesPane.ascx.designer.cs UserControls\User
+  Content\FriendsPane.ascx.cs UserControls\UserContent\FriendsPane.ascx.designer.cs UserControls\UserContent\HeaderPane
+  .ascx.cs UserControls\UserContent\HeaderPane.ascx.designer.cs UserControls\PlaceAccessIndicator.ascx.cs UserControls\
+  PlaceAccessIndicator.ascx.designer.cs UserControls\Platform.ascx.cs UserControls\Platform.ascx.designer.cs UserContro
+  ls\UserContent\PublicUser.ascx.cs UserControls\UserContent\PublicUser.ascx.designer.cs UserControls\UserContent\SetsP
+  ane.ascx.cs UserControls\UserContent\SetsPane.ascx.designer.cs UserControls\UserContent\UserAssetsPane.ascx.cs UserCo
+  ntrols\UserContent\UserAssetsPane.ascx.designer.cs UserControls\UserContent\UserBadgesPane.ascx.cs UserControls\UserC
+  ontent\UserBadgesPane.ascx.designer.cs UserControls\UserContent\UserGroupsPane.ascx.cs UserControls\UserContent\UserG
+  roupsPane.ascx.designer.cs UserControls\UserContent\UserPane.ascx.cs UserControls\UserContent\UserPane.ascx.designer.
+  cs UserControls\UserContent\UserPlacesPane.ascx.cs UserControls\UserContent\UserPlacesPane.ascx.designer.cs UserContr
+  ols\UserContent\UserStatisticsPane.ascx.cs UserControls\UserContent\UserStatisticsPane.ascx.designer.cs UserControls\
+  VisitButtonOverhead.ascx.cs UserControls\VisitButtonOverhead.ascx.designer.cs UserControls\VisitButtons.ascx.cs UserC
+  ontrols\VisitButtons.ascx.designer.cs ViewModels\Admi\UserAdmin\GiveAndTakeViewModel.cs ViewModels\Admi\UserAdmin\Upd
+  ateUserViewModel.cs ViewModels\Admi\UserAdmin\BillingInfoViewModel.cs ViewModels\Admi\UserAdmin\AccountSummaryViewMod
+  el.cs ViewModels\Admi\UserAdmin\UserNoteModel.cs Models\Moderation\PunishmentModel.cs ViewModels\Admi\UserAdmin\UserN
+  otesViewModel.cs ViewModels\Admi\UserAdmin\PunishmentsViewModel.cs Models\Moderation\PunishableUserModel.cs ViewModel
+  s\Admi\Users\UserSearchViewModel.cs ViewModels\Catalog\ItemPurchaseAjaxViewModel.cs ViewModels\Catalog\QueryStateMode
+  lBinder.cs ViewModels\ClientInstallerViewModel.cs ViewModels\JavascriptErrorTrackerViewModel.cs ViewModels\LoginViewM
+  odel.cs ViewModels\Navigation\AlertsAndOptionsViewModel.cs ViewModels\Navigation\NavigationViewModel.cs ViewModels\Pl
+  aceLauncherViewModel.cs ViewModels\Shared\LeanViewModel.cs ViewModels\MetaTagListViewModel.cs ViewModels\Users\Profil
+  eViewModel.cs ViewModels\Users\Shared\PresenceViewModel.cs ViewModels\Users\Shared\ProductContainer.cs ViewModels\Use
+  rs\Shared\UserHeaderViewModel.cs ViewModels\Users\UserPlacesViewModel.cs ViewModels\VisitButtons\VisitButtonModel.cs
+  WebCode\BrowserUtils.cs WebCode\Core\ExceptionHandlerListener.cs WebCode\Core\RazorPartialBridge.cs WebCode\Core\Robl
+  oxWebsiteLogger.cs WebCode\Resources\RobloxResourceSet.cs WebCode\SignupHelper.cs WebCode\StaticContent.cs WebCode\Us
+  erAdUtils.cs "obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs"
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Admi\User.aspx.cs(22,68): error CS0266: Não é possíve
+l converter implicitamente tipo "System.Collections.Generic.IEnumerable<Roblox.Moderation.PunishmentType>" em "System.C
+ollections.Generic.ICollection<Roblox.Moderation.PunishmentType>". Existe uma conversão explícita (há uma conversão aus
+ente?) [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Admi\User.aspx.cs(28,22): error CS0120: Uma referênci
+a de objeto é necessária para o campo, o método ou a propriedade "User.RobloxAccountID" não estática [C:\Users\Usuário\
+Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Admi\User.aspx.cs(78,40): error CS1061: ‘User’ não co
+ntém uma definição para "Account" e não foi possível encontrar nenhum método de extensão "Account" que aceite um primei
+ro argumento do tipo ‘User’ (você está se esquecendo de usar uma diretiva ou uma referência de assembly?) [C:\Users\Usu
+ário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Admi\User.aspx.cs(79,61): error CS0117: "AccountStatu
+s" não contém uma definição para "OkId" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Websi
+te.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Admi\Users\UserAdmin.aspx.cs(73,50): error CS0117: "A
+ccountStatus" não contém uma definição para "MustGet" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSit
+e\Roblox.Website.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\App_Start\BundleConfig.cs(28,18): error CS0117: "Stat
+icContent" não contém uma definição para "CreateScriptBundle" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Robl
+oxWebSite\Roblox.Website.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\App_Start\BundleConfig.cs(57,18): error CS0117: "Stat
+icContent" não contém uma definição para "CreateScriptBundle" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Robl
+oxWebSite\Roblox.Website.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\App_Start\BundleConfig.cs(86,18): error CS0117: "Stat
+icContent" não contém uma definição para "CreateScriptBundle" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Robl
+oxWebSite\Roblox.Website.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\App_Start\BundleConfig.cs(104,18): error CS0117: "Sta
+ticContent" não contém uma definição para "CreateScriptBundle" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Rob
+loxWebSite\Roblox.Website.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\App_Start\BundleConfig.cs(119,18): error CS0117: "Sta
+ticContent" não contém uma definição para "CreateScriptBundle" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Rob
+loxWebSite\Roblox.Website.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\App_Start\BundleConfig.cs(123,18): error CS0117: "Sta
+ticContent" não contém uma definição para "CreateScriptBundle" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Rob
+loxWebSite\Roblox.Website.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\App_Start\BundleConfig.cs(130,18): error CS0117: "Sta
+ticContent" não contém uma definição para "CreateScriptBundle" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Rob
+loxWebSite\Roblox.Website.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\App_Start\BundleConfig.cs(137,18): error CS0117: "Sta
+ticContent" não contém uma definição para "CreateScriptBundle" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Rob
+loxWebSite\Roblox.Website.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\App_Start\BundleConfig.cs(142,18): error CS0117: "Sta
+ticContent" não contém uma definição para "CreateScriptBundle" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Rob
+loxWebSite\Roblox.Website.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\App_Start\BundleConfig.cs(149,18): error CS0117: "Sta
+ticContent" não contém uma definição para "CreateScriptBundle" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Rob
+loxWebSite\Roblox.Website.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\App_Start\BundleConfig.cs(157,18): error CS0117: "Sta
+ticContent" não contém uma definição para "CreateScriptBundle" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Rob
+loxWebSite\Roblox.Website.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\App_Start\BundleConfig.cs(161,18): error CS0117: "Sta
+ticContent" não contém uma definição para "CreateScriptBundle" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Rob
+loxWebSite\Roblox.Website.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\App_Start\BundleConfig.cs(167,18): error CS0117: "Sta
+ticContent" não contém uma definição para "CreateCSSBundle" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Roblox
+WebSite\Roblox.Website.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\App_Start\BundleConfig.cs(245,18): error CS0117: "Sta
+ticContent" não contém uma definição para "CreateCSSBundle" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Roblox
+WebSite\Roblox.Website.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Admi\Users\UserAdmin.aspx.cs(113,68): error CS1061: ‘
+object’ não contém uma definição para "EmailAddress" e não foi possível encontrar nenhum método de extensão "EmailAddre
+ss" que aceite um primeiro argumento do tipo ‘object’ (você está se esquecendo de usar uma diretiva ou uma referência d
+e assembly?) [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Admi\Users\UserAdmin.aspx.cs(114,71): error CS1061: ‘
+object’ não contém uma definição para "IsValid" e não foi possível encontrar nenhum método de extensão "IsValid" que ac
+eite um primeiro argumento do tipo ‘object’ (você está se esquecendo de usar uma diretiva ou uma referência de assembly
+?) [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\ModelFactories\Moderation\PunishmentModelFactory.cs(2
+6,31): error CS0266: Não é possível converter implicitamente tipo "long" em "int". Existe uma conversão explícita (há u
+ma conversão ausente?) [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Global.asax.cs(113,22): error CS0266: Não é possível
+converter implicitamente tipo "Roblox.Website.RobloxWebsiteLogger" em "Roblox.EventLog.ILogger". Existe uma conversão e
+xplícita (há uma conversão ausente?) [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.
+csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Membership\NotApproved.aspx.cs(37,100): error CS1503:
+ Argumento 3: não é possível converter de "long" para "int" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Roblox
+WebSite\Roblox.Website.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\ModelFactories\Moderation\PunishableUserModelFactory.
+cs(30,62): error CS1061: ‘object’ não contém uma definição para "EmailAddress" e não foi possível encontrar nenhum méto
+do de extensão "EmailAddress" que aceite um primeiro argumento do tipo ‘object’ (você está se esquecendo de usar uma di
+retiva ou uma referência de assembly?) [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Websit
+e.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Membership\NotApproved.aspx.cs(95,26): error CS1061:
+‘Account’ não contém uma definição para "AccountStatusID" e não foi possível encontrar nenhum método de extensão "Accou
+ntStatusID" que aceite um primeiro argumento do tipo ‘Account’ (você está se esquecendo de usar uma diretiva ou uma ref
+erência de assembly?) [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Membership\NotApproved.aspx.cs(95,45): error CS0103:
+O nome "AccountStatus" não existe no contexto atual [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\
+Roblox.Website.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Membership\NotApproved.aspx.cs(103,26): error CS1061:
+ ‘Account’ não contém uma definição para "AccountStatusID" e não foi possível encontrar nenhum método de extensão "Acco
+untStatusID" que aceite um primeiro argumento do tipo ‘Account’ (você está se esquecendo de usar uma diretiva ou uma re
+ferência de assembly?) [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Membership\NotApproved.aspx.cs(103,44): error CS0103:
+ O nome "AccountStatus" não existe no contexto atual [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite
+\Roblox.Website.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Membership\NotApproved.aspx.cs(104,26): error CS1061:
+ ‘Account’ não contém uma definição para "Save" e não foi possível encontrar nenhum método de extensão "Save" que aceit
+e um primeiro argumento do tipo ‘Account’ (você está se esquecendo de usar uma diretiva ou uma referência de assembly?)
+ [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\ViewModels\ClientInstallerViewModel.cs(17,39): error
+CS0234: O nome de tipo ou namespace "Layout" não existe no namespace "Roblox.WebsiteSettings.Properties" (você está sem
+ uma referência de assembly?) [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\UserControls\Admi\UserAdmin\UserNotesPane.ascx.cs(40,
+36): error CS0246: O nome do tipo ou do namespace "UserModerationNote" não pode ser encontrado (está faltando uma diret
+iva using ou uma referência de assembly?) [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Web
+site.csproj]
+C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\UserControls\Admi\UserAdmin\UserNotesPane.ascx.cs(55,
+39): error CS0103: O nome "UserModerationNote" não existe no contexto atual [C:\Users\Usuário\Downloads\Roblox-2013-nov
+etus-site\RobloxWebSite\Roblox.Website.csproj]
+  CompilerServer: server - server processed compilation - Roblox.Website
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj"
+(destinos padrão) -- FALHA.
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\Instrumentation\Roblox.Instrumentation\Roblox.Instrumentation.csproj" (3
+7) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Instrumentation -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Instrumentation\Roblox.Instr
+  umentation\bin\Debug\Roblox.Instrumentation.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Instrumentation\Roblox.Ins
+trumentation\Roblox.Instrumentation.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\Agents\Roblox.Agents\Roblox.Agents.csproj" (38) no nó 1 (destinos padrão
+).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Agents -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Agents\Roblox.Agents\bin\Debug\Roblox
+  .Agents.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Agents\Roblox.Agents\Roblo
+x.Agents.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http\Roblox.Http.csproj" (39) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Http -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http\bin\Debug\Roblox.Http.
+  dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http\Roblox.Ht
+tp.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\Marketing\Roblox.Marketing\Roblox.Marketing.csproj" (40) no nó 1 (destin
+os padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Marketing -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Marketing\Roblox.Marketing\bin\Deb
+  ug\Roblox.Marketing.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Marketing\Roblox.Marketing
+\Roblox.Marketing.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\Economy\Roblox.Economy.Common\Roblox.Economy.Common.csproj" (41) no nó 1
+ (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Economy.Common -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Economy\Roblox.Economy.Common
+  \bin\Debug\Roblox.Economy.Common.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Economy\Roblox.Economy.Com
+mon\Roblox.Economy.Common.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\RequestContext\Roblox.RequestContext\Roblox.RequestContext.csproj" (42)
+no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.RequestContext -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\RequestContext\Roblox.Request
+  Context\bin\Debug\Roblox.RequestContext.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\RequestContext\Roblox.Requ
+estContext\Roblox.RequestContext.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\Grid\Roblox.Grid.Client\Roblox.Grid.Client.csproj" (43) no nó 1 (destino
+s padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Grid.Client -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Grid\Roblox.Grid.Client\bin\Debu
+  g\Roblox.Grid.Client.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Grid\Roblox.Grid.Client\Ro
+blox.Grid.Client.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\Grid\Roblox.Grid.Common\Roblox.Grid.Common.csproj" (44) no nó 1 (destino
+s padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Grid.Common -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Grid\Roblox.Grid.Common\bin\Debu
+  g\Roblox.Grid.Common.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Grid\Roblox.Grid.Common\Ro
+blox.Grid.Common.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\Grid\Arbiter\Roblox.Grid.Arbiter.Common\Roblox.Grid.Arbiter.Common.cspro
+j" (45) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Grid.Arbiter.Common -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Grid\Arbiter\Roblox.Grid
+  .Arbiter.Common\bin\Debug\Roblox.Grid.Arbiter.Common.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Grid\Arbiter\Roblox.Grid.A
+rbiter.Common\Roblox.Grid.Arbiter.Common.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\Core\Roblox.Web.Core\Roblox.Web.Core.csproj" (46) no nó 1 (destinos padr
+ão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Web.Core -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Core\Roblox.Web.Core\bin\Debug\Robl
+  ox.Web.Core.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Core\Roblox.Web.Core\Roblo
+x.Web.Core.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\Caching\Roblox.MultiCastToMemcached\Roblox.MultiCastToMemcached.csproj"
+(47) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.MultiCastToMemcached -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Caching\Roblox.MultiCas
+  tToMemcached\bin\Debug\Roblox.MultiCastToMemcached.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Caching\Roblox.MultiCastTo
+Memcached\Roblox.MultiCastToMemcached.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\Files\Roblox.Files\Roblox.Files.csproj" (48) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Files -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Files\Roblox.Files\bin\Debug\Roblox.Fi
+  les.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Files\Roblox.Files\Roblox.
+Files.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\Caching\Emcaster\Emcaster.csproj" (49) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Emcaster -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Caching\Emcaster\bin\Debug\Emcaster.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Caching\Emcaster\Emcaster.
+csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\Mssql\Roblox.Mssql\Roblox.Mssql.csproj" (50) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Mssql -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Mssql\Roblox.Mssql\bin\Debug\Roblox.Ms
+  sql.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Mssql\Roblox.Mssql\Roblox.
+Mssql.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\Sentinels\Roblox.Sentinels\Roblox.Sentinels.csproj" (51) no nó 1 (destin
+os padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Sentinels -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Sentinels\Roblox.Sentinels\bin\Deb
+  ug\Roblox.Sentinels.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Sentinels\Roblox.Sentinels
+\Roblox.Sentinels.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\Entities\Roblox.Entities.Mssql\Roblox.Entities.Mssql.csproj" (52) no nó
+1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Entities.Mssql -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Entities\Roblox.Entities.Mssq
+  l\bin\Debug\Roblox.Entities.Mssql.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Entities\Roblox.Entities.M
+ssql\Roblox.Entities.Mssql.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox.Platform.Membership.Commands\Roblox.Platform.
+Membership.Commands.csproj" (53) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Platform.Membership.Commands -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Member
+  ship\Roblox.Platform.Membership.Commands\bin\Debug\Roblox.Platform.Membership.Commands.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Membership\Roblox
+.Platform.Membership.Commands\Roblox.Platform.Membership.Commands.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\IpAddresses\Roblox.IpAddresses\Roblox.IpAddresses.csproj" (54) no nó 1 (
+destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.IpAddresses -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\IpAddresses\Roblox.IpAddresses\b
+  in\Debug\Roblox.IpAddresses.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\IpAddresses\Roblox.IpAddre
+sses\Roblox.IpAddresses.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\Caching\MemCachedClient\Roblox.MemcachedClient\Roblox.MemcachedClient.cs
+proj" (55) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.MemcachedClient -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Caching\MemCachedClient\Robl
+  ox.MemcachedClient\bin\Debug\Roblox.MemcachedClient.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Caching\MemCachedClient\Ro
+blox.MemcachedClient\Roblox.MemcachedClient.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\LightUtils\Roblox.LightUtils\Roblox.LightUtils.csproj" (56) no nó 1 (des
+tinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.LightUtils -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\LightUtils\Roblox.LightUtils\bin\
+  Debug\Roblox.LightUtils.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\LightUtils\Roblox.LightUti
+ls\Roblox.LightUtils.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\LightUtils\Redis\Roblox.LightUtils.Redis\Roblox.LightUtils.Redis.csproj"
+ (57) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.LightUtils.Redis -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\LightUtils\Redis\Roblox.Lig
+  htUtils.Redis\bin\Debug\Roblox.LightUtils.Redis.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\LightUtils\Redis\Roblox.Li
+ghtUtils.Redis\Roblox.LightUtils.Redis.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\Redis\Roblox.Redis\Roblox.Redis.csproj" (58) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Redis -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Redis\Roblox.Redis\bin\Debug\Roblox.Re
+  dis.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Redis\Roblox.Redis\Roblox.
+Redis.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\Common\Roblox.Common.NetStandard\Roblox.Common.NetStandard.csproj" (59)
+no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Common.NetStandard -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Common\Roblox.Common.NetS
+  tandard\bin\Debug\Roblox.Common.NetStandard.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Common\Roblox.Common.NetSt
+andard\Roblox.Common.NetStandard.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\Databases\Roblox.Databases\Roblox.Databases.csproj" (60) no nó 1 (destin
+os padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Databases -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Databases\Roblox.Databases\bin\Deb
+  ug\Roblox.Databases.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Databases\Roblox.Databases
+\Roblox.Databases.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http.Client\Roblox.Http.Client.csproj" (61) no nó 1 (destino
+s padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Http.Client -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http.Client\bin\Debu
+  g\Roblox.Http.Client.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http.Client\Ro
+blox.Http.Client.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http.Client.Monitoring\Roblox.Http.Client.Monitoring.csproj"
+ (62) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Http.Client.Monitoring -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http.Clie
+  nt.Monitoring\bin\Debug\Roblox.Http.Client.Monitoring.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http.Client.Mo
+nitoring\Roblox.Http.Client.Monitoring.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http.ServiceClient\Roblox.Http.ServiceClient.csproj" (63) no
+ nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Http.ServiceClient -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http.ServiceC
+  lient\bin\Debug\Roblox.Http.ServiceClient.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Http\Roblox.Http.ServiceCl
+ient\Roblox.Http.ServiceClient.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\Pipeline\Roblox.Pipeline\Roblox.Pipeline.csproj" (64) no nó 1 (destinos
+padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Pipeline -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Pipeline\Roblox.Pipeline\bin\Debug\
+  Roblox.Pipeline.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Pipeline\Roblox.Pipeline\R
+oblox.Pipeline.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\Tracing\Roblox.Tracing.Core\Roblox.Tracing.Core.csproj" (65) no nó 1 (de
+stinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Tracing.Core -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Tracing\Roblox.Tracing.Core\bin
+  \Debug\Roblox.Tracing.Core.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Tracing\Roblox.Tracing.Cor
+e\Roblox.Tracing.Core.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\ApiControlPlane\Roblox.ApiControlPlane\Roblox.ApiControlPlane.csproj" (6
+6) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.ApiControlPlane -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\ApiControlPlane\Roblox.ApiCo
+  ntrolPlane\bin\Debug\Roblox.ApiControlPlane.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\ApiControlPlane\Roblox.Api
+ControlPlane\Roblox.ApiControlPlane.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Security\Roblox.Platform.Security.Core\Roblox.Platform.Security
+.Core.csproj" (67) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Platform.Security.Core -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Security\Rob
+  lox.Platform.Security.Core\bin\Debug\Roblox.Platform.Security.Core.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Security\Roblox.P
+latform.Security.Core\Roblox.Platform.Security.Core.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Platform.Email.Entities\Roblox.Platform.Email.Enti
+ties.csproj" (68) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Platform.Email.Entities -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblo
+  x.Platform.Email.Entities\bin\Debug\Roblox.Platform.Email.Entities.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Email\Roblox.Plat
+form.Email.Entities\Roblox.Platform.Email.Entities.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Platform.Roles.Entities\Roblox.Platform.Roles.Enti
+ties.csproj" (69) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Platform.Roles.Entities -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblo
+  x.Platform.Roles.Entities\bin\Debug\Roblox.Platform.Roles.Entities.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Roles\Roblox.Plat
+form.Roles.Entities\Roblox.Platform.Roles.Entities.csproj" (destinos padrão).
+
+O projeto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (1) está compilando "C:\Users\Usuário
+\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Authentication\Roblox.Platform.Authentication.Entities\Roblox.P
+latform.Authentication.Entities.csproj" (70) no nó 1 (destinos padrão).
+GenerateTargetFrameworkMonikerAttribute:
+Ignorando o destino "GenerateTargetFrameworkMonikerAttribute" porque todos os arquivos de saída estão atualizados em re
+lação aos arquivos de entrada.
+CoreCompile:
+Ignorando o destino "CoreCompile" porque todos os arquivos de saída estão atualizados em relação aos arquivos de entrad
+a.
+CopyFilesToOutputDirectory:
+  Roblox.Platform.Authentication.Entities -> C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Au
+  thentication\Roblox.Platform.Authentication.Entities\bin\Debug\Roblox.Platform.Authentication.Entities.dll
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Assemblies\Platform\Authentication\Ro
+blox.Platform.Authentication.Entities\Roblox.Platform.Authentication.Entities.csproj" (destinos padrão).
+
+Projeto de compilação pronto "C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (destinos padrão)
+-- FALHA.
+
+
+FALHA da compilação.
+
+"C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite.sln" (destino padrão) (1) ->
+"C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj" (destino padrão) (2) ->
+(CoreCompile destino) ->
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Admi\User.aspx.cs(22,68): error CS0266: Não é possí
+vel converter implicitamente tipo "System.Collections.Generic.IEnumerable<Roblox.Moderation.PunishmentType>" em "System
+.Collections.Generic.ICollection<Roblox.Moderation.PunishmentType>". Existe uma conversão explícita (há uma conversão a
+usente?) [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Admi\User.aspx.cs(28,22): error CS0120: Uma referên
+cia de objeto é necessária para o campo, o método ou a propriedade "User.RobloxAccountID" não estática [C:\Users\Usuári
+o\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Admi\User.aspx.cs(78,40): error CS1061: ‘User’ não
+contém uma definição para "Account" e não foi possível encontrar nenhum método de extensão "Account" que aceite um prim
+eiro argumento do tipo ‘User’ (você está se esquecendo de usar uma diretiva ou uma referência de assembly?) [C:\Users\U
+suário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Admi\User.aspx.cs(79,61): error CS0117: "AccountSta
+tus" não contém uma definição para "OkId" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Web
+site.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Admi\Users\UserAdmin.aspx.cs(73,50): error CS0117:
+"AccountStatus" não contém uma definição para "MustGet" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebS
+ite\Roblox.Website.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\App_Start\BundleConfig.cs(28,18): error CS0117: "St
+aticContent" não contém uma definição para "CreateScriptBundle" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Ro
+bloxWebSite\Roblox.Website.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\App_Start\BundleConfig.cs(57,18): error CS0117: "St
+aticContent" não contém uma definição para "CreateScriptBundle" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Ro
+bloxWebSite\Roblox.Website.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\App_Start\BundleConfig.cs(86,18): error CS0117: "St
+aticContent" não contém uma definição para "CreateScriptBundle" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Ro
+bloxWebSite\Roblox.Website.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\App_Start\BundleConfig.cs(104,18): error CS0117: "S
+taticContent" não contém uma definição para "CreateScriptBundle" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\R
+obloxWebSite\Roblox.Website.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\App_Start\BundleConfig.cs(119,18): error CS0117: "S
+taticContent" não contém uma definição para "CreateScriptBundle" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\R
+obloxWebSite\Roblox.Website.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\App_Start\BundleConfig.cs(123,18): error CS0117: "S
+taticContent" não contém uma definição para "CreateScriptBundle" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\R
+obloxWebSite\Roblox.Website.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\App_Start\BundleConfig.cs(130,18): error CS0117: "S
+taticContent" não contém uma definição para "CreateScriptBundle" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\R
+obloxWebSite\Roblox.Website.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\App_Start\BundleConfig.cs(137,18): error CS0117: "S
+taticContent" não contém uma definição para "CreateScriptBundle" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\R
+obloxWebSite\Roblox.Website.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\App_Start\BundleConfig.cs(142,18): error CS0117: "S
+taticContent" não contém uma definição para "CreateScriptBundle" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\R
+obloxWebSite\Roblox.Website.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\App_Start\BundleConfig.cs(149,18): error CS0117: "S
+taticContent" não contém uma definição para "CreateScriptBundle" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\R
+obloxWebSite\Roblox.Website.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\App_Start\BundleConfig.cs(157,18): error CS0117: "S
+taticContent" não contém uma definição para "CreateScriptBundle" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\R
+obloxWebSite\Roblox.Website.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\App_Start\BundleConfig.cs(161,18): error CS0117: "S
+taticContent" não contém uma definição para "CreateScriptBundle" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\R
+obloxWebSite\Roblox.Website.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\App_Start\BundleConfig.cs(167,18): error CS0117: "S
+taticContent" não contém uma definição para "CreateCSSBundle" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Robl
+oxWebSite\Roblox.Website.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\App_Start\BundleConfig.cs(245,18): error CS0117: "S
+taticContent" não contém uma definição para "CreateCSSBundle" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Robl
+oxWebSite\Roblox.Website.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Admi\Users\UserAdmin.aspx.cs(113,68): error CS1061:
+ ‘object’ não contém uma definição para "EmailAddress" e não foi possível encontrar nenhum método de extensão "EmailAdd
+ress" que aceite um primeiro argumento do tipo ‘object’ (você está se esquecendo de usar uma diretiva ou uma referência
+ de assembly?) [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Admi\Users\UserAdmin.aspx.cs(114,71): error CS1061:
+ ‘object’ não contém uma definição para "IsValid" e não foi possível encontrar nenhum método de extensão "IsValid" que
+aceite um primeiro argumento do tipo ‘object’ (você está se esquecendo de usar uma diretiva ou uma referência de assemb
+ly?) [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\ModelFactories\Moderation\PunishmentModelFactory.cs
+(26,31): error CS0266: Não é possível converter implicitamente tipo "long" em "int". Existe uma conversão explícita (há
+ uma conversão ausente?) [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Global.asax.cs(113,22): error CS0266: Não é possíve
+l converter implicitamente tipo "Roblox.Website.RobloxWebsiteLogger" em "Roblox.EventLog.ILogger". Existe uma conversão
+ explícita (há uma conversão ausente?) [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Websit
+e.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Membership\NotApproved.aspx.cs(37,100): error CS150
+3: Argumento 3: não é possível converter de "long" para "int" [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\Robl
+oxWebSite\Roblox.Website.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\ModelFactories\Moderation\PunishableUserModelFactor
+y.cs(30,62): error CS1061: ‘object’ não contém uma definição para "EmailAddress" e não foi possível encontrar nenhum mé
+todo de extensão "EmailAddress" que aceite um primeiro argumento do tipo ‘object’ (você está se esquecendo de usar uma
+diretiva ou uma referência de assembly?) [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Webs
+ite.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Membership\NotApproved.aspx.cs(95,26): error CS1061
+: ‘Account’ não contém uma definição para "AccountStatusID" e não foi possível encontrar nenhum método de extensão "Acc
+ountStatusID" que aceite um primeiro argumento do tipo ‘Account’ (você está se esquecendo de usar uma diretiva ou uma r
+eferência de assembly?) [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Membership\NotApproved.aspx.cs(95,45): error CS0103
+: O nome "AccountStatus" não existe no contexto atual [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSit
+e\Roblox.Website.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Membership\NotApproved.aspx.cs(103,26): error CS106
+1: ‘Account’ não contém uma definição para "AccountStatusID" e não foi possível encontrar nenhum método de extensão "Ac
+countStatusID" que aceite um primeiro argumento do tipo ‘Account’ (você está se esquecendo de usar uma diretiva ou uma
+referência de assembly?) [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Membership\NotApproved.aspx.cs(103,44): error CS010
+3: O nome "AccountStatus" não existe no contexto atual [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSi
+te\Roblox.Website.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Membership\NotApproved.aspx.cs(104,26): error CS106
+1: ‘Account’ não contém uma definição para "Save" e não foi possível encontrar nenhum método de extensão "Save" que ace
+ite um primeiro argumento do tipo ‘Account’ (você está se esquecendo de usar uma diretiva ou uma referência de assembly
+?) [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\ViewModels\ClientInstallerViewModel.cs(17,39): erro
+r CS0234: O nome de tipo ou namespace "Layout" não existe no namespace "Roblox.WebsiteSettings.Properties" (você está s
+em uma referência de assembly?) [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.Website.cspro
+j]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\UserControls\Admi\UserAdmin\UserNotesPane.ascx.cs(4
+0,36): error CS0246: O nome do tipo ou do namespace "UserModerationNote" não pode ser encontrado (está faltando uma dir
+etiva using ou uma referência de assembly?) [C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\Roblox.W
+ebsite.csproj]
+  C:\Users\Usuário\Downloads\Roblox-2013-novetus-site\RobloxWebSite\UserControls\Admi\UserAdmin\UserNotesPane.ascx.cs(5
+5,39): error CS0103: O nome "UserModerationNote" não existe no contexto atual [C:\Users\Usuário\Downloads\Roblox-2013-n
+ovetus-site\RobloxWebSite\Roblox.Website.csproj]
+
+    0 Aviso(s)
+    33 Erro(s)
+
+Tempo Decorrido 00:00:02.13
+PS C:\Users\Usuário>
