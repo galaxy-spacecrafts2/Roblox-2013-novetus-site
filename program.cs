@@ -59,6 +59,29 @@ class Program {
         }
     }
 
+    static bool IsValidHost(string host) {
+        if (string.IsNullOrEmpty(host)) return false;
+        // Host must not contain spaces, null bytes, or control characters
+        foreach (char c in host) {
+            if (char.IsControl(c) || char.IsSurrogate(c)) return false;
+        }
+        // Basic format: host or host:port
+        int colonIdx = host.LastIndexOf(':');
+        string hostname;
+        if (colonIdx >= 0) {
+            string portStr = host.Substring(colonIdx + 1);
+            int port;
+            if (!int.TryParse(portStr, out port) || port < 1 || port > 65535) return false;
+            hostname = host.Substring(0, colonIdx);
+        } else {
+            hostname = host;
+        }
+        // Hostname must not be empty and must not contain invalid characters
+        if (string.IsNullOrEmpty(hostname)) return false;
+        // Allow simple hostnames and IPs (CheckHostName returns >= 0 for valid, -1 for unknown)
+        return Uri.CheckHostName(hostname) >= 0;
+    }
+
     static void HandleRequest(AppHost host, HttpListenerContext ctx) {
         try {
             // Build serializable request snapshot in the main AppDomain
@@ -68,22 +91,31 @@ class Program {
             req.Method       = httpReq.HttpMethod;
             req.RawUrl       = httpReq.RawUrl ?? "/";
             req.AbsPath      = httpReq.Url?.AbsolutePath ?? "/";
-            req.Host         = httpReq.Headers["Host"] ?? "localhost";
-            req.LocalAddr    = httpReq.LocalEndPoint?.Address?.ToString() ?? "127.0.0.1";
-            req.LocalPort    = httpReq.LocalEndPoint?.Port ?? 5000;
-            req.RemoteAddr   = httpReq.RemoteEndPoint?.Address?.ToString() ?? "127.0.0.1";
-            req.RemotePort   = httpReq.RemoteEndPoint?.Port ?? 0;
-            req.ContentType  = httpReq.ContentType ?? "";
-            req.ContentLen   = httpReq.ContentLength64;
 
-            // Query string (without leading '?')
-            var q = httpReq.Url?.Query ?? "";
-            req.QueryString  = q.StartsWith("?") ? q.Substring(1) : q;
+            // Ensure Host header is valid - critical for ASP.NET processing
+            string hostHeader = httpReq.Headers["Host"];
+            if (string.IsNullOrEmpty(hostHeader)) {
+                // Construct host from local endpoint
+                var localAddr = httpReq.LocalEndPoint?.Address?.ToString() ?? "127.0.0.1";
+                var localPort = httpReq.LocalEndPoint?.Port ?? 80;
+                hostHeader = (localPort == 80) ? localAddr : localAddr + ":" + localPort;
+            }
+            // Validate host format - it must be parseable as a URI authority
+            // Replace invalid characters and ensure proper format
+            if (!IsValidHost(hostHeader)) {
+                var localAddr = httpReq.LocalEndPoint?.Address?.ToString() ?? "127.0.0.1";
+                var localPort = httpReq.LocalEndPoint?.Port ?? 80;
+                hostHeader = (localPort == 80) ? localAddr : localAddr + ":" + localPort;
+            }
+            req.Host = hostHeader;
 
-            // Headers
+            // Headers - override Host header to ensure it's valid
             var hdrList = new List<string[]>();
-            foreach (string k in httpReq.Headers.Keys)
+            foreach (string k in httpReq.Headers.Keys) {
+                if (k.Equals("Host", StringComparison.OrdinalIgnoreCase)) continue; // Skip original Host
                 hdrList.Add(new[] { k, httpReq.Headers[k] ?? "" });
+            }
+            hdrList.Add(new[] { "Host", hostHeader }); // Add validated Host header
             req.Headers = hdrList.ToArray();
 
             // Request body

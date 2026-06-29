@@ -98,7 +98,8 @@ namespace MonoAspNetHost {
         public override int    GetRemotePort()   => _req.RemotePort;
         public override string GetLocalAddress() => _req.LocalAddr;
         public override int    GetLocalPort()    => _req.LocalPort;
-        public override string GetServerName()   => _req.Host;
+        public override string GetUriScheme()    => "http";
+        public override string GetServerName()   => _req.Host.Contains(":") ? _req.Host.Split(':')[0] : _req.Host;
 
         public override string GetAppPath()           => "/";
         public override string GetAppPathTranslated() =>
