@@ -37,10 +37,10 @@
                     </div>
                     <div class="dropdownnavcontainer" style="display:none;" drop-down-nav-container="moreLink">
                         <div class="dropdownmainnav" style="z-index:1023">
-                            <a class="dropdownoption" data-se="nav-more-browse" href="/Browse.aspx" title="<asp:Literal runat='server' Text='<%$ Resources: Nav.Browse%>' />" ref="nav-people"><span><asp:Literal runat="server" Text="<%$ Resources: Nav.Browse%>" /></span></a>
-                            <a class="dropdownoption" data-se="nav-more-contests" href="/Contests/" title="<asp:Literal runat='server' Text='<%$ Resources: Nav.Contests%>' />" ref="nav-contests"><span><asp:Literal runat="server" Text="<%$ Resources: Nav.Contests%>" /></span></a>
-                            <a class="dropdownoption" data-se="nav-more-blog" href="http://blog.roblox.com" title="<asp:Literal runat='server' Text='<%$ Resources: Nav.News%>' />" ref="nav-news"><span><asp:Literal runat="server" Text="<%$ Resources: Nav.News%>" /></span></a></>
-                            <a class="dropdownoption" data-se="nav-more-help" href="/Help/Builderman.aspx" title="<asp:Literal runat='server' Text='<%$ Resources: Nav.Help%>' />" ref="nav-help"><span><asp:Literal runat="server" Text="<%$ Resources: Nav.Help%>" /></span></a>
+                            <a class="dropdownoption" data-se="nav-more-browse" href="/Browse.aspx"  ref="nav-people"><span><asp:Literal runat="server" Text="<%$ Resources: Nav.Browse%>" /></span></a>
+                            <a class="dropdownoption" data-se="nav-more-contests" href="/Contests/"  ref="nav-contests"><span><asp:Literal runat="server" Text="<%$ Resources: Nav.Contests%>" /></span></a>
+                            <a class="dropdownoption" data-se="nav-more-blog" href="http://blog.roblox.com"  ref="nav-news"><span><asp:Literal runat="server" Text="<%$ Resources: Nav.News%>" /></span></a>
+                            <a class="dropdownoption" data-se="nav-more-help" href="/Help/Builderman.aspx"  ref="nav-help"><span><asp:Literal runat="server" Text="<%$ Resources: Nav.Help%>" /></span></a>
                         </div>  
                     </div>
                 </li>
